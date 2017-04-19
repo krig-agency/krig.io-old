@@ -1,0 +1,14 @@
+.header {
+
+}
+.logo {
+  position: fixed;
+  top: -20px;
+  left: -20px;
+  z-index: -1;
+
+  img {
+    width: 550px;
+    opacity: 0.6;
+  }
+}

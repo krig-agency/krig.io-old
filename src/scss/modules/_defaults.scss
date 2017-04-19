@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+html {
+  font-size: 100%;
+  background: $color-app;
+}
+body {
+  font: 300 16px/1.6 'Helvetica Neue', Helvetica, Arial;
+  color: $color-black;
+  transition: all .4s .3s ease-in;
+}
+body,html{
+	min-height: 100vh;
+}
