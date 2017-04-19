@@ -11,6 +11,7 @@ body {
   font: 300 16px/1.6 'Helvetica Neue', Helvetica, Arial;
   color: $color-black;
   transition: all .4s .3s ease-in;
+  overflow: hidden;
 }
 body,html{
 	min-height: 100vh;
