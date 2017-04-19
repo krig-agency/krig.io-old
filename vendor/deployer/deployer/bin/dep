@@ -1,0 +1,120 @@
+#!/usr/bin/env php
+<?php
+/* (c) Anton Medvedev <anton@medv.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+// Deployer constants
+define('DEPLOYER', true);
+define('DEPLOYER_BIN', __FILE__);
+
+// Detect deploy.php script
+$options = getopt('f::', ['file::']);
+$userSpecifiedFile = null;
+
+if (isset($options['f'])) {
+    $userSpecifiedFile = $options['f'];
+} elseif (isset($options['file'])) {
+    $userSpecifiedFile = $options['file'];
+}
+
+if (empty($userSpecifiedFile)) {
+    $deployFile = getcwd() . '/deploy.php';
+
+    if (!is_readable($deployFile)) {
+        $currentDir = getcwd();
+        $count = 0;
+        do {
+            $currentDir = dirname($currentDir);
+            $deployFile = $currentDir . '/deploy.php';
+            $count++;
+        } while (!is_readable($deployFile) && $count < 100);
+    }
+} else {
+    $deployFile = ($userSpecifiedFile[0] === '/' ? '' : getcwd() . '/') . $userSpecifiedFile;
+}
+
+$deployFilePath = dirname($deployFile);
+
+// Detect source location
+
+$autoload = [
+    $deployFilePath . '/vendor/autoload.php',
+    __DIR__ . '/../../../autoload.php',
+    __DIR__ . '/../vendor/autoload.php'
+];
+
+$includes = [
+    $deployFilePath . '/vendor/deployer/deployer',
+    __DIR__ . '/../../../deployer/deployer',
+    __DIR__ . '/../'
+];
+
+$loaded = false;
+$includePath = false;
+
+for ($i = 0; $i < count($autoload); $i++) {
+    if (file_exists($autoload[$i]) && file_exists($includes[$i])) {
+        require $autoload[$i];
+        $includePath = $includes[$i];
+        $loaded = true;
+        break;
+    }
+}
+
+if (!$loaded) {
+    die(
+        'You need to set up the project dependencies using the following commands:' . PHP_EOL .
+        'wget http://getcomposer.org/composer.phar' . PHP_EOL .
+        'php composer.phar install' . PHP_EOL
+    );
+}
+
+// Setup include path
+set_include_path($includePath . PATH_SEPARATOR . get_include_path());
+
+// Detect version
+$version = 'master';
+
+$composerLockFile = $deployFilePath . '/composer.lock';
+if (is_readable($composerLockFile)) {
+    $lock = json_decode(file_get_contents($composerLockFile), true);
+    foreach ($lock['packages'] as $package) {
+        if ($package['name'] === 'deployer/deployer') {
+            $version = $package['version'];
+        }
+    }
+    foreach ($lock['packages-dev'] as $package) {
+        if ($package['name'] === 'deployer/deployer') {
+            $version = $package['version'];
+        }
+    }
+}
+
+// Init Deployer
+$console = new \Deployer\Console\Application('Deployer', $version);
+$input = new \Symfony\Component\Console\Input\ArgvInput();
+$output = new \Symfony\Component\Console\Output\ConsoleOutput();
+$deployer = new \Deployer\Deployer($console, $input, $output);
+
+// Pretty-print uncaught exceptions in symfony-console
+// SymfonyStyle was added in sf-console 2.7, therefore we feature detect first
+if (class_exists('\Symfony\Component\Console\Style\SymfonyStyle')) {
+    set_exception_handler(function($e) use ($input, $output) {
+        $io = new \Symfony\Component\Console\Style\SymfonyStyle($input, $output);
+        $io->error($e);
+    });
+}
+
+// Require deploy.php file
+if (is_readable($deployFile)) {
+    // Prevent variable leak into deploy.php file
+    call_user_func(function () use ($deployFile) {
+        require $deployFile;
+    });
+}
+
+// Run Deployer
+$deployer->run();
