@@ -6,16 +6,18 @@ require 'recipe/common.php';
 
 server('prod', 'krig.io')
     ->user('razitazi')
+    ->set('branch', 'master')
     ->identityFile()
     ->forwardAgent()
     ->set('deploy_path', '/var/www/krig.io/html')
     ->stage('production');
 
-server('kriga', 'kriga.krig.io')
+server('knacka', 'knacka.krig.io')
     ->user('razitazi')
+    ->set('branch', 'knacka')
     ->identityFile()
     ->forwardAgent()
-    ->set('deploy_path', '/var/www/kriga.krig.io/html')
+    ->set('deploy_path', '/var/www/knacka.krig.io/html')
     ->stage('development');
 
 // Git configuration.
@@ -34,7 +36,6 @@ task('deploy', [
     'deploy:update_code',
     'deploy:shared',
     'deploy:writable',
-    'deploy:vendors',
     'deploy:clear_paths',
     'deploy:symlink',
     'deploy:unlock',
