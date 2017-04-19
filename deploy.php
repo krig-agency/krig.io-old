@@ -12,7 +12,7 @@ server('prod', 'krig.io')
     ->set('deploy_path', '/var/www/krig.io/html')
     ->stage('production');
 
-server('knacka', 'knacka.krig.io')
+server('knacka', ' krig.io')
     ->user('razitazi')
     ->set('branch', 'knacka')
     ->identityFile()
