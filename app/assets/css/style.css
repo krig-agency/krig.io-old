@@ -14,12 +14,13 @@
 
 html {
   font-size: 100%;
-  background: #006EFF; }
+  background: #111; }
 
 body {
   font: 300 16px/1.6 'Helvetica Neue', Helvetica, Arial;
-  color: #181818;
-  transition: all .4s .3s ease-in; }
+  color: #000000;
+  transition: all .4s .3s ease-in;
+  overflow: hidden; }
 
 body, html {
   min-height: 100vh; }
@@ -391,12 +392,13 @@ textarea {
   /* 2 */ }
 
 .logo {
-  position: fixed;
-  top: -20px;
-  left: -20px;
-  z-index: -1; }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
   .logo img {
-    width: 550px;
+    width: 400px;
     opacity: 0.6; }
 
 .nav ul {
@@ -435,63 +437,6 @@ textarea {
   background: #333;
   color: #fff;
   text-shadow: none; }
-
-.splash {
-  margin: 17% auto 0 auto;
-  max-width: 85%;
-  font-family: "acumin-pro-extra-condensed",sans-serif;
-  font-weight: black;
-  font-size: 3rem;
-  line-height: 1;
-  color: #fff;
-  letter-spacing: 2px;
-  vertical-align: baseline; }
-  .splash span {
-    display: inline-block;
-    margin-bottom: 200px; }
-  .splash h1 {
-    font-size: 3rem;
-    margin: 0;
-    position: relative; }
-  .splash .splash__part-one {
-    position: absolute;
-    bottom: 0;
-    z-index: 10;
-    background: #181818;
-    padding: 0 10px 7px 10px;
-    margin-bottom: -200px; }
-  .splash .splash__part-two {
-    font-size: 11rem;
-    text-transform: uppercase;
-    color: #fff;
-    position: relative;
-    font-style: italic;
-    padding-right: 20px;
-    margin-right: -20px;
-    float: right; }
-  .splash .splash__part-three {
-    margin-top: 50px;
-    margin-left: 50px;
-    font-size: 5.25rem;
-    text-transform: uppercase; }
-  .splash .splash__part-four {
-    position: relative;
-    z-index: 10; }
-  .splash .splash__part-five {
-    display: block;
-    font-size: 9.75rem;
-    color: #fff;
-    text-transform: uppercase;
-    -ms-transform: rotate(180deg);
-        transform: rotate(180deg); }
-  .splash .splash__part-six {
-    display: block;
-    text-transform: uppercase; }
-  .splash .splash__part-seven {
-    display: block;
-    font-size: 13.75rem;
-    color: #fff;
-    text-transform: uppercase; }
 
 @media print {
   * {
