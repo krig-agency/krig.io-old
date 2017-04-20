@@ -14,7 +14,7 @@
 
 html {
   font-size: 100%;
-  background: #111; }
+  background: #0000ff; }
 
 body {
   font: 300 16px/1.6 'Helvetica Neue', Helvetica, Arial;
@@ -392,14 +392,10 @@ textarea {
   /* 2 */ }
 
 .logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%); }
+  margin-bottom: 50px; }
   .logo img {
-    width: 400px;
-    opacity: 0.6; }
+    max-width: 400px;
+    opacity: 0.8; }
 
 .nav ul {
   list-style: none; }
@@ -437,6 +433,17 @@ textarea {
   background: #333;
   color: #fff;
   text-shadow: none; }
+
+.site-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff; }
+  .site-wrap a {
+    color: inherit; }
 
 @media print {
   * {
