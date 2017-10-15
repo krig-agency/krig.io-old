@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Chivo|Overpass+Mono");
 .clear:before, .clear:after {
   content: ' ';
   display: table; }
@@ -14,7 +15,7 @@
 
 html {
   font-size: 100%;
-  background: #0000ff; }
+  background: #FF8372; }
 
 body {
   font: 300 16px/1.6 'Helvetica Neue', Helvetica, Arial;
@@ -391,28 +392,68 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+.header {
+  max-width: 70%;
+  margin: 0 auto; }
+
 .logo {
   margin-bottom: 50px; }
   .logo img {
     max-width: 400px;
     opacity: 0.8; }
 
+.sticky {
+  position: fixed;
+  top: 50%;
+  font-family: "Chivo", sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 3px; }
+  .sticky a {
+    color: #000;
+    text-decoration: none;
+    opacity: 0.45; }
+
+.sticky--top {
+  top: auto;
+  width: 100%;
+  text-align: center;
+  top: 35px; }
+
+.sticky--left {
+  left: -39px;
+  right: auto;
+  -ms-transform: rotate(90deg) translateY(-50%);
+      transform: rotate(90deg) translateY(-50%); }
+
+.sticky--right {
+  right: -35px;
+  -ms-transform: rotate(-90deg) translateY(-50%);
+      transform: rotate(-90deg) translateY(-50%); }
+
+.sticky--bottom {
+  top: auto;
+  bottom: 36px;
+  width: 100%;
+  text-align: center; }
+
 .nav ul {
   list-style: none; }
 
-@font-face {
-  font-family: 'switz';
-  src: url("../fonts/switzerland.eot");
-  src: url("../fonts/switzerland.eot?#iefix") format("embedded-opentype"), url("../fonts/switzerland.woff") format("woff"), url("../fonts/switzerland.ttf") format("truetype"), url("../fonts/switzerland.svg#font-name") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+body,
+p {
+  font-family: "Overpass Mono", monospace; }
 
-@font-face {
-  font-family: 'switz';
-  src: url("../fonts/switzerland-italic.eot");
-  src: url("../fonts/switzerland-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/switzerland-italic.woff") format("woff"), url("../fonts/switzerland-italic.ttf") format("truetype"), url("../fonts/switzerland-italic.svg#font-name") format("svg");
-  font-weight: normal;
-  font-style: italic; }
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Chivo", sans-serif; }
+
+p {
+  font-size: 0.75rem;
+  line-height: 2; }
 
 ::-moz-selection {
   background: #333;
@@ -433,6 +474,19 @@ textarea {
   background: #333;
   color: #fff;
   text-shadow: none; }
+
+html,
+body,
+main {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.5; }
+
+body {
+  position: relative;
+  font-family: "Overpass Mono", monospace;
+  border: 15px solid #fff; }
 
 .site-wrap {
   position: absolute;
