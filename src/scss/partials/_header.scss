@@ -1,5 +1,6 @@
 .header {
-
+ max-width: 60%;
+ margin: 0 auto;
 }
 .logo {
   margin-bottom: 50px;
@@ -8,4 +9,45 @@
     max-width: 400px;
     opacity: 0.8;
   }
+}
+
+.sticky {
+  position: fixed;
+  top: 50%;
+  font-family: $font-headline;
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 3px;
+
+  a {
+    color: #000;
+    text-decoration: none;
+    opacity: 0.45;
+  } 
+}
+
+.sticky--top {
+  top: auto;
+  width: 100%;
+  text-align: center;
+  top: 35px;
+}
+
+.sticky--left {
+  left: -39px;
+  right: auto;
+  transform: rotate(90deg) translateY(-50%);
+}
+
+.sticky--right {
+  right: -35px;
+  transform: rotate(-90deg) translateY(-50%);
+}
+
+.sticky--bottom {
+  top: auto;
+  bottom: 36px;
+  width: 100%;
+  text-align: center;
 }
