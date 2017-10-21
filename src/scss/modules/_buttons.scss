@@ -9,7 +9,7 @@
     border: 1px solid #fff;
     color: #fff;
     background: transparent;
-    border-radius: 4px;
+    border-radius: 7px;
     margin-top: 15px;
     margin-bottom: 10px; 
 }
@@ -21,7 +21,7 @@
     border: 1px solid #fff;
     color: #fff;
     background: transparent;
-    border-radius: 4px;
+    border-radius: 7px;
     margin-bottom: 10px; 
 }
 
@@ -32,5 +32,30 @@
     border: 1px solid #fff;
     color: #fff;
     background: transparent;
-    border-radius: 4px;
+    border-radius: 7px;
+    margin-bottom: 20px; 
+}
+
+.pitch-send {
+    border-style: none;
+    width: 30%;
+    height: 50px;
+    border: none;
+    color: $color-work;
+    background: #fff;
+    border-radius: 100px;
+    margin: 0 auto;
+    display: block;
+}
+
+.member-send {
+    border-style: none;
+    width: 30%;
+    height: 50px;
+    border: none;
+    color: $color-member;
+    background: #fff;
+    border-radius: 100px;
+    margin: 0 auto;
+    display: block;
 }

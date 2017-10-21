@@ -7,7 +7,11 @@ main {
   line-height: 1.5;
 
   .work {
-    background-color: $color-second;
+    background-color: $color-work;
+  }
+
+  .member {
+    background-color: $color-member;
   }
 }
 
