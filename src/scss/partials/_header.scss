@@ -2,6 +2,8 @@
  max-width: 60%;
  margin: 0 auto;
 }
+
+
 .logo {
   margin-bottom: 50px;
   
@@ -28,10 +30,11 @@
 }
 
 .sticky--top {
+  position: relative;
   top: auto;
   width: 100%;
   text-align: center;
-  top: 35px;
+  top: 20px;
 }
 
 .sticky--left {
@@ -46,8 +49,8 @@
 }
 
 .sticky--bottom {
-  top: auto;
-  bottom: 36px;
+  position: relative;
+  top: 90%;
   width: 100%;
   text-align: center;
 }

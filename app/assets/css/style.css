@@ -416,10 +416,11 @@ textarea {
     opacity: 0.45; }
 
 .sticky--top {
+  position: relative;
   top: auto;
   width: 100%;
   text-align: center;
-  top: 35px; }
+  top: 20px; }
 
 .sticky--left {
   left: -39px;
@@ -433,13 +434,46 @@ textarea {
       transform: rotate(-90deg) translateY(-50%); }
 
 .sticky--bottom {
-  top: auto;
-  bottom: 36px;
+  position: relative;
+  top: 90%;
   width: 100%;
   text-align: center; }
 
 .nav ul {
   list-style: none; }
+
+.pitch-form {
+  max-width: 100%; }
+
+.pitch-pitch {
+  border-style: none;
+  width: 60%;
+  height: 70px;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  border-radius: 4px;
+  margin-top: 15px;
+  margin-bottom: 10px; }
+
+.pitch-budget {
+  border-style: none;
+  width: 60%;
+  height: 50px;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  border-radius: 4px;
+  margin-bottom: 10px; }
+
+.pitch-mail {
+  border-style: none;
+  width: 60%;
+  height: 50px;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  border-radius: 4px; }
 
 body,
 p {
@@ -450,6 +484,11 @@ h2,
 h3,
 h4 {
   font-family: "Chivo", sans-serif; }
+  h1.headline,
+  h2.headline,
+  h3.headline,
+  h4.headline {
+    font-style: italic; }
 
 p {
   font-size: 0.75rem;
@@ -482,6 +521,10 @@ main {
   height: 100%;
   font-size: 16px;
   line-height: 1.5; }
+  html .work,
+  body .work,
+  main .work {
+    background-color: #EBB041; }
 
 body {
   position: relative;

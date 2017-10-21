@@ -10,6 +10,10 @@ h2,
 h3,
 h4 {
   font-family: $font-headline;
+
+  &.headline {
+    font-style: italic;
+  }
 }
 
 p {
