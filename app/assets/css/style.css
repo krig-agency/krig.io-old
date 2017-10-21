@@ -492,7 +492,7 @@ textarea {
   width: 30%;
   height: 50px;
   border: none;
-  color: #4CB180;
+  color: #B5C6C2;
   background: #fff;
   border-radius: 100px;
   margin: 0 auto;
@@ -551,7 +551,7 @@ main {
   html .member,
   body .member,
   main .member {
-    background-color: #4CB180; }
+    background-color: #B5C6C2; }
 
 body {
   position: relative;
