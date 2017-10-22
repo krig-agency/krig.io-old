@@ -534,6 +534,12 @@ textarea {
   margin-left: 10px;
   margin-right: 10px; }
 
+.mail-icon {
+  width: 30px;
+  opacity: .80;
+  margin-left: 10px;
+  margin-right: 10px; }
+
 body,
 p {
   font-family: "Overpass Mono", monospace; }
