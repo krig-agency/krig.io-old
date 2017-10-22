@@ -498,6 +498,42 @@ textarea {
   margin: 0 auto;
   display: block; }
 
+.home-icon {
+  float: left;
+  width: 30px;
+  opacity: .80;
+  margin-left: 25px; }
+
+.login-icon {
+  float: right;
+  width: 30px;
+  opacity: .80;
+  margin-right: 25px; }
+
+.facebook-icon {
+  width: 30px;
+  opacity: .80;
+  margin-left: 10px;
+  margin-right: 10px; }
+
+.github-icon {
+  width: 30px;
+  opacity: .80;
+  margin-left: 10px;
+  margin-right: 10px; }
+
+.instagram-icon {
+  width: 30px;
+  opacity: .80;
+  margin-left: 10px;
+  margin-right: 10px; }
+
+.twitter-icon {
+  height: 30px;
+  opacity: .80;
+  margin-left: 10px;
+  margin-right: 10px; }
+
 body,
 p {
   font-family: "Overpass Mono", monospace; }
