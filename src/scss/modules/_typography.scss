@@ -19,4 +19,8 @@ h4 {
 p {
   font-size: 0.75rem;
   line-height: 2;
+
+  &.under-text {
+    margin-bottom: 30px;
+  }
 }

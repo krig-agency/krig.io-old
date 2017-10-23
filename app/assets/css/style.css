@@ -445,7 +445,7 @@ textarea {
 .pitch-form {
   max-width: 100%; }
 
-.pitch-pitch {
+.pitch-form-text {
   border-style: none;
   width: 60%;
   height: 70px;
@@ -453,30 +453,12 @@ textarea {
   color: #fff;
   background: transparent;
   border-radius: 7px;
-  margin-top: 15px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  text-align: center; }
+  .pitch-form-text:focus {
+    outline: none; }
 
-.pitch-budget {
-  border-style: none;
-  width: 60%;
-  height: 50px;
-  border: 1px solid #fff;
-  color: #fff;
-  background: transparent;
-  border-radius: 7px;
-  margin-bottom: 10px; }
-
-.pitch-mail {
-  border-style: none;
-  width: 60%;
-  height: 50px;
-  border: 1px solid #fff;
-  color: #fff;
-  background: transparent;
-  border-radius: 7px;
-  margin-bottom: 20px; }
-
-.pitch-send {
+.pitch-button-send {
   border-style: none;
   width: 30%;
   height: 50px;
@@ -485,9 +467,31 @@ textarea {
   background: #fff;
   border-radius: 100px;
   margin: 0 auto;
-  display: block; }
+  display: block;
+  margin-top: 10px; }
+  .pitch-button-send:hover {
+    cursor: pointer; }
+  .pitch-button-send:focus {
+    border: none;
+    outline: none; }
 
-.member-send {
+.member-form {
+  max-width: 100%; }
+
+.member-form-text {
+  border-style: none;
+  width: 60%;
+  height: 70px;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  text-align: center; }
+  .member-form-text:focus {
+    outline: none; }
+
+.member-button-send {
   border-style: none;
   width: 30%;
   height: 50px;
@@ -496,7 +500,13 @@ textarea {
   background: #fff;
   border-radius: 100px;
   margin: 0 auto;
-  display: block; }
+  display: block;
+  margin-top: 10px; }
+  .member-button-send:hover {
+    cursor: pointer; }
+  .member-button-send:focus {
+    border: none;
+    outline: none; }
 
 .home-icon {
   float: left;
@@ -558,6 +568,8 @@ h4 {
 p {
   font-size: 0.75rem;
   line-height: 2; }
+  p.under-text {
+    margin-bottom: 30px; }
 
 ::-moz-selection {
   background: #333;

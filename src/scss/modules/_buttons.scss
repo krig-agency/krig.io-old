@@ -2,7 +2,7 @@
     max-width: 100%;
 }
 
-.pitch-pitch {
+.pitch-form-text {
     border-style: none;
     width: 60%;
     height: 70px;
@@ -10,33 +10,15 @@
     color: #fff;
     background: transparent;
     border-radius: 7px;
-    margin-top: 15px;
     margin-bottom: 10px; 
+    text-align: center;
+
+    &:focus {
+        outline: none;
+        }
 }
 
-.pitch-budget {
-    border-style: none;
-    width: 60%;
-    height: 50px;
-    border: 1px solid #fff;
-    color: #fff;
-    background: transparent;
-    border-radius: 7px;
-    margin-bottom: 10px; 
-}
-
-.pitch-mail {
-    border-style: none;
-    width: 60%;
-    height: 50px;
-    border: 1px solid #fff;
-    color: #fff;
-    background: transparent;
-    border-radius: 7px;
-    margin-bottom: 20px; 
-}
-
-.pitch-send {
+.pitch-button-send {
     border-style: none;
     width: 30%;
     height: 50px;
@@ -46,9 +28,40 @@
     border-radius: 100px;
     margin: 0 auto;
     display: block;
+    margin-top: 10px;
+
+    &:hover {
+        cursor: pointer;
+      }
+
+    &:focus {
+    border: none;
+    outline: none;
+    }
 }
 
-.member-send {
+
+.member-form {
+    max-width: 100%;
+}
+
+.member-form-text {
+    border-style: none;
+    width: 60%;
+    height: 70px;
+    border: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+    border-radius: 7px;
+    margin-bottom: 10px; 
+    text-align: center;
+
+    &:focus {
+        outline: none;
+        }
+}
+
+.member-button-send {
     border-style: none;
     width: 30%;
     height: 50px;
@@ -58,6 +71,16 @@
     border-radius: 100px;
     margin: 0 auto;
     display: block;
+    margin-top: 10px;
+
+    &:hover {
+        cursor: pointer;
+      }
+
+    &:focus {
+    border: none;
+    outline: none;
+    }
 }
 
 .home-icon {
