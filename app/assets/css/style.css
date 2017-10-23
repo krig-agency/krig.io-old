@@ -452,9 +452,10 @@ textarea {
   border: 1px solid #fff;
   color: #fff;
   background: transparent;
-  border-radius: 7px;
-  margin-bottom: 15px;
-  text-align: center; }
+  border-radius: 4px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 0.75rem; }
   .pitch-form-text:focus {
     outline: none; }
 
@@ -468,7 +469,8 @@ textarea {
   border-radius: 100px;
   margin: 0 auto;
   display: block;
-  margin-top: 10px; }
+  margin-top: 10px;
+  font-size: 0.75rem; }
   .pitch-button-send:hover {
     cursor: pointer; }
   .pitch-button-send:focus {
@@ -485,9 +487,10 @@ textarea {
   border: 1px solid #fff;
   color: #fff;
   background: transparent;
-  border-radius: 7px;
-  margin-bottom: 15px;
-  text-align: center; }
+  border-radius: 4px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 0.75rem; }
   .member-form-text:focus {
     outline: none; }
 
@@ -501,7 +504,8 @@ textarea {
   border-radius: 100px;
   margin: 0 auto;
   display: block;
-  margin-top: 10px; }
+  margin-top: 10px;
+  font-size: 0.75rem; }
   .member-button-send:hover {
     cursor: pointer; }
   .member-button-send:focus {
@@ -563,7 +567,8 @@ h4 {
   h2.headline,
   h3.headline,
   h4.headline {
-    font-style: italic; }
+    font-style: italic;
+    margin-top: 0px; }
 
 p {
   font-size: 0.75rem;

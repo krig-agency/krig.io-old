@@ -9,9 +9,10 @@
     border: 1px solid #fff;
     color: #fff;
     background: transparent;
-    border-radius: 7px;
-    margin-bottom: 15px; 
+    border-radius: 4px;
+    margin-bottom: 10px; 
     text-align: center;
+    font-size: 0.75rem;
 
     &:focus {
         outline: none;
@@ -29,6 +30,7 @@
     margin: 0 auto;
     display: block;
     margin-top: 10px;
+    font-size: 0.75rem;
 
     &:hover {
         cursor: pointer;
@@ -52,9 +54,10 @@
     border: 1px solid #fff;
     color: #fff;
     background: transparent;
-    border-radius: 7px;
-    margin-bottom: 15px; 
+    border-radius: 4px;
+    margin-bottom: 10px; 
     text-align: center;
+    font-size: 0.75rem;
 
     &:focus {
         outline: none;
@@ -72,6 +75,7 @@
     margin: 0 auto;
     display: block;
     margin-top: 10px;
+    font-size: 0.75rem;
 
     &:hover {
         cursor: pointer;
