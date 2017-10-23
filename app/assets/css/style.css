@@ -448,12 +448,12 @@ textarea {
 .pitch-form-text {
   border-style: none;
   width: 60%;
-  height: 70px;
+  height: 65px;
   border: 1px solid #fff;
   color: #fff;
   background: transparent;
   border-radius: 7px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-align: center; }
   .pitch-form-text:focus {
     outline: none; }
@@ -481,12 +481,12 @@ textarea {
 .member-form-text {
   border-style: none;
   width: 60%;
-  height: 70px;
+  height: 65px;
   border: 1px solid #fff;
   color: #fff;
   background: transparent;
   border-radius: 7px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-align: center; }
   .member-form-text:focus {
     outline: none; }
@@ -606,6 +606,10 @@ main {
   body .member,
   main .member {
     background-color: #B5C6C2; }
+  html .about,
+  body .about,
+  main .about {
+    background-color: #4CB180; }
 
 body {
   position: relative;
