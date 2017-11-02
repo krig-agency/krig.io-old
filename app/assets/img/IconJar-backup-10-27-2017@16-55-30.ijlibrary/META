@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>backupdate</key>
+	<date>2017-10-27T14:55:32Z</date>
+	<key>builddate</key>
+	<date>2016-10-11T08:50:37Z</date>
+	<key>buildversion</key>
+	<string>1.7.0</string>
+	<key>version</key>
+	<real>0.029999999329447746</real>
+</dict>
+</plist>
