@@ -442,6 +442,24 @@ textarea {
 .nav ul {
   list-style: none; }
 
+path {
+  fill-opacity: .5;
+  transition: all .5s; }
+
+path:nth-child(n+32) {
+  opacity: 0; }
+
+svg:hover path:nth-child(n+10) {
+  opacity: 1; }
+
+p {
+  font-family: Courier New; }
+
+svg {
+  display: block;
+  float: left;
+  margin: 0; }
+
 .pitch-form {
   max-width: 100%; }
 
