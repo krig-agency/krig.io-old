@@ -482,7 +482,7 @@ svg {
   width: 30%;
   height: 50px;
   border: none;
-  color: #EBB041;
+  color: #e9c45a;
   background: #fff;
   border-radius: 100px;
   margin: 0 auto;
@@ -517,7 +517,7 @@ svg {
   width: 30%;
   height: 50px;
   border: none;
-  color: #B5C6C2;
+  color: #7ac4b9;
   background: #fff;
   border-radius: 100px;
   margin: 0 auto;
@@ -624,15 +624,15 @@ main {
   html .work,
   body .work,
   main .work {
-    background-color: #EBB041; }
+    background-color: #e9c45a; }
   html .member,
   body .member,
   main .member {
-    background-color: #B5C6C2; }
+    background-color: #7ac4b9; }
   html .about,
   body .about,
   main .about {
-    background-color: #4CB180; }
+    background-color: #7ed4ab; }
 
 body {
   position: relative;
