@@ -653,6 +653,10 @@ body {
   .site-wrap a {
     color: inherit; }
 
+@media only screen and (min-width: 1140px) and (--large) {
+  .home-icon {
+    width: 40px; } }
+
 @media print {
   * {
     background: transparent !important;
