@@ -460,6 +460,9 @@ svg {
   float: left;
   margin: 0; }
 
+.about-pics {
+  margin-bottom: 40px; }
+
 .pitch-form {
   max-width: 100%; }
 
@@ -652,10 +655,6 @@ body {
   color: #fff; }
   .site-wrap a {
     color: inherit; }
-
-@media only screen and (min-width: 1140px) and (--large) {
-  .home-icon {
-    width: 40px; } }
 
 @media print {
   * {
