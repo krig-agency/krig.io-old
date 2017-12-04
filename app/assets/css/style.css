@@ -461,7 +461,9 @@ svg {
   margin: 0; }
 
 .about-pics {
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  display: -ms-flexbox;
+  display: flex; }
 
 .pitch-form {
   max-width: 100%; }
