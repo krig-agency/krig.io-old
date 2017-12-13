@@ -1,6 +1,7 @@
 .main {
 
 
+
 }
 
 path {
@@ -9,7 +10,7 @@ path {
     }
     path:nth-child(n+32){opacity:0;}
     svg:hover path:nth-child(n+10){opacity:1}
-    
+
     p {
       font-family: Courier New;
     }
@@ -18,9 +19,10 @@ svg {
     display: block;
     float: left;
     margin: 0;
-    
+
 }
 
 .about-pics {
     margin-bottom: 40px;
+    display: flex;
 }
