@@ -19,7 +19,7 @@ html {
 
 body {
   font: 300 16px/1.6 'Helvetica Neue', Helvetica, Arial;
-  color: #000000;
+  color: #222;
   transition: all .4s .3s ease-in;
   overflow: hidden; }
 
