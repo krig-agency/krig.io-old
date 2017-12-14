@@ -1,6 +1,8 @@
 # FastShell
 # https://HosseinKarami.github.io/fastshell
 # @author Hossein Karami
+/.idea/
+.env
 
 
 ## Node.js
