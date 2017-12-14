@@ -68,3 +68,13 @@ gulp.task('default', ['css', 'js', 'browser-sync'], function () {
     gulp.watch("src/js/*.js", ['js']);
     gulp.watch("app/*.html", ['bs-reload']);
 });
+
+gulp.task('html', function() {
+  // Move html...
+});
+
+gulp.task('watch', ['css', 'js'], function() {
+  gulp.watch('src/scss/**/*.scss', ['css']);
+  gulp.watch('src/js/**/*.js', ['js']);
+  gulp.watch('app/*.html', ['html']);
+});
