@@ -10,9 +10,25 @@ h2,
 h3,
 h4 {
   font-family: $font-headline;
+
+  &.headline {
+    font-style: italic;
+    margin-top: 0px;
+  }
+  @media only screen and (max-width:480px) {
+    font-size: 1.5rem;
+}
 }
 
 p {
   font-size: 0.75rem;
   line-height: 2;
+
+  &.under-text {
+    margin-bottom: 30px;
+    
+  }
+  @media only screen and (max-width:480px) {
+    font-size: 0.65rem;
+}
 }

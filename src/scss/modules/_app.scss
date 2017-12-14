@@ -5,12 +5,28 @@ main {
   height:100%;
   font-size: 16px;
   line-height: 1.5;
+
+  .work {
+    background-color: $color-work;
+  }
+
+  .member {
+    background-color: $color-member;
+  }
+
+  .about {
+    background-color: $color-about;
+  }
 }
 
 body {
   position: relative;
   font-family: $font-body;
   border: 15px solid #fff;
+}
+
+.intro-text {
+  float: left;
 }
 
 .site-wrap {
@@ -20,6 +36,7 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   color: #fff;
+  max-width: 80%;
 
   a {
     color: inherit;
