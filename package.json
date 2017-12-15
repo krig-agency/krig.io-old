@@ -6,21 +6,28 @@
   "version": "0.0.1",
   "license": "UNLICENSED",
   "private": true,
+  "semistandard": {
+    "parser": "babel-eslint"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/semistandard src/**/*.js --verbose | snazzy"
+  },
   "devDependencies": {
     "animejs": "^2.2.0",
+    "babel-eslint": "^8.0.3",
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cssnano": "^2.1.0",
     "gulp-header": "^1.7.1",
-    "gulp-jshint": "^2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.1",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.1",
-    "jshint": "^2.8.0"
+    "semistandard": "^11.0.0"
   },
   "dependencies": {
+    "gulp-semistandard": "^1.0.0",
     "watch": "^1.0.2"
   }
 }

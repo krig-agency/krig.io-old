@@ -1,7 +1,7 @@
-(function ($, window, document, undefined) {
-  
+/* global jQuery */
+(function ($, window, document) {
   'use strict';
-  
+
   $(function () {
     // var cssSelector = anime({
     //   targets: '#cssSelector .el',
@@ -9,5 +9,4 @@
     //   autostart: true
     // });
   });
-  
 })(jQuery, window, document);

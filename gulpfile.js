@@ -3,12 +3,12 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     autoprefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
-    jshint = require('gulp-jshint'),
     header  = require('gulp-header'),
     rename = require('gulp-rename'),
     cssnano = require('gulp-cssnano'),
     sourcemaps = require('gulp-sourcemaps'),
-    package = require('./package.json');
+    package = require('./package.json'),
+    semistandard = require('gulp-semistandard');
 
 
 var banner = [
@@ -38,10 +38,10 @@ gulp.task('css', function () {
 });
 
 gulp.task('js',function(){
-  gulp.src('src/js/scripts.js')
+  gulp.src('src/js/**/*.js')
     .pipe(sourcemaps.init())
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'))
+    .pipe(semistandard())
+    .pipe(semistandard.reporter('default', { breakOnError: false }))
     .pipe(header(banner, { package : package }))
     .pipe(gulp.dest('app/assets/js'))
     .pipe(uglify())
@@ -63,11 +63,7 @@ gulp.task('bs-reload', function () {
     browserSync.reload();
 });
 
-gulp.task('default', ['watch'], function () {
-    gulp.watch("src/scss/**/*.scss", ['css']);
-    gulp.watch("src/js/*.js", ['js']);
-    gulp.watch("app/*.html", ['bs-reload']);
-});
+gulp.task('default', ['watch']);
 
 gulp.task('html', function() {
   gulp.src('src/html/**/*.html')
