@@ -1,4 +1,4 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -8,10 +8,12 @@ var gulp = require('gulp'),
     cssnano = require('gulp-cssnano'),
     sourcemaps = require('gulp-sourcemaps'),
     package = require('./package.json'),
-    semistandard = require('gulp-semistandard');
+    eslint = require('gulp-eslint'),
+    webpack = require('webpack-stream'),
+    gulpSequence = require('gulp-sequence');
 
 
-var banner = [
+const banner = [
   '/*!\n' +
   ' * <%= package.name %>\n' +
   ' * <%= package.title %>\n' +
@@ -37,20 +39,46 @@ gulp.task('css', function () {
     .pipe(browserSync.reload({stream:true}));
 });
 
-gulp.task('js',function(){
-  gulp.src('src/js/**/*.js')
+gulp.task('lint-js', function() {
+
+  return gulp.src('src/js/**/*.js')
+    .pipe(eslint())
+    .pipe(eslint.format())
+});
+
+gulp.task('compile-js', function() {
+  return gulp.src('src/js/**/*.js')
+    .pipe(webpack(
+      {
+        entry: {
+          scripts: './src/js/scripts.js'
+          // If more than one entrypoint exists, add it here and a new file will be created on build.
+        },
+        output: {
+          filename: '[name].js',
+        },
+        module: {
+          loaders: [{
+            test: /\.js$/,
+            loader: 'babel-loader',
+            options: {
+              presets: ['env']
+            }
+          }]
+        }
+      }
+    ))
     .pipe(sourcemaps.init())
-    .pipe(semistandard())
-    .pipe(semistandard.reporter('default', { breakOnError: false }))
     .pipe(header(banner, { package : package }))
     .pipe(gulp.dest('app/assets/js'))
     .pipe(uglify())
     .pipe(header(banner, { package : package }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('app/assets/js'))
-    .pipe(browserSync.reload({stream:true, once: true}));
+    .pipe(gulp.dest('app/assets/js'));
 });
+
+gulp.task('js', (cb) => { gulpSequence('compile-js', 'lint-js')(cb); });
 
 gulp.task('browser-sync', function() {
     browserSync.init(null, {
@@ -59,6 +87,7 @@ gulp.task('browser-sync', function() {
         }
     });
 });
+
 gulp.task('bs-reload', function () {
     browserSync.reload();
 });
@@ -75,21 +104,15 @@ gulp.task('images', function() {
     .pipe(gulp.dest('app/assets/img'));
 });
 
-gulp.task('components', function() {
-  gulp.src('src/components/**/*')
-    .pipe(gulp.dest('app/assets/components'));
-});
-
 gulp.task('icons', function() {
   gulp.src('src/favicon/**/*')
     .pipe(gulp.dest('app/'));
 });
 
-gulp.task('watch', ['css', 'js', 'icons', 'components', 'html', 'browser-sync'], function() {
+gulp.task('watch', gulpSequence(['css', 'js', 'icons', 'html'], 'browser-sync', function(cb) {
   gulp.watch('src/scss/**/*.scss', ['css', 'bs-reload']);
   gulp.watch('src/js/**/*.js', ['js', 'bs-reload']);
   gulp.watch('src/html/**/*', ['html', 'bs-reload']);
   gulp.watch('src/favicon/**/*', ['icons', 'bs-reload']);
   gulp.watch('src/img/**/*', ['images', 'bs-reload']);
-  gulp.watch('src/components/**/*', ['components', 'bs-reload']);
-});
+}));

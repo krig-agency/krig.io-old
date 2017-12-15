@@ -1,4 +1,6 @@
-/* global jQuery */
+import modernizer from '../components/modernizr'; // eslint-disable-line
+import jQuery from 'jquery';
+
 (function ($, window, document) {
   'use strict';
 
