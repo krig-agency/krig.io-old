@@ -63,18 +63,37 @@ gulp.task('bs-reload', function () {
     browserSync.reload();
 });
 
-gulp.task('default', ['css', 'js', 'browser-sync'], function () {
+gulp.task('default', ['watch'], function () {
     gulp.watch("src/scss/**/*.scss", ['css']);
     gulp.watch("src/js/*.js", ['js']);
     gulp.watch("app/*.html", ['bs-reload']);
 });
 
 gulp.task('html', function() {
-  // Move html...
+  gulp.src('src/html/**/*.html')
+    .pipe(gulp.dest('app'));
 });
 
-gulp.task('watch', ['css', 'js'], function() {
-  gulp.watch('src/scss/**/*.scss', ['css']);
-  gulp.watch('src/js/**/*.js', ['js']);
-  gulp.watch('app/*.html', ['html']);
+gulp.task('images', function() {
+  gulp.src('src/img/**/*')
+    .pipe(gulp.dest('app/assets/img'));
+});
+
+gulp.task('components', function() {
+  gulp.src('src/components/**/*')
+    .pipe(gulp.dest('app/assets/components'));
+});
+
+gulp.task('icons', function() {
+  gulp.src('src/favicon/**/*')
+    .pipe(gulp.dest('app/'));
+});
+
+gulp.task('watch', ['css', 'js', 'icons', 'components', 'html', 'browser-sync'], function() {
+  gulp.watch('src/scss/**/*.scss', ['css', 'bs-reload']);
+  gulp.watch('src/js/**/*.js', ['js', 'bs-reload']);
+  gulp.watch('src/html/**/*', ['html', 'bs-reload']);
+  gulp.watch('src/favicon/**/*', ['icons', 'bs-reload']);
+  gulp.watch('src/img/**/*', ['images', 'bs-reload']);
+  gulp.watch('src/components/**/*', ['components', 'bs-reload']);
 });
