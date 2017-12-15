@@ -1,7 +1,9 @@
-(function ($, window, document, undefined) {
-  
+import modernizer from '../components/modernizr'; // eslint-disable-line
+import jQuery from 'jquery';
+
+(function ($, window, document) {
   'use strict';
-  
+
   $(function () {
     // var cssSelector = anime({
     //   targets: '#cssSelector .el',
@@ -9,5 +11,4 @@
     //   autostart: true
     // });
   });
-  
 })(jQuery, window, document);
