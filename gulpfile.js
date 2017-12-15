@@ -109,10 +109,10 @@ gulp.task('icons', function() {
     .pipe(gulp.dest('app/'));
 });
 
-gulp.task('watch', gulpSequence(['css', 'js', 'icons', 'html'], 'browser-sync', function(cb) {
+gulp.task('watch', gulpSequence(['css', 'js', 'icons', 'images', 'html'], 'browser-sync', function(cb) {
   gulp.watch('src/scss/**/*.scss', ['css', 'bs-reload']);
   gulp.watch('src/js/**/*.js', ['js', 'bs-reload']);
   gulp.watch('src/html/**/*', ['html', 'bs-reload']);
   gulp.watch('src/favicon/**/*', ['icons', 'bs-reload']);
-  gulp.watch('src/img/**/*', ['images', 'bs-reload']);
+  gulp.watch('src/images/**/*', ['images', 'bs-reload']);
 }));
