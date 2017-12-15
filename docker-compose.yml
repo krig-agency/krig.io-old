@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+
+  webserver:
+    image: jitesoft/lighttpd:latest
+    volumes:
+      - ./app:/var/www/html
+    ports:
+      - 80:80
