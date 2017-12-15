@@ -20,9 +20,6 @@ results
 npm-debug.log
 node_modules
 
-## Bower
-src/components
-
 ## Sass
 .sass-cache
 
