@@ -1,14 +1,13 @@
 import modernizer from '../components/modernizr'; // eslint-disable-line
 import jQuery from 'jquery';
+import menu from './menu.js'; // eslint-disable-line
 
 (function ($, window, document) {
   'use strict';
-
-  $(function () {
-    // var cssSelector = anime({
-    //   targets: '#cssSelector .el',
-    //   translateX: 250,
-    //   autostart: true
-    // });
-  });
-})(jQuery, window, document);
+  //   translateX: 250,
+  //   autostart: true
+  // var cssSelector = anime({
+  //   targets: '#cssSelector .el',
+  // });
+});
+(jQuery, window, document);

@@ -12,8 +12,9 @@ h4 {
   font-family: $font-headline;
 
   &.headline {
-    font-style: italic;
-    margin-top: 0px;
+    margin-bottom: 20px;
+    line-height: 115%;
+    font-size: 1.75rem;
   }
   @media only screen and (max-width:480px) {
     font-size: 1.5rem;

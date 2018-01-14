@@ -1,3 +1,16 @@
+html,
+body {
+    max-height: 1vh;
+    max-height: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: #fff;
+    font-size: 16px;
+  line-height: 1.5;
+}
+
 .main {
 
 
@@ -22,7 +35,43 @@ svg {
 
 }
 
-.about-pics {
-    margin-bottom: 40px;
-    display: flex;
+*{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
+
+canvas{
+    background-color: #fff;
+    position: fixed;
+    z-index: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .7;
+    box-sizing: border-box;
+}
+
+.work-panel {
+    position: fixed;
+    right: 0;
+    background-color: #000;
+    min-height: 100%;
+    text-align: center;
+    right: -10px;
+
+.sticky--right span {
+    display: block;
+    min-width: 100%;
+    position: relative;
+    transform: rotate(-90deg) translateY(-50%) translateX(-50%);
+    top: 50%;
+    }
+    
+    .arrow {
+        color: #fff;
+        width: 30px;
+        margin-top: 30px;
+    }
+}
+
