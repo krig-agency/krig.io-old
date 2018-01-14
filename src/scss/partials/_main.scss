@@ -20,8 +20,8 @@ body {
     .intro {
         position: absolute;
         width: 35%;
-        margin-left: 200px;
-        margin-top: 200px;
+        margin-left: 150px;
+        margin-top: 50px;
     }
     @media only screen and (max-width:480px) {
         width: 50%;
@@ -78,20 +78,6 @@ canvas{
     background-color: #000;
     min-height: 100%;
     text-align: center;
-    right: -10px;
-
-.sticky--right span {
-    display: block;
-    min-width: 100%;
-    position: relative;
-    transform: rotate(-90deg) translateY(-50%) translateX(-50%);
-    top: 50%;
-    }
-    
-    .arrow {
-        color: #fff;
-        width: 30px;
-        margin-top: 30px;
-    }
+    width: 50%;
 }
 

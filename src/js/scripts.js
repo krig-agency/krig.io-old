@@ -1,6 +1,5 @@
 import modernizer from '../components/modernizr'; // eslint-disable-line
 import jQuery from 'jquery';
-import menu from './menu.js'; // eslint-disable-line
 
 (function ($, window, document) {
   'use strict';
