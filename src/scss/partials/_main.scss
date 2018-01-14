@@ -1,96 +1,104 @@
 html,
 body {
-    max-height: 1vh;
-    max-height: 100%;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: #fff;
-    font-size: 16px;
+  min-height: 1vh;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: #fff;
+  font-size: 16px;
   line-height: 1.5;
 }
 
 .main {
-    display: flex;
-    height: 100%;
-    width: 100%;
-
-
-    .intro {
-        position: absolute;
-        width: 35%;
-        margin-left: 200px;
-        margin-top: 200px;
-    }
-    @media only screen and (max-width:480px) {
-        width: 50%;
-        margin-left: 89px;
-        margin-top: 200px;
-    }
-
-    @media only screen and (min-width:768px) {
-        width: 54%;
-        margin-left: 119px;
-        margin-top: 200px;
-    }
+  height: 100%;
+  width: 100%;
+  
+  
+  .intro {
+    position: absolute;
+    width: 35%;
+    margin-left: 200px;
+    margin-top: 200px;
+  }
+  @media only screen and (max-width:480px) {
+    width: 50%;
+    margin-left: 89px;
+    margin-top: 200px;
+  }
+  
+  @media only screen and (min-width:768px) {
+    width: 54%;
+    margin-left: 119px;
+    margin-top: 200px;
+  }
 }
 
 path {
-    fill-opacity: .5;
-    transition: all .5s;
-    }
-    path:nth-child(n+32){opacity:0;}
-    svg:hover path:nth-child(n+10){opacity:1}
+  fill-opacity: .5;
+  transition: all .5s;
+}
+path:nth-child(n+32){opacity:0;}
+svg:hover path:nth-child(n+10){opacity:1}
 
-    p {
-      font-family: Courier New;
-    }
+p {
+  font-family: Courier New;
+}
 
 svg {
-    display: block;
-    float: left;
-    margin: 0;
-
+  display: block;
+  float: left;
+  margin: 0;
+  
 }
 
 *{
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-canvas{
-    background-color: #fff;
-    position: fixed;
-    z-index: 0;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    opacity: .7;
-    box-sizing: border-box;
+canvas {
+  background-color: #fff;
+  position: fixed;
+  z-index: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: .7;
+  box-sizing: border-box;
 }
 
 .work-panel {
-    position: fixed;
-    right: 0;
-    background-color: #000;
-    min-height: 100%;
-    text-align: center;
-    right: -10px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-panel__bar {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 20px;
+  bottom: 0;
+  left: calc(50% - 100px);
+  background-color: darkblue;
+  border-radius: 50%; 
+}
 
 .sticky--right span {
-    display: block;
-    min-width: 100%;
-    position: relative;
-    transform: rotate(-90deg) translateY(-50%) translateX(-50%);
-    top: 50%;
-    }
-
-    .arrow {
-        color: #fff;
-        width: 30px;
-        margin-top: 30px;
-    }
+  display: block;
+  min-width: 100%;
+  position: relative;
+  transform: rotate(-90deg) translateY(-50%) translateX(-50%);
+  top: 50%;
 }
+
+.arrow {
+  color: #fff;
+  width: 30px;
+  margin-top: 30px;
+}
+
 
