@@ -22,20 +22,14 @@ body {
     width: 23%;
     margin-left: 200px;
     margin-top: 300px;
-
-    }
-    @media only screen and (max-width:480px) {
-        width: 50%;
-        margin-left: 89px;
-        margin-top: 200px;
     }
 
-    @media only screen and (max-width:768px) {
-        width: 54%;
-        margin-left: 119px;
-        margin-top: 200px;
+    .about{
+    position: absolute;
+    width: 23%;
+    margin-left: 200px;
+    margin-top: 500px;
     }
-
 }
 
 path {
