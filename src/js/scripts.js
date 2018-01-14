@@ -32,24 +32,24 @@ import jQuery from 'jquery';
 // });
 
 // var panelEl = document.getElementById('work-panel');
-// 
+//
 // var panelAnimation = anime({
 //   targets: panelEl,
 //   translateX: -500,
 //   duration: 800,
 //   autoplay: false
 // });
-// 
+//
 // function openPanel() {
 //   if (panelAnimation.reversed) panelAnimation.reverse();
 //   console.log(buttonAnimation);
 //   panelAnimation.play();
 // }
-// 
+//
 // function closePanel() {
 //   if (!panelAnimation.reversed) panelAnimation.reverse();
 //   panelAnimation.play();
 // }
-// 
+//
 // panelEl.addEventListener('click', openPanel, false);
 // panelEl.addEventListener('click', closePanel, false);

@@ -67,6 +67,18 @@
     font-style: italic;
     text-decoration: none;
     color: #000;
+    display: inline-block;
+  }
 
+  .saker-text {
+    font-family: $font-saker;
+    margin-left: 20px;
+}
+
+  .saker-icon {
+    width: 12px;
+    transform: translateY(2px);
+    display: inline-block;
+    margin-left: -5px;
   }
 }
