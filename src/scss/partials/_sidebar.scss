@@ -27,6 +27,17 @@
   width: 100%;
   padding: 10px 10px 50px;
   margin-bottom: 25px;
+  font-size: 0.875rem;
+  color: $color-terminal;
+
+  &::placeholder {
+    color: $color-terminal;
+  }
+
+  &:focus  {
+    outline: none;
+    border-color: $color-terminal;
+  }
 }
 
 .pitch-button-send {
@@ -84,7 +95,11 @@
   position: relative;
   text-align: center;
   background-color: black;
-  cursor: url('../img/cursor.png'), pointer;
+  cursor: url('../img/cursor.png'), auto;
+  cursor: -webkit-image-set(
+  url('../img/cursor.png') 1x,
+  url('../img/cursor.png') 2x
+), auto;
 }
 
 .sticky--right span {

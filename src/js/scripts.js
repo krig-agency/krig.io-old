@@ -1,6 +1,7 @@
 // import modernizer from '../components/modernizr'; // eslint-disable-line
 // import anime from '../components/anime.js'; // eslint-disable-line
 import menu from '../components/menu.js'; // eslint-disable-line
+import scrollSnap from '../components/scroll.js'; // eslint-disable-line
 
 import jQuery from 'jquery';
 
@@ -22,34 +23,28 @@ import jQuery from 'jquery';
 // });
 // (jQuery);
 
+scrollSnap.init({
 
-// var bouncingBall = anime({
-//   targets: '#work-panel .work-panel__bar',
-//   translateX: -500,
-//   autoplay: false,
-//   easing: 'easeInElastic',
-//   direction: 'alternate'
-// });
+  // NodeList of snap-elements (required)
+  // scrollSnap always snaps to the nearest element
+  elements: document.querySelectorAll('section'),
 
-// var panelEl = document.getElementById('work-panel');
-//
-// var panelAnimation = anime({
-//   targets: panelEl,
-//   translateX: -500,
-//   duration: 800,
-//   autoplay: false
-// });
-//
-// function openPanel() {
-//   if (panelAnimation.reversed) panelAnimation.reverse();
-//   console.log(buttonAnimation);
-//   panelAnimation.play();
-// }
-//
-// function closePanel() {
-//   if (!panelAnimation.reversed) panelAnimation.reverse();
-//   panelAnimation.play();
-// }
-//
-// panelEl.addEventListener('click', openPanel, false);
-// panelEl.addEventListener('click', closePanel, false);
+  // Integer - Set a minimum window-size (required)
+  // scrollSnap will be deactivated when the window is smaller than the given dimensions
+  minWidth: 600,
+  minHeight: 400,
+
+  // Boolean - Deactivate scrollSnap on mobile devices (optional)
+  detectMobile: true,
+
+  // Boolean - Keyboard-navigation (optional)
+  keyboard: true,
+
+  // Integer - Snap-animation-speed (optional)
+  // Higher = slower
+  duration: 20,
+
+  // Function - Set a custom timing-function for the snap-animation (optional)
+  timing: scrollSnap._timing
+
+});
