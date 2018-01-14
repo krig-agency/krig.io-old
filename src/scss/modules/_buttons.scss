@@ -1,34 +1,5 @@
-.pitch-button-send {
-    border-style: none;
-    width: 30%;
-    height: 50px;
-    border: none;
-    background: #fff;
-    border-radius: 100px;
-    margin: 0 auto;
-    display: block;
-    margin-top: 10px;
-    font-size: 0.75rem;
 
-    &:hover {
-        cursor: pointer;
-      }
-
-    &:focus {
-    border: none;
-    outline: none;
-    }
-
-    @media only screen and (max-width:480px) {
-      width: 90%;
-    }
-
-    @media only screen and (max-width:768px) {
-      width: 80%;
-      }
-}
-
-  .facebook-icon {
+ .facebook-icon {
     width: 15px;
     opacity: .80;
     margin-left: 10px;
