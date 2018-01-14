@@ -65,6 +65,20 @@
     font-style: italic;
     text-decoration: none;
     color: #000;
+    display: inline-block;
+  }
 
+  .saker-text {
+    font-family: $font-saker;
+    font-size: 0.75rem;
+    display: inline-block;
+    margin-left: 20px;
+  }
+
+  .saker-icon {
+    width:15px;
+    transform: translateY(3px);
+    display: inline-block;
+    margin-left: -4px;
   }
 }

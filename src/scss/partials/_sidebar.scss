@@ -3,32 +3,43 @@
     right: 0;
     background-color: #000;
     min-height: 100%;
-    text-align: center;
     width: 50%;
-    display: flex;
+    display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+
+	align-items: center;
+}
+
+.pitch-form {
+    max-width: 65%;
+    margin-left: 15%;
 }
 
 .pitch-text{
     color: #fff;
-    max-width: 70%;
-    margin-top: 110px;
     text-align: left;
 }
 
-.pitch-form {
-    
-}
-
 .pitch-form-text {
-    border: 1, #fff;
+    border: 1px #fff;
     background: transparent;
     color: #fff;
+    border-style: solid;
+    border-radius: 4px;
+    width: 100%;
+    padding: 10px 10px 50px;
+    margin-bottom: 25px;
 }
 
 .pitch-button-send {
     border-style: none;
-    width: 30%;
-    height: 50px;
+    width: 35%;
+    height: 46px;
     border: none;
     background: #fff;
     border-radius: 100px;
