@@ -12,8 +12,30 @@ body {
 }
 
 .main {
+    display: flex;
+    height: 100%;
+    width: 100%;
 
 
+    .intro {
+        position: absolute;
+        width: 35%;
+        margin-left: 200px;
+        margin-top: 200px;
+    }
+    @media only screen and (max-width:480px) {
+        width: 50%;
+        margin-left: 89px;
+        margin-top: 200px;
+    }
+
+    @media only screen and (min-width:768px) {
+        width: 54%;
+        margin-left: 119px;
+        margin-top: 200px;
+    }
+        
+    }
 
 }
 
