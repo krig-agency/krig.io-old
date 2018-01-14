@@ -1,67 +1,102 @@
 .work-panel {
-    position: fixed;
-    right: 0;
-    background-color: #000;
-    min-height: 100%;
-    width: 50%;
-    display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	-webkit-box-align: center;
-
-	align-items: center;
+  position: fixed;
+  right: 0;
+  background-color: #000;
+  min-height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
 }
 
 .pitch-form {
-    max-width: 60%;
-    margin-left: 20%;
+  max-width: 100%;
+  padding: 0 10%;
 }
 
 .pitch-text{
-    color: #fff;
-    text-align: left;
+  color: #fff;
+  text-align: left;
 }
 
 .pitch-form-text {
-    border: 1px #fff;
-    background: transparent;
-    color: #fff;
-    border-style: solid;
-    border-radius: 4px;
-    width: 100%;
-    padding: 10px 10px 50px;
-    margin-bottom: 25px;
+  border: 1px #fff;
+  background: transparent;
+  color: #fff;
+  border-style: solid;
+  border-radius: 4px;
+  width: 100%;
+  padding: 10px 10px 50px;
+  margin-bottom: 25px;
 }
 
 .pitch-button-send {
-    border-style: none;
-    width: 35%;
-    height: 46px;
-    border: none;
-    background: #fff;
-    border-radius: 100px;
-    margin: 0 auto;
-    display: block;
-    margin-top: 10px;
-    font-size: 0.75rem;
+  border-style: none;
+  width: 35%;
+  height: 46px;
+  border: none;
+  background: #fff;
+  border-radius: 100px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 10px;
+  font-size: 0.75rem;
 
-    &:hover {
-        cursor: pointer;
-      }
+  &:hover {
+    cursor: pointer;
+  }
 
-    &:focus {
+  &:focus {
     border: none;
     outline: none;
-    }
+  }
 
-    @media only screen and (max-width:480px) {
-      width: 90%;
-    }
+  @media only screen and (max-width:480px) {
+    width: 90%;
+  }
 
-    @media only screen and (max-width:768px) {
-      width: 80%;
-      }
+  @media only screen and (max-width:768px) {
+    width: 80%;
+  }
+}
+
+
+.work-panel {
+  width: 50vw;
+  height: 100vh;
+  top: 0;
+  position: fixed;
+  right: -43vw;
+  overflow: hidden;
+  background-color: #111;
+  transition: all .3s ease-in-out;
+  &.open {
+    right: 0;
+
+    .arrow {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.work-panel__bar {
+  height: 100%;
+  width: 17vw;
+  position: relative;
+  text-align: center;
+  background-color: black;
+  cursor: url('../img/cursor.png'), pointer;
+}
+
+.sticky--right span {
+  display: block;
+  min-width: 300px;
+  text-align: center;
+  top: 50%;
+}
+
+.arrow {
+  color: #fff;
+  width: 30px;
+  margin-top: 30px;
+  transition: all 500ms ease;
 }
