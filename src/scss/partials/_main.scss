@@ -1,69 +1,98 @@
 html,
 body {
-    max-height: 1vh;
-    max-height: 100%;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: #fff;
-    font-size: 16px;
-    line-height: 1.5;
+  min-height: 1vh;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .main {
-    display: flex;
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 
 
-    .intro {
+  .intro {
     position: absolute;
-    width: 23%;
+    width: 35%;
     margin-left: 200px;
     margin-top: 300px;
-    }
 
-    .about{
+    @media only screen and (max-width:480px) {
+        width: 50%;
+        margin-left: 89px;
+        margin-top: 200px;
+      }
+    
+      @media only screen and (max-width:768px) {
+        width: 54%;
+        margin-left: 119px;
+        margin-top: 200px;
+      }
+  }
+
+  .about {
     position: absolute;
-    width: 23%;
+    width: 35%;
     margin-left: 200px;
     margin-top: 500px;
+
+    @media only screen and (max-width:480px) {
+        width: 50%;
+        margin-left: 89px;
+        margin-top: 200px;
+      }
+    
+      @media only screen and (max-width:768px) {
+        width: 54%;
+        margin-left: 119px;
+        margin-top: 200px;
+      }
+  }
+
+    .buddy {
+        margin-top: 30px;
+        margin-right: 10px;
+        width: 80px;
+        height: auto;
+        display: inline-block;
     }
 }
 
 path {
-    fill-opacity: .5;
-    transition: all .5s;
-    }
-    path:nth-child(n+32){opacity:0;}
-    svg:hover path:nth-child(n+10){opacity:1}
+  fill-opacity: .5;
+  transition: all .5s;
+}
+path:nth-child(n+32){opacity:0;}
+svg:hover path:nth-child(n+10){opacity:1}
 
-    p {
-      font-family: Courier New;
-    }
+p {
+  font-family: Courier New;
+}
 
 svg {
-    display: block;
-    float: left;
-    margin: 0;
+  display: block;
+  float: left;
+  margin: 0;
 
 }
 
 *{
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-canvas{
-    background-color: #fff;
-    position: fixed;
-    z-index: 0;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    opacity: .7;
-    box-sizing: border-box;
+canvas {
+  background-color: #fff;
+  position: fixed;
+  z-index: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: .7;
+  box-sizing: border-box;
 }
-

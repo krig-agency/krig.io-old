@@ -36,9 +36,11 @@
 
 .sticky--right {
   display: block;
+  position: absolute;
+  top: 50%;
+  left: -93px;
+  transform: rotate(-90deg) translateY(-50%);
 
-  min-width: 100%;
-  height: 100%;
   color: #fff;
 
   a {
@@ -60,7 +62,7 @@
 
   a{
     font-family: $font-headline;
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: bold;
     font-style: italic;
     text-decoration: none;
@@ -71,12 +73,14 @@
   .saker-text {
     font-family: $font-saker;
     margin-left: 20px;
+    font-style: normal;
+    font-size: 0.625rem;
 }
 
   .saker-icon {
     width: 12px;
     transform: translateY(2px);
     display: inline-block;
-    margin-left: -5px;
+    margin-left: -4px;
   }
 }
