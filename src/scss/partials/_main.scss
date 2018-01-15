@@ -38,7 +38,7 @@ body {
     position: absolute;
     width: 35%;
     margin-left: 200px;
-    margin-top: 500px;
+    margin-top: 400px;
 
     @media only screen and (max-width:480px) {
         width: 50%;
@@ -51,15 +51,19 @@ body {
         margin-left: 119px;
         margin-top: 200px;
       }
+
+      .buddies-container{
+  
+      }
+  
+      .buddy {
+          margin-top: 30px;
+          margin-right: 10px;
+          height: 80px;
+          display: inline-block;
+      }
   }
 
-    .buddy {
-        margin-top: 30px;
-        margin-right: 10px;
-        width: 80px;
-        height: auto;
-        display: inline-block;
-    }
 }
 
 path {
