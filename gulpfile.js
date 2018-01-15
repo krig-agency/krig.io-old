@@ -11,6 +11,11 @@ const pkg = require('./package.json');
 const eslint = require('gulp-eslint');
 const webpack = require('webpack-stream');
 
+let outDir = process.env.OUT_DIR;
+if (outDir === null) {
+  outDir = 'app';
+}
+
 const banner = [
   '/*!\n' +
   ' * <%= package.name %>\n' +
@@ -28,12 +33,12 @@ let cssCompile = () => {
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(autoprefixer('last 4 version'))
-    .pipe(gulp.dest('app/assets/css'))
+    .pipe(gulp.dest(outDir + '/assets/css'))
     .pipe(cssnano())
     .pipe(rename({ suffix: '.min' }))
     .pipe(header(banner, { package: pkg }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('app/assets/css'))
+    .pipe(gulp.dest(outDir + '/assets/css'))
     .pipe(browserSync.reload({stream: true}));
 };
 cssCompile.displayName = 'compile-css';
@@ -73,12 +78,12 @@ let jsCompile = () => {
     ))
     .pipe(sourcemaps.init())
     .pipe(header(banner, { package: pkg }))
-    .pipe(gulp.dest('app/assets/js'))
+    .pipe(gulp.dest(outDir + '/assets/js'))
     .pipe(uglify())
     .pipe(header(banner, { package: pkg }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('app/assets/js'));
+    .pipe(gulp.dest(outDir + '/assets/js'));
 };
 jsCompile.displayName = 'compile-js';
 jsCompile.description = 'Builds the JavaScript sourcecode with Webpack.';
@@ -113,11 +118,11 @@ gulp.task(moveHtml);
 let moveImages = gulp.parallel(
   function moveImg () {
     return gulp.src('src/img/**/*')
-      .pipe(gulp.dest('app/assets/img'));
+      .pipe(gulp.dest(outDir + '/assets/img'));
   },
   function moveFavicon () {
     return gulp.src('src/favicon/**/*')
-      .pipe(gulp.dest('app/'));
+      .pipe(gulp.dest(outDir));
   }
 );
 moveImages.displayName = 'move-images';
@@ -134,9 +139,13 @@ watchTask.displayName = 'watch';
 watchTask.description = 'Watches files for changes and invokes its given move or compile scripts..';
 gulp.task(watchTask);
 
+let build = gulp.series(gulp.parallel('compile-css', 'compile-js', 'move-html', 'move-images'), 'lint-js');
+build.displayName = 'build';
+build.description = 'Builds the source.';
+gulp.task(build);
+
 let defaultTask = gulp.series(
-  gulp.parallel('compile-css', 'compile-js', 'move-html', 'move-images'),
-  'lint-js',
+  'build',
   gulp.parallel('browser-sync', 'watch')
 );
 defaultTask.displayName = 'default';

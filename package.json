@@ -43,6 +43,7 @@
     "webpack-stream": "^4.0.0"
   },
   "dependencies": {
+    "gulp-cli": "^1.4.0",
     "watch": "^1.0.2"
   }
 }

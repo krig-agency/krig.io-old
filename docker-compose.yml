@@ -2,9 +2,26 @@ version: '2.1'
 
 services:
 
+  gulp:
+    image: jitesoft/node-yarn
+    volumes:
+      - ./:/app
+      - appdir:/out
+    environment:
+      - OUT_DIR=/out
+    working_dir: /app
+    command: install
+
   webserver:
+    depends_on:
+      - gulp
     image: jitesoft/lighttpd:latest
     volumes:
-      - ./app:/var/www/html
+      - appdir:/var/www/html
     ports:
       - 80:80
+
+
+volumes:
+  appdir:
+    driver: local
