@@ -122,7 +122,7 @@ let moveImages = gulp.parallel(
   },
   function moveFavicon () {
     return gulp.src('src/favicon/**/*')
-      .pipe(gulp.dest(outDir));
+      .pipe(gulp.dest(outDir + '/'));
   }
 );
 moveImages.displayName = 'move-images';
