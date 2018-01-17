@@ -75,12 +75,24 @@
     margin-left: 20px;
     font-style: normal;
     font-size: 0.625rem;
-}
+
+    &:hover {
+      .saker-icon {
+        fill: #fc276c;
+      }
+    }
+  }
 
   .saker-icon {
     width: 12px;
-    transform: translateY(2px);
+    transform: translateY(3px);
     display: inline-block;
-    margin-left: -4px;
+    margin-left: 3px;
+    fill: $color-black;
+    float: none;
+
+    path {
+      fill-opacity: 1;
+    }
   }
 }

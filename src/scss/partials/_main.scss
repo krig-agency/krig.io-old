@@ -17,53 +17,22 @@ body {
 
   .intro {
     position: absolute;
-    width: 35%;
+    width: 40%;
     margin-left: 200px;
     margin-top: 300px;
 
-    @media only screen and (max-width:480px) {
-        width: 50%;
-        margin-left: 89px;
-        margin-top: 200px;
-      }
-    
-      @media only screen and (max-width:768px) {
-        width: 54%;
-        margin-left: 119px;
-        margin-top: 200px;
-      }
+  }
+  @media only screen and (max-width:480px) {
+    width: 50%;
+    margin-left: 89px;
+    margin-top: 200px;
   }
 
-  .about {
-    position: absolute;
-    width: 35%;
-    margin-left: 200px;
-    margin-top: 400px;
-
-    @media only screen and (max-width:480px) {
-        width: 50%;
-        margin-left: 89px;
-        margin-top: 200px;
-      }
-    
-      @media only screen and (max-width:768px) {
-        width: 54%;
-        margin-left: 119px;
-        margin-top: 200px;
-      }
-
-      .buddies-container{
-  
-      }
-  
-      .buddy {
-          margin-top: 30px;
-          margin-right: 10px;
-          height: 80px;
-          display: inline-block;
-      }
+  @media only screen and (max-width:768px) {
+    width: 54%;
+    margin-left: 119px;
+    margin-top: 200px;
   }
-
 }
 
 path {

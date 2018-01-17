@@ -36,12 +36,12 @@ h4 {
 }
 
 p {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   line-height: 2;
 
   &.under-text {
     margin-bottom: 30px;
-    
+
   }
   @media only screen and (max-width:480px) {
     font-size: 0.65rem;
