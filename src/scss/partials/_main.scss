@@ -35,6 +35,34 @@ body {
   }
 }
 
+.about {
+  position: absolute;
+  width: 40%;
+  margin-left: 200px;
+  margin-top: 300px;
+
+}
+@media only screen and (max-width:480px) {
+  width: 50%;
+  margin-left: 89px;
+  margin-top: 200px;
+}
+
+@media only screen and (max-width:768px) {
+  width: 54%;
+  margin-left: 119px;
+  margin-top: 200px;
+}
+
+.buddies-container {
+  max-width: 100%;
+}
+
+.buddy {
+  width: 50px;
+  margin-right: 20px;
+}
+
 path {
   fill-opacity: .5;
   transition: all .5s;
