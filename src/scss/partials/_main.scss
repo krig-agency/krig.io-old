@@ -16,10 +16,16 @@ body {
 }
 
 .intro {
+<<<<<<< HEAD
   position: absolute;
   width: 60%;
   margin-left: 77px;
   margin-top: 120px;
+=======
+  width: 40%;
+  margin-left: 200px;
+  margin-top: 250px;
+>>>>>>> 88d3eebc5c7440e3e8226cf55b615fe51235c471
 
   @media only screen and (min-width:768px) {
     width: 60%;
@@ -27,8 +33,9 @@ body {
     margin-top: 120px;
   }
 }
-  
+
 .about {
+<<<<<<< HEAD
     position: absolute;
     width: 60%;
     margin-left: 77px;
@@ -40,6 +47,23 @@ body {
       margin-left: 120px;
       margin-top: 120px;
     }
+=======
+  width: 40%;
+  margin-left: 200px;
+  margin-top: 250px;
+
+  @media only screen and (max-width:480px) {
+    width: 60%;
+    margin-left: 77px;
+    margin-top: 119px;
+  }
+
+  @media only screen and (max-width:768px) {
+    width: 60%;
+    margin-left: 77px;
+    margin-top: 119px;
+  }
+>>>>>>> 88d3eebc5c7440e3e8226cf55b615fe51235c471
 }
 
 
@@ -78,7 +102,7 @@ svg {
 canvas {
   background-color: #fff;
   position: fixed;
-  z-index: 0;
+  z-index: -1;
   right: 0;
   top: 0;
   height: 100%;
