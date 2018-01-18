@@ -13,46 +13,46 @@ body {
 .main {
   height: 100%;
   width: 100%;
+}
 
+.intro {
+  position: absolute;
+  width: 40%;
+  margin-left: 200px;
+  margin-top: 250px;
 
-  .intro {
-    position: absolute;
-    width: 40%;
-    margin-left: 200px;
-    margin-top: 300px;
-
-  }
   @media only screen and (max-width:480px) {
-    width: 50%;
-    margin-left: 89px;
-    margin-top: 200px;
+    width: 60%;
+    margin-left: 77px;
+    margin-top: 119px;
   }
 
   @media only screen and (max-width:768px) {
-    width: 54%;
-    margin-left: 119px;
-    margin-top: 200px;
+    width: 60%;
+    margin-left: 77px;
+    margin-top: 119px;
   }
 }
-
+  
 .about {
   position: absolute;
   width: 40%;
   margin-left: 200px;
-  margin-top: 300px;
+  margin-top: 250px;
 
-}
-@media only screen and (max-width:480px) {
-  width: 50%;
-  margin-left: 89px;
-  margin-top: 200px;
+  @media only screen and (max-width:480px) {
+    width: 60%;
+    margin-left: 77px;
+    margin-top: 119px;
+  }
+  
+  @media only screen and (max-width:768px) {
+    width: 60%;
+    margin-left: 77px;
+    margin-top: 119px;
+  }
 }
 
-@media only screen and (max-width:768px) {
-  width: 54%;
-  margin-left: 119px;
-  margin-top: 200px;
-}
 
 .buddies-container {
   max-width: 100%;

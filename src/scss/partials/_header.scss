@@ -5,6 +5,12 @@
   position: absolute;
   margin-left: 40px;
   margin-top: 40px;
+
+  @media only screen and (max-width:480px) {
+    width: 150px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
 }
 
 .sticky--top {
@@ -17,20 +23,14 @@
 }
 
 .sticky--left {
-  left: -68px;
+  left: -86px;
   right: auto;
   transform: rotate(90deg) translateY(-50%);
   position: fixed;
   top: 50%;
-  font-family: $font-headline;
-  font-size: 0.75rem;
-  font-weight: bold;
-  font-style: italic;
-  letter-spacing: 3px;
 
-  a {
-    color: #000;
-    text-decoration: none;
+  @media only screen and (max-width:480px) {
+    left: -110px;
   }
 }
 
@@ -62,7 +62,7 @@
 
   a{
     font-family: $font-headline;
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     font-weight: bold;
     font-style: italic;
     text-decoration: none;
@@ -74,7 +74,7 @@
     font-family: $font-saker;
     margin-left: 20px;
     font-style: normal;
-    font-size: 0.625rem;
+    font-size: 0.75rem;
 
     &:hover {
       .saker-icon {
@@ -84,7 +84,7 @@
   }
 
   .saker-icon {
-    width: 12px;
+    width: 20px;
     transform: translateY(3px);
     display: inline-block;
     margin-left: 3px;
