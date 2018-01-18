@@ -620,7 +620,8 @@ body {
 .about {
   width: 60%;
   margin-left: 77px;
-  margin-top: 120px; }
+  margin-top: 120px;
+  width: 40%; }
   @media only screen and (min-width: 768px) {
     .about {
       width: 60%;
