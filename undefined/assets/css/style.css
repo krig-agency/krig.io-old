@@ -26,8 +26,7 @@ html {
 body {
   font: 300 16px/1.6 'Helvetica Neue', Helvetica, Arial;
   color: #000;
-  transition: all .4s .3s ease-in;
-  overflow: hidden; }
+  transition: all .4s .3s ease-in; }
 
 a {
   cursor: url("../img/cursor.png") 0 0, auto;
@@ -608,10 +607,10 @@ body {
   width: 100%; }
 
 .intro {
-  position: absolute;
   width: 60%;
   margin-left: 77px;
-  margin-top: 120px; }
+  margin-top: 120px;
+  width: 40%; }
   @media only screen and (min-width: 768px) {
     .intro {
       width: 60%;
@@ -619,7 +618,6 @@ body {
       margin-top: 120px; } }
 
 .about {
-  position: absolute;
   width: 60%;
   margin-left: 77px;
   margin-top: 120px; }
@@ -660,7 +658,7 @@ svg {
 canvas {
   background-color: #fff;
   position: fixed;
-  z-index: 0;
+  z-index: -1;
   right: 0;
   top: 0;
   height: 100%;

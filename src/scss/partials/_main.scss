@@ -16,16 +16,10 @@ body {
 }
 
 .intro {
-<<<<<<< HEAD
-  position: absolute;
   width: 60%;
   margin-left: 77px;
   margin-top: 120px;
-=======
   width: 40%;
-  margin-left: 200px;
-  margin-top: 250px;
->>>>>>> 88d3eebc5c7440e3e8226cf55b615fe51235c471
 
   @media only screen and (min-width:768px) {
     width: 60%;
@@ -35,8 +29,6 @@ body {
 }
 
 .about {
-<<<<<<< HEAD
-    position: absolute;
     width: 60%;
     margin-left: 77px;
     margin-top: 120px;
@@ -47,23 +39,6 @@ body {
       margin-left: 120px;
       margin-top: 120px;
     }
-=======
-  width: 40%;
-  margin-left: 200px;
-  margin-top: 250px;
-
-  @media only screen and (max-width:480px) {
-    width: 60%;
-    margin-left: 77px;
-    margin-top: 119px;
-  }
-
-  @media only screen and (max-width:768px) {
-    width: 60%;
-    margin-left: 77px;
-    margin-top: 119px;
-  }
->>>>>>> 88d3eebc5c7440e3e8226cf55b615fe51235c471
 }
 
 
