@@ -43,7 +43,7 @@
     "webpack-stream": "^4.0.0"
   },
   "dependencies": {
-    "watch": "^1.0.2",
-    "yarn": "^1.3.2"
+    "gulp-cli": "^1.4.0",
+    "watch": "^1.0.2"
   }
 }
