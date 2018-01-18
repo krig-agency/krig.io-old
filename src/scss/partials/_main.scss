@@ -16,7 +16,6 @@ body {
 }
 
 .intro {
-  position: absolute;
   width: 40%;
   margin-left: 200px;
   margin-top: 250px;
@@ -33,9 +32,8 @@ body {
     margin-top: 119px;
   }
 }
-  
+
 .about {
-  position: absolute;
   width: 40%;
   margin-left: 200px;
   margin-top: 250px;
@@ -45,7 +43,7 @@ body {
     margin-left: 77px;
     margin-top: 119px;
   }
-  
+
   @media only screen and (max-width:768px) {
     width: 60%;
     margin-left: 77px;
@@ -89,7 +87,7 @@ svg {
 canvas {
   background-color: #fff;
   position: fixed;
-  z-index: 0;
+  z-index: -1;
   right: 0;
   top: 0;
   height: 100%;
