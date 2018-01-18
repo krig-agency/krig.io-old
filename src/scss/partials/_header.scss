@@ -1,15 +1,24 @@
 .logo-small {
-  width: 250px;
+  width: 150px;
   height: auto;
   position: absolute;
   position: absolute;
-  margin-left: 40px;
-  margin-top: 40px;
+  margin-left: 20px;
+  margin-top: 20px;
 
-  @media only screen and (max-width:480px) {
+  @media only screen and (min-width: 480px) {
     width: 150px;
+    height: auto;
+    position: absolute;
+    position: absolute;
     margin-left: 20px;
     margin-top: 20px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 250px;
+    margin-left: 40px;
+    margin-top: 40px;
   }
 }
 
