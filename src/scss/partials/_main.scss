@@ -19,13 +19,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 60%;
+  max-width: 80%;
 
   > .panel__content {;
     padding-left: 77px;
 
+    @media only screen and (min-width:480px) {
+      padding-left: 97px;
+    }
+
     @media only screen and (min-width:768px) {
-      padding-left: 120px;
+      padding-left: 66px;
+      max-width: 80%;
     }
   }
 }
