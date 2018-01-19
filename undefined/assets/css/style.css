@@ -522,7 +522,7 @@ body {
   max-width: 100%; }
 
 .buddy {
-  height: 50px;
+  max-height: 50px;
   width: auto;
   margin-right: 20px; }
 
