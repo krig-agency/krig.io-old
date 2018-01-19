@@ -405,14 +405,6 @@ textarea {
   position: absolute;
   margin-left: 20px;
   margin-top: 20px; }
-  @media only screen and (min-width: 480px) {
-    .logo-small {
-      width: 150px;
-      height: auto;
-      position: absolute;
-      position: absolute;
-      margin-left: 20px;
-      margin-top: 20px; } }
   @media only screen and (min-width: 768px) {
     .logo-small {
       width: 250px;
