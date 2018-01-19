@@ -481,6 +481,83 @@ textarea {
 .nav ul {
   list-style: none; }
 
+html,
+body {
+  min-height: 1vh;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5; }
+
+.main {
+  height: 100%;
+  width: 100%; }
+
+.intro {
+  position: absolute;
+  width: 40%;
+  margin-left: 77px;
+  margin-top: 120px; }
+  @media only screen and (min-width: 768px) {
+    .intro {
+      width: 60%;
+      margin-left: 120px;
+      margin-top: 120px; } }
+
+.about {
+  position: absolute;
+  width: 40%;
+  margin-left: 77px;
+  margin-top: 120px; }
+  @media only screen and (min-width: 768px) {
+    .about {
+      width: 60%;
+      margin-left: 120px;
+      margin-top: 120px; } }
+
+.buddies-container {
+  max-width: 100%; }
+
+.buddy {
+  height: 50px;
+  width: auto;
+  margin-right: 20px; }
+
+path {
+  fill-opacity: .5;
+  transition: all .5s; }
+
+path:nth-child(n+32) {
+  opacity: 0; }
+
+svg:hover path:nth-child(n+10) {
+  opacity: 1; }
+
+p {
+  font-family: Courier New; }
+
+svg {
+  display: block;
+  float: left;
+  margin: 0; }
+
+* {
+  box-sizing: border-box; }
+
+canvas {
+  background-color: #fff;
+  position: fixed;
+  z-index: -1;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: .7;
+  box-sizing: border-box; }
+
 .work-panel {
   position: fixed;
   right: 0;
@@ -582,83 +659,6 @@ textarea {
   width: 30px;
   margin-top: 30px;
   transition: all 500ms ease; }
-
-html,
-body {
-  min-height: 1vh;
-  min-height: 100%;
-  padding: 0;
-  margin: 0;
-  border: none;
-  background: #fff;
-  font-size: 16px;
-  line-height: 1.5; }
-
-.main {
-  height: 100%;
-  width: 100%; }
-
-.intro {
-  position: absolute;
-  width: 40%;
-  margin-left: 77px;
-  margin-top: 120px; }
-  @media only screen and (min-width: 768px) {
-    .intro {
-      width: 60%;
-      margin-left: 120px;
-      margin-top: 120px; } }
-
-.about {
-  position: absolute;
-  width: 40%;
-  margin-left: 77px;
-  margin-top: 120px; }
-  @media only screen and (min-width: 768px) {
-    .about {
-      width: 60%;
-      margin-left: 120px;
-      margin-top: 120px; } }
-
-.buddies-container {
-  max-width: 100%; }
-
-.buddy {
-  height: 50px;
-  width: auto;
-  margin-right: 20px; }
-
-path {
-  fill-opacity: .5;
-  transition: all .5s; }
-
-path:nth-child(n+32) {
-  opacity: 0; }
-
-svg:hover path:nth-child(n+10) {
-  opacity: 1; }
-
-p {
-  font-family: Courier New; }
-
-svg {
-  display: block;
-  float: left;
-  margin: 0; }
-
-* {
-  box-sizing: border-box; }
-
-canvas {
-  background-color: #fff;
-  position: fixed;
-  z-index: -1;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  opacity: .7;
-  box-sizing: border-box; }
 
 .facebook-icon {
   width: 20px;
