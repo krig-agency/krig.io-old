@@ -93,7 +93,7 @@
 
 .work-panel__bar {
   height: 100%;
-  width: 17vw;
+  width: 54vw;
   position: relative;
   text-align: center;
   background-color: black;
@@ -102,6 +102,18 @@
   url('../img/cursor.png') 1x,
   url('../img/cursor.png') 2x
 ), auto;
+
+  @media only screen and (min-width:480px) {
+    width: 37vw;
+  }
+
+  @media only screen and (min-width:768px) {
+    width: 47vw;
+  }
+
+  @media only screen and (min-width:1024px) {
+    width: 24vw;
+  }
 }
 
 .sticky--right span {
