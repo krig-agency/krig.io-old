@@ -28,19 +28,26 @@ export default class Background {
       });
     }
 
+    this.mousePoint = Object.assign({}, this.points[0]);
+    this.mousePoint.alpha = 0;
+    this.points.push(this.mousePoint);
+
+    log(this.mousePoint);
+
     this.lastFrame = Date.now();
 
     // Subscribe events.
     window.addEventListener('resize', this.resize.bind(this));
 
-    window.addEventListener('mouseenter', () => {
-
+    this.canvas.addEventListener('mouseenter', () => {
+      this.mousePoint.velocity = new Point(0, 0);
     });
-    window.addEventListener('mouseleave', () => {
-
+    this.canvas.addEventListener('mouseleave', () => {
+      this.mousePoint.pos = new Point(0, 0);
     });
-    window.addEventListener('mousemove', () => {
-
+    this.canvas.addEventListener('mousemove', (event) => {
+      this.mousePoint.pos.X = event.pageX;
+      this.mousePoint.pos.Y = event.pageY;
     });
   }
 
