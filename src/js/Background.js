@@ -2,9 +2,7 @@ import Point from './Point';
 import Rect from './Rect';
 import Color from './Color';
 
-let log = (msg) => {
-  console.log(msg);
-};
+let log = (msg) => {};
 
 export default class Background {
   constructor (canvasElement) {
