@@ -109,11 +109,11 @@
 ), auto;
 
   @media only screen and (min-width:320px) {
-    width: 29vw;
+    width: 21vw;
   }
 
   @media only screen and (min-width:480px) {
-    width: 18vw;
+    width: 14vw;
   }
 
   @media only screen and (min-width:768px) {
@@ -131,7 +131,11 @@
   min-width: 300px;
   text-align: center;
   top: 50%;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
+
+  @media only screen and (min-width:480px) {
+    font-size: 0.75rem;
+  }
 }
 
 .arrow {
