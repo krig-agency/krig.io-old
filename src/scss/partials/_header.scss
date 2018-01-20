@@ -38,10 +38,21 @@
   display: block;
   position: absolute;
   top: 50%;
-  left: -93px;
+  left: -109px;
   transform: rotate(-90deg) translateY(-50%);
-
   color: #fff;
+
+  @media only screen and (min-width:480px) {
+    left: -102px;
+  }
+
+  @media only screen and (min-width:768px) {
+    left: -107px;
+  }
+
+  @media only screen and (min-width:1024px) {
+    left: -100px;
+  }
 
   a {
     font-family: $font-headline;
