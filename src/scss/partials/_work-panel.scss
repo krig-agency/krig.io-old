@@ -18,7 +18,7 @@
   width: 100%;
   padding: 10px 10px 50px;
   margin-bottom: 25px;
-  font-size: 0.875rem;
+  font-size: 0.65rem;
   color: $color-terminal;
 
   &::placeholder {
@@ -28,6 +28,10 @@
   &:focus  {
     outline: none;
     border-color: $color-terminal;
+  }
+
+  @media only screen and (min-width:768px) {
+    font-size: 0.875rem;
   }
 }
 
@@ -41,7 +45,7 @@
   margin: 0 auto;
   display: block;
   margin-top: 10px;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
 
   &:hover {
     cursor: pointer;
@@ -54,6 +58,7 @@
 
   @media only screen and (max-width:480px) {
     width: 90%;
+    font-size: 0.75rem;
   }
 
   @media only screen and (max-width:768px) {
@@ -104,19 +109,19 @@
 ), auto;
 
   @media only screen and (min-width:320px) {
-    width: 73vw;
+    width: 29vw;
   }
 
   @media only screen and (min-width:480px) {
-    width: 37vw;
+    width: 18vw;
   }
 
   @media only screen and (min-width:768px) {
-    width: 47vw;
+    width: 15vw;
   }
 
   @media only screen and (min-width:1024px) {
-    width: 24vw;
+    width: 9vw;
   }
 }
 
@@ -126,11 +131,16 @@
   min-width: 300px;
   text-align: center;
   top: 50%;
+  font-size: 0.75rem;
 }
 
 .arrow {
   color: #fff;
-  width: 30px;
+  width: 20px;
   margin-top: 30px;
   transition: all 500ms ease;
+
+  @media only screen and (min-width:768px) {
+    width: 30px;
+  }
 }
