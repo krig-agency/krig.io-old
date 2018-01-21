@@ -1,4 +1,3 @@
-import menu from '../components/menu'; // eslint-disable-line
 import Background from './Background';
 import $ from 'jquery';
 require('jquery-scrollify');
@@ -9,6 +8,11 @@ $(function () {
     setHeights: true
   });
 
-  let bg = new Background(document.getElementById('nokey'));
+  let bg = new Background(document.querySelector('#nokey'));
   bg.startAnimation();
+
+  let menu = document.querySelector('#work-panel');
+  document.querySelector('#panel-toggle').addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
 });

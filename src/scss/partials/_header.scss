@@ -1,13 +1,12 @@
 .logo-small {
-  width: 150px;
+  width: 100px;
   height: auto;
-  position: absolute;
-  position: absolute;
+  position: fixed;
   margin-left: 20px;
   margin-top: 20px;
 
   @media only screen and (min-width: 768px) {
-    width: 250px;
+    width: 200px;
     margin-left: 40px;
     margin-top: 40px;
   }
@@ -15,6 +14,7 @@
 
 .sticky--top {
   position: fixed;
+  z-index: 100;
   top: auto;
   width: 100%;
   text-align: center;
@@ -23,6 +23,7 @@
 }
 
 .sticky--left {
+  z-index: 100;
   left: -86px;
   right: auto;
   transform: rotate(90deg) translateY(-50%);
@@ -77,6 +78,7 @@
 
 .sticky--bottom {
   position: fixed;
+  z-index: 100;
   bottom: 30px;
   width: 100%;
   left: 40px;
