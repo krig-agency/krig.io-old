@@ -5,16 +5,24 @@ import Color from './Color';
 let log = (msg) => {};
 
 export default class Background {
-  constructor (canvasElement) {
+  /**
+   * @param {Element} canvasElement
+   * @param {{pointCount: Number, pointSpeed: Number}} config
+   */
+  constructor (canvasElement, config = {pointCount: 50, pointSpeed: 50}) {
+    this.pointSpeed = config.pointSpeed;
+    let totalPointCount = config.pointCount;
     this.canvas = canvasElement;
     this.context = this.canvas.getContext('2d');
     this.rect = new Rect(0, 0, parseFloat(window.innerWidth), parseFloat(window.innerHeight));
+
     this.canvas.setAttribute('width', this.rect.Width);
     this.canvas.setAttribute('height', this.rect.Height);
+
     this.maxDistance = 260;
 
     this.points = [];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < totalPointCount; i++) {
       let pos = this.getRandomPos(true);
 
       this.points.push({
@@ -30,22 +38,20 @@ export default class Background {
     this.mousePoint.alpha = 0;
     this.points.push(this.mousePoint);
 
-    log(this.mousePoint);
-
     this.lastFrame = Date.now();
 
     // Subscribe events.
     window.addEventListener('resize', this.resize.bind(this));
 
-    this.canvas.addEventListener('mouseenter', () => {
+    window.addEventListener('mouseenter', () => {
       this.mousePoint.velocity = new Point(0, 0);
     });
-    this.canvas.addEventListener('mouseleave', () => {
+    window.addEventListener('mouseleave', () => {
       this.mousePoint.pos = new Point(0, 0);
     });
-    this.canvas.addEventListener('mousemove', (event) => {
-      this.mousePoint.pos.X = event.pageX;
-      this.mousePoint.pos.Y = event.pageY;
+    window.addEventListener('mousemove', (event) => {
+      this.mousePoint.pos.X = event.clientX;
+      this.mousePoint.pos.Y = event.clientY;
     });
   }
 
@@ -80,8 +86,8 @@ export default class Background {
   update (delta) {
     this.points.forEach((point) => {
       // Update position with velocity times delta.
-      point.pos.X += (point.velocity.X / 20) * delta;
-      point.pos.Y += (point.velocity.Y / 20) * delta;
+      point.pos.X += (point.velocity.X / this.pointSpeed) * delta;
+      point.pos.Y += (point.velocity.Y / this.pointSpeed) * delta;
 
       if (!this.rect.inside(point.pos, 50)) {
         // When a point is outside of the actual canvas, we just reset its position
@@ -98,7 +104,7 @@ export default class Background {
 
   resize () {
     log('Resize called.');
-    this.rect.Width = parseFloat(window.innerWidth);
+    this.rect.Width = parseFloat(document.body.clientWidth);
     this.rect.Height = parseFloat(window.innerHeight);
     this.canvas.setAttribute('width', this.rect.Width);
     this.canvas.setAttribute('height', this.rect.Height);
@@ -150,6 +156,9 @@ export default class Background {
     }
   }
 
+  /**
+   * Run the animation.
+   */
   startAnimation () {
     this.resize();
     this.render();
