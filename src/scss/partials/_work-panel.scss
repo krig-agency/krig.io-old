@@ -121,8 +121,13 @@
   }
 
   @media only screen and (min-width:1024px) {
-    width: 9vw;
+    width: 12vw;
   }
+
+  @media only screen and (min-width:1280px) {
+    width: 10vw;
+  }
+
 }
 
 .sticky--right span {
