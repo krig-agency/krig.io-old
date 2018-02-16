@@ -8,3 +8,31 @@
     }
   }
 }
+
+.sticky--left {
+  z-index: 100;
+  left: -86px;
+  right: auto;
+  transform: rotate(90deg) translateY(-50%);
+  position: fixed;
+  top: 50%;
+
+  @media only screen and (max-width:480px) {
+    left: -110px;
+  }
+}
+
+.social-nav__item {
+  display: block;
+  width: 20px;
+  opacity: .80;
+  margin-left: 10px;
+  margin-right: 10px;
+  transform: rotate(-90deg);
+  img {
+
+  }
+  &:hover {
+    transform: scale(1.2);
+  }
+}

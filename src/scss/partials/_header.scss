@@ -22,19 +22,6 @@
   left: 20px;
 }
 
-.sticky--left {
-  z-index: 100;
-  left: -86px;
-  right: auto;
-  transform: rotate(90deg) translateY(-50%);
-  position: fixed;
-  top: 50%;
-
-  @media only screen and (max-width:480px) {
-    left: -110px;
-  }
-}
-
 .sticky--right {
   display: block;
   position: absolute;

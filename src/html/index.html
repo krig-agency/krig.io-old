@@ -49,116 +49,115 @@
   <header>
 
     <img class="logo-small" src="assets/img/krig-logomark.svg">
-    <div class="sticky--left">
-      <a href="https://www.facebook.com/krig.collective/"><img class="facebook-icon" src="assets/img/facebook.svg"></a>
-      <a href="https://github.com/krig-collective"><img class="facebook-icon" src="assets/img/github.svg"></a>
-      <a href="https://www.instagram.com/krig_collective/"><img class="instagram-icon" src="assets/img/instagram.svg"></a>
-      <a href="https://twitter.com/krig_io"><img class="twitter-icon" src="assets/img/twitter.svg"></a>
-      <a href="mailto:webmasterkrig.io"><img class="mail-icon" src="assets/img/mail.svg"></a>
+    
+    <div class="sticky--left social-nav">
+      <a class="social-nav__item social-nav__item--facebook" href="https://www.facebook.com/krig.collective/"><img src="assets/img/facebook.svg"></a>
+      <a class="social-nav__item social-nav__item--github" href="https://github.com/krig-collective"><img src="assets/img/github.svg"></a>
+      <a class="social-nav__item social-nav__item--instagram" href="https://www.instagram.com/krig_collective/"><img src="assets/img/instagram.svg"></a>
+      <a class="social-nav__item social-nav__item--twitter" href="https://twitter.com/krig_io"><img src="assets/img/twitter.svg"></a>
+      <a class="social-nav__item social-nav__item--email" href="mailto:webmasterkrig.io"><img src="assets/img/mail.svg"></a>
     </div>
   </header>
 
   <aside class="work-panel" id="work-panel">
+
     <div class="work-panel__bar" id="panel-toggle">
       <div class="panel-toogle">
         <img class="menu-toggle arrow" src="assets/img/arrow-right.svg">
         <p class="sticky--right"><span>Need work done?</span></p>
       </div>
     </div>
-    <section>
 
-      <div class="pitch-form">
-        <div class="pitch-text">
-          <h1 class="headline">Elevator Pitch</h1>
-          <p class="under-text">Pitch us your project and we'll get back to you shortly.</p>
+    <section class="pitch-form">
+      <div class="pitch-text">
+        <h1 class="headline">Elevator Pitch</h1>
+        <p class="under-text">Pitch us your project and we'll get back to you shortly.</p>
+      </div>
+      <input type="text"
+      class="pitch-form-text"
+      name="about"
+      title="Contact form about input field"
+      placeholder="Short descripton of the project">
+      <input type="text"
+      class="pitch-form-text"
+      name="budget"
+      title="Contact form links input field"
+      placeholder="Budget">
+      <input type="text"
+      class="pitch-form-text"
+      name="email"
+      title="Contact form email input field"
+      placeholder="Email">
+      <input class="pitch-button-send" type="submit" value="Send">
+    </section>
+
+  </aside>
+
+
+  <main class="main" role="main">
+    <section class="intro panel">
+      <div class="panel__content">
+        <h1 class="headline">A freelance collective</h1>
+        <p class="intro-text"><strong class="krig">KRIG</strong> is a collective of freelancers and independant companies within tech och digital design. We have a wide knowledge and have grown out of the large corporate companies. We know what we are doing. Give us a problem and we will solve it!</p>
+      </div>
+    </section>
+
+    <section class="intro panel">
+      <div class="panel__content">
+        <div class"about">
+          <h1 class="headline">About</h1>
+          <p class="intro-text"><strong class="krig">KRIG</strong> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
         </div>
-        <input type="text"
-        class="pitch-form-text"
-        name="about"
-        title="Contact form about input field"
-        placeholder="Short descripton of the project">
+      </div>
+    </section>
 
-        <input type="text"
-        class="pitch-form-text"
-        name="budget"
-        title="Contact form links input field"
-        placeholder="Budget">
-
-        <input type="text"
-        class="pitch-form-text"
-        name="email"
-        title="Contact form email input field"
-        placeholder="Email">
-
-        <input class="pitch-button-send" type="submit" value="Send">
-      </section>
-    </aside>
-
-
-    <main class="main" role="main">
-      <section class="intro panel">
-        <div class="panel__content">
-          <h1 class="headline">A freelance collective</h1>
-          <p class="intro-text"><strong class="krig">KRIG</strong> is a collective of freelancers and independant companies within tech och digital design. We have a wide knowledge and have grown out of the large corporate companies. We know what we are doing. Give us a problem and we will solve it!</p>
-        </div>
-      </section>
-
-      <section class="intro panel">
-        <div class="panel__content">
-          <div class"about">
-              <h1 class="headline">About</h1>
-              <p class="intro-text"><strong class="krig">KRIG</strong> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-            </div>
+    <section class="intro panel">
+      <div class="panel__content">
+        <div class"about">
+          <h1 class="headline">Buddies</h1>
+          <p class="intro-text"><strong class="krig">KRIG</strong> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+          <div class="buddies-container">
+            <a href="https://oakwood.se/"><img class="buddy" src="assets/img/oakwood.png"></a>
+            <a href="https://www.hellostudio.se/"><img class="buddy" src="assets/img/hello.png"></a>
+            <a href="http://www.technigo.io/"><img class="buddy" src="assets/img/technigo.png"></a>
+            <a href="https://www.tjejerkodar.se/"><img class="buddy" src="assets/img/tjejerkodar.png"></a>
+            <a href="https://www.doberman.se/"><img class="buddy" src="assets/img/doberman.png"></a>
+            <a href="https://www.feminio.se/"><img class="buddy" src="assets/img/feminio.png"></a>
+            <a href="http://mlithvall.com/"><img class="buddy" src="assets/img/mlithvall.png"></a>
+            <a href="https://www.earthpeople.se/"><img class="buddy" src="assets/img/ep.png"></a>
+            <a href="https://www.studieforbunden.se/"><img class="buddy" src="assets/img/studieforbunden.png"></a>
+            <a href="https://www.fatta.nu/"><img class="buddy" src="assets/img/fatta.png"></a>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        <section class="intro panel">
-          <div class="panel__content">
-            <div class"about">
-                <h1 class="headline">Buddies</h1>
-                <p class="intro-text"><strong class="krig">KRIG</strong> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                <div class="buddies-container">
-                  <a href="https://oakwood.se/"><img class="buddy" src="assets/img/oakwood.png"></a>
-                  <a href="https://www.hellostudio.se/"><img class="buddy" src="assets/img/hello.png"></a>
-                  <a href="http://www.technigo.io/"><img class="buddy" src="assets/img/technigo.png"></a>
-                  <a href="https://www.tjejerkodar.se/"><img class="buddy" src="assets/img/tjejerkodar.png"></a>
-                  <a href="https://www.doberman.se/"><img class="buddy" src="assets/img/doberman.png"></a>
-                  <a href="https://www.feminio.se/"><img class="buddy" src="assets/img/feminio.png"></a>
-                  <a href="http://mlithvall.com/"><img class="buddy" src="assets/img/mlithvall.png"></a>
-                  <a href="https://www.earthpeople.se/"><img class="buddy" src="assets/img/ep.png"></a>
-                  <a href="https://www.studieforbunden.se/"><img class="buddy" src="assets/img/studieforbunden.png"></a>
-                  <a href="https://www.fatta.nu/"><img class="buddy" src="assets/img/fatta.png"></a>
-                </div>
-              </div>
-            </div>
-          </section>
-    </main>
+</div>
 
+<footer class="footer" role="contentinfo">
+  <div class="sticky--bottom">
+    <a href="https://medlm.krig.io/login">Medlm</a>
+    <a href="https://xn--sker-loa.online/" class="saker-text">säker.online
+      <svg class="saker-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.08 80.57"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M53.48,28.42c.07-.72.11-1.45.11-2.19V21.36A21.39,21.39,0,0,0,32.23,0h-.38A21.38,21.38,0,0,0,10.49,21.36v4.87c0,.74,0,1.47.11,2.19A13.51,13.51,0,0,0,0,41.6V67.08A13.5,13.5,0,0,0,13.49,80.57h37.1A13.5,13.5,0,0,0,64.08,67.08V41.6A13.51,13.51,0,0,0,53.48,28.42ZM17.24,21.36A14.62,14.62,0,0,1,31.85,6.75h.38A14.62,14.62,0,0,1,46.84,21.36v4.87a14.33,14.33,0,0,1-.12,1.87H17.36a14.33,14.33,0,0,1-.12-1.87ZM57.33,67.08a6.74,6.74,0,0,1-6.74,6.74H13.49a6.74,6.74,0,0,1-6.74-6.74V41.6A6.75,6.75,0,0,1,12.36,35a7,7,0,0,1,1.13-.1h37.1a7.08,7.08,0,0,1,1.13.1,6.75,6.75,0,0,1,5.61,6.65Z"/><circle cx="32.23" cy="54.34" r="5.25"/></g></g></svg>
+    </a>
   </div>
+</footer>
 
-  <footer class="footer" role="contentinfo">
-    <div class="sticky--bottom">
-      <a href="https://medlm.krig.io/login">Medlm</a>
-      <a href="https://xn--sker-loa.online/" class="saker-text">säker.online
-        <svg class="saker-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.08 80.57"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M53.48,28.42c.07-.72.11-1.45.11-2.19V21.36A21.39,21.39,0,0,0,32.23,0h-.38A21.38,21.38,0,0,0,10.49,21.36v4.87c0,.74,0,1.47.11,2.19A13.51,13.51,0,0,0,0,41.6V67.08A13.5,13.5,0,0,0,13.49,80.57h37.1A13.5,13.5,0,0,0,64.08,67.08V41.6A13.51,13.51,0,0,0,53.48,28.42ZM17.24,21.36A14.62,14.62,0,0,1,31.85,6.75h.38A14.62,14.62,0,0,1,46.84,21.36v4.87a14.33,14.33,0,0,1-.12,1.87H17.36a14.33,14.33,0,0,1-.12-1.87ZM57.33,67.08a6.74,6.74,0,0,1-6.74,6.74H13.49a6.74,6.74,0,0,1-6.74-6.74V41.6A6.75,6.75,0,0,1,12.36,35a7,7,0,0,1,1.13-.1h37.1a7.08,7.08,0,0,1,1.13.1,6.75,6.75,0,0,1,5.61,6.65Z"/><circle cx="32.23" cy="54.34" r="5.25"/></g></g></svg>
-      </a>
-    </div>
-  </footer>
+<script src="assets/js/scripts.min.js"></script>
 
-  <script src="assets/js/scripts.min.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-  <script>
-  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-    e.src='//www.google-analytics.com/analytics.js';
-    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    ga('create','UA-97449698-1');ga('send','pageview');
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+  function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+  e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+  e.src='//www.google-analytics.com/analytics.js';
+  r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+  ga('create','UA-97449698-1');ga('send','pageview');
 
 
 
-    </script>
+  </script>
 
-  </body>
-  </html>
+</body>
+</html>
