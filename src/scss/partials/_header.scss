@@ -8,7 +8,7 @@
   @media only screen and (min-width: 768px) {
     width: 200px;
     margin-left: 40px;
-    margin-top: 40px;
+    margin-top: 50px;
   }
 }
 
@@ -88,7 +88,7 @@
 
     &:hover {
       .saker-icon {
-        fill: #fc276c;
+        fill: $color-details;
       }
     }
   }
@@ -105,4 +105,25 @@
       fill-opacity: 1;
     }
   }
+}
+
+.cookies {
+  width: 100%;
+  height: 30px;
+  background: $color-details;
+  color: #fff;
+  position: fixed;
+  display: inline-block;
+}
+
+.cookie-text {
+  font-size: 0.65rem;
+  float: right;
+  margin-right: 200px;
+  margin-top: 6px;
+  padding-bottom: 15px;
+}
+
+.accept {
+  padding-left: 20px;
 }
