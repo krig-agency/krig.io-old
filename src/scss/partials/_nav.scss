@@ -11,9 +11,9 @@
 
 .sticky--left {
   z-index: 100;
-  left: -86px;
+  left: 0;
   right: auto;
-  transform: rotate(90deg) translateY(-50%);
+  transform: translateY(-50%);
   position: fixed;
   top: 50%;
 
@@ -28,9 +28,8 @@
   opacity: .80;
   margin-left: 10px;
   margin-right: 10px;
-  transform: rotate(-90deg);
   img {
-
+    width: 20px;
   }
   &:hover {
     transform: scale(1.2);
