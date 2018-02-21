@@ -3,7 +3,7 @@
   height: auto;
   position: fixed;
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 83px;
 
   @media only screen and (min-width: 768px) {
     width: 200px;
@@ -151,6 +151,7 @@
 
   @media only screen and (min-width:768px) {
     width: 100%;
+    margin-top: -3px;
   }
 }
 
