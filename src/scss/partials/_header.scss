@@ -109,16 +109,28 @@
 
 .cookies {
   width: 100%;
-  height: 40px;
+  height: 65px;
   background: $color-details;
   color: #fff;
   position: fixed;
   display: block;
+
+  @media only screen and (min-width:768px) {
+    height: 40px;
+  }
 }
 
 .cookies-container{
-  width: 80%;
+  width: 87%;
   position: relative;
+
+  @media only screen and (min-width:768px) {
+    width: 90%;
+  }
+
+  @media only screen and (min-width:1024px) {
+    width: 80%;
+  }
 
   ul {
     list-style-type: none;
@@ -130,6 +142,16 @@
   float: right;
   margin-top: -5px;
   position: absolute;
+  width: 66%;
+  line-height: normal;
+
+  @media only screen and (min-width:480px) {
+    margin-top: 2px;
+  }
+
+  @media only screen and (min-width:768px) {
+    width: 100%;
+  }
 }
 
 
@@ -138,8 +160,22 @@
   background-color: #fff;
   border-color: #fff;
   font-size: 0.65rem;
-  border-radius: 20px;
+  border-radius: 100px;
   padding: 5px 15px;
-  margin-top: -10px;
-  
+  margin-top: 3px;
+  z-index: 2000;
+
+
+  @media only screen and (min-width:768px) {
+    margin-top: -10px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
 }
