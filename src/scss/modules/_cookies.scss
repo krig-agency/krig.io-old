@@ -1,0 +1,56 @@
+.cookies {
+  display: block;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px;
+  color: #fff;
+  background: $color-details;
+
+  @media only screen and (min-width:768px) {
+  }
+}
+
+.cookie-text {
+  font-size: 0.65rem;
+  float: right;
+  margin-top: -5px;
+  position: absolute;
+  width: 66%;
+  line-height: normal;
+
+  @media only screen and (min-width:480px) {
+    margin-top: 2px;
+  }
+
+  @media only screen and (min-width:768px) {
+    width: 100%;
+    margin-top: -3px;
+  }
+}
+
+
+.accept {
+  float: right;
+  background-color: #fff;
+  border-color: #fff;
+  font-size: 0.65rem;
+  border-radius: 100px;
+  padding: 5px 15px;
+  margin-top: 3px;
+  z-index: 2000;
+
+
+  @media only screen and (min-width:768px) {
+    margin-top: -10px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
