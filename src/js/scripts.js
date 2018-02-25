@@ -1,8 +1,9 @@
 import Background from './Background';
 import $ from 'jquery';
-import CookieParser from './CookieParser';
 import CookieConsent from './CookieConsent';
 import 'jquery-scrollify';
+import 'babel-polyfill';
+import 'babel-core/register';
 
 $(function () {
   $.scrollify({
@@ -11,7 +12,6 @@ $(function () {
   });
 
   let bg = new Background(document.querySelector('#nokey'));
-  let consent = new CookieConsent();
   bg.startAnimation();
 
   let menu = document.querySelector('#work-panel');
@@ -19,10 +19,11 @@ $(function () {
     menu.classList.toggle('open');
   });
 
-  // Check if user have already accepted cookie.
-  if (CookieParser.getValue('cookieaccept') !== null) {
-    // Load scripts.
-  } else {
-    consent.show();
-  }
+  (new CookieConsent()).show().then(() => {
+    let script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = './assets/js/postcookie.js';
+    document.querySelector('body').appendChild(script);
+  });
 });

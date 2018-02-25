@@ -62,7 +62,7 @@ let jsCompile = () => {
     .pipe(webpack(
       {
         entry: {
-          'scripts': './src/js/scripts.js',
+          'scripts': ['babel-polyfill', './src/js/scripts.js'],
           'postcookie': './src/js/postcookie.js'
         },
         output: {

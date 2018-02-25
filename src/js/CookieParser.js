@@ -9,7 +9,7 @@ export default class CookieParser {
    * @return {null|string|bool|number}
    */
   static getValue (name) {
-    let parsed = this.parseCookies();
+    let parsed = CookieParser.parseCookies();
     if (parsed[name] !== undefined) {
       return parsed[name];
     }
@@ -26,7 +26,7 @@ export default class CookieParser {
     let spl = [];
 
     for (let i = 0; i < cookies.length; i++) {
-      spl = cookies[i].split('=');
+      spl = cookies[i].trim().split('=');
       fixed[spl[0]] = spl[1];
     }
 

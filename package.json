@@ -46,5 +46,7 @@
     "webpack": "^3.10.0",
     "webpack-stream": "^4.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  }
 }
