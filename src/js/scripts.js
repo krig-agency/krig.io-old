@@ -1,20 +1,18 @@
-(function ($, window, document, undefined) {
-  
-  'use strict';
-  
-  $(function () {
-<<<<<<< HEAD
-    // new Vivus('canvas', {
-    //   start: 'autostart',
-    //   type: 'scenario-sync',
-    //   duration: 15
-=======
-    // var cssSelector = anime({
-    //   targets: '#cssSelector .el',
-    //   translateX: 250,
-    //   autostart: true
->>>>>>> bca1876de9b80960eec6d4d66529d211f4b1cb5a
-    // });
+import Background from './Background';
+import $ from 'jquery';
+require('jquery-scrollify');
+
+$(function () {
+  $.scrollify({
+    section: '.panel',
+    setHeights: true
   });
-  
-})(jQuery, window, document);
+
+  let bg = new Background(document.querySelector('#nokey'));
+  bg.startAnimation();
+
+  let menu = document.querySelector('#work-panel');
+  document.querySelector('#panel-toggle').addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
+});

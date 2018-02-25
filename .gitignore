@@ -1,6 +1,8 @@
 # FastShell
 # https://HosseinKarami.github.io/fastshell
 # @author Hossein Karami
+/.idea/
+.env
 
 
 ## Node.js
@@ -17,9 +19,6 @@ logs
 results
 npm-debug.log
 node_modules
-
-## Bower
-src/components
 
 ## Sass
 .sass-cache
@@ -42,3 +41,4 @@ $RECYCLE.BIN/
 README 2.md
 
 
+package-lock.json
