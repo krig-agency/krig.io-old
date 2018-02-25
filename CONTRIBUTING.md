@@ -4,6 +4,13 @@
 
 Feel free to add issues in the github repository issue tracker.
 
+## Code Standard
+
+### JavaScript
+
+This repository uses the `semistandard` js standard. Which is same as `standard` but with semicolons sprinkled on top!  
+Gulp will run the semistandard check on build, make sure it's not red!
+
 ## Git flow
 
 We try to stick as much as possible to the standard git-flow methodology.  
@@ -32,4 +39,6 @@ Commits should include messages with a description of the changes. You don't hav
 Example:
 
 > Updated the Contribution guidelines, added info about commit messages.
+
+
 
