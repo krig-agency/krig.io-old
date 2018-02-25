@@ -1,28 +1,83 @@
+html,
+body {
+  min-height: 1vh;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 .main {
+  height: 100%;
+  width: 100%;
+}
 
+.panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 80%;
 
+  > .panel__content {
+    padding-left: 77px;
 
+    @media only screen and (min-width:480px) {
+      padding-left: 97px;
+    }
+
+    @media only screen and (min-width:768px) {
+      padding-left: 66px;
+      max-width: 80%;
+    }
+  }
+}
+
+.buddies-container {
+  max-width: 100%;
+  margin-top: 40PX;
+  position: relative;
+  z-index: 100;
+}
+
+.buddy {
+  max-height: 45px;
+  width: auto;
+  margin-right: 15px;
 }
 
 path {
-    fill-opacity: .5;
-    transition: all .5s;
-    }
-    path:nth-child(n+32){opacity:0;}
-    svg:hover path:nth-child(n+10){opacity:1}
+  fill-opacity: .5;
+  transition: all .5s;
+}
+path:nth-child(n+32){opacity:0;}
+svg:hover path:nth-child(n+10){opacity:1}
 
-    p {
-      font-family: Courier New;
-    }
-
-svg {
-    display: block;
-    float: left;
-    margin: 0;
-
+p {
+  font-family: "Courier New";
 }
 
-.about-pics {
-    margin-bottom: 40px;
-    display: flex;
+svg {
+  display: block;
+  float: left;
+  margin: 0;
+}
+
+*{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+canvas {
+  background-color: transparent;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: .7;
+  box-sizing: border-box;
 }

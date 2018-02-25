@@ -10,11 +10,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const pkg = require('./package.json');
 const eslint = require('gulp-eslint');
 const webpack = require('webpack-stream');
-
-let outDir = process.env.OUT_DIR;
-if (outDir === null) {
-  outDir = 'app';
-}
+const outDir = 'app';
 
 const banner = [
   '/*!\n' +

@@ -1,58 +1,182 @@
-.header {
- max-width: 60%;
- margin: 0 auto;
-}
+.logo-small {
+  width: 100px;
+  height: auto;
+  position: fixed;
+  margin-left: 20px;
+  margin-top: 83px;
 
-
-.logo {
-  margin-bottom: 50px;
-  
-  img {
-    max-width: 400px;
-    opacity: 0.8;
+  @media only screen and (min-width: 768px) {
+    width: 200px;
+    margin-left: 40px;
+    margin-top: 50px;
   }
 }
 
-.sticky {
-  position: fixed;
-  top: 50%;
-  font-family: $font-headline;
-  font-size: 0.75rem;
-  font-weight: bold;
-  font-style: italic;
-  letter-spacing: 3px;
-
-  a {
-    color: #000;
-    text-decoration: none;
-    opacity: 0.45;
-  } 
-}
-
 .sticky--top {
-  position: relative;
+  position: fixed;
+  z-index: 100;
   top: auto;
   width: 100%;
   text-align: center;
-  top: 20px;
-}
-
-.sticky--left {
-  left: -39px;
-  right: auto;
-  transform: rotate(90deg) translateY(-50%);
+  top: 30px;
+  left: 20px;
 }
 
 .sticky--right {
-  right: -35px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -113px;
   transform: rotate(-90deg) translateY(-50%);
+  color: #fff;
+
+  @media only screen and (min-width:480px) {
+    left: -111px;
+  }
+
+  @media only screen and (min-width:768px) {
+    left: -110px;
+  }
+
+  @media only screen and (min-width:1024px) {
+    left: -100px;
+  }
+
+  @media only screen and (min-width:1140px) {
+
+  }
+  @media only screen and (min-width:1280px) {
+    left: -93px;
+  }
+
+ 
+
+
+  a {
+    font-family: $font-headline;
+    font-size: 0.75rem;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 3px;
+    color: #000;
+    text-decoration: none;
+  }
 }
 
 .sticky--bottom {
-  position: relative;
-  top: 90%;
+  position: fixed;
+  z-index: 100;
+  bottom: 30px;
   width: 100%;
-  text-align: center;
+  left: 40px;
+
+  a{
+    font-family: $font-headline;
+    font-size: 0.75rem;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+  }
+
+  .saker-text {
+    font-family: $font-saker;
+    margin-left: 20px;
+    font-style: normal;
+    font-size: 0.75rem;
+
+    &:hover {
+      .saker-icon {
+        fill: $color-details;
+      }
+    }
+  }
+
+  .saker-icon {
+    width: 20px;
+    transform: translateY(3px);
+    display: inline-block;
+    margin-left: 3px;
+    fill: $color-black;
+    float: none;
+
+    path {
+      fill-opacity: 1;
+    }
+  }
+}
+
+.cookies {
+  width: 100%;
+  height: 65px;
+  background: $color-details;
+  color: #fff;
+  position: fixed;
+  display: block;
+
+  @media only screen and (min-width:768px) {
+    height: 40px;
+  }
+}
+
+.cookies-container{
+  width: 87%;
+  position: relative;
+
+  @media only screen and (min-width:768px) {
+    width: 90%;
+  }
+
+  @media only screen and (min-width:1024px) {
+    width: 80%;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+}
+
+.cookie-text {
+  font-size: 0.65rem;
+  float: right;
+  margin-top: -5px;
+  position: absolute;
+  width: 66%;
+  line-height: normal;
+
+  @media only screen and (min-width:480px) {
+    margin-top: 2px;
+  }
+
+  @media only screen and (min-width:768px) {
+    width: 100%;
+    margin-top: -3px;
+  }
 }
 
 
+.accept {
+  float: right;
+  background-color: #fff;
+  border-color: #fff;
+  font-size: 0.65rem;
+  border-radius: 100px;
+  padding: 5px 15px;
+  margin-top: 3px;
+  z-index: 2000;
+
+
+  @media only screen and (min-width:768px) {
+    margin-top: -10px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
