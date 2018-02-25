@@ -16,6 +16,7 @@
   transform: translateY(-50%);
   position: fixed;
   top: 50%;
+  margin: 10px;
 
   @media only screen and (max-width:480px) {
     left: -110px;
@@ -35,3 +36,4 @@
     transform: scale(1.2);
   }
 }
+ 
