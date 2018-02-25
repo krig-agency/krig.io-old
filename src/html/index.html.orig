@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>KRIG.io</title>
-  
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  
+
   <!-- COMMON TAGS -->
   <meta charset="utf-8">
   <title>KRIG.io</title>
@@ -32,407 +32,125 @@
   <meta name="og:locale" content="sv_SE">
   <meta name="fb:admins" content="793435117">
   <meta name="og:type" content="website">
-  
+
   <link href="//www.google-analytics.com" rel="dns-prefetch">
   <link href="//ajax.googleapis.com" rel="dns-prefetch">
   <link href="assets/css/style.min.css" rel="stylesheet">
-  
+
   <script src="https://use.typekit.net/qxf5usi.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 
 <body>
-<<<<<<< HEAD
   <canvas id="nokey" width="100%" height="100%">
     Your Browser Don't Support Canvas, Please Download Chrome ^_^``
   </canvas>
-  
-  
-  <div class="sticky--bottom">
-    <a href="https://medlm.krig.io/login">Medlm</a>
-  </div>
-  
-  <div class="work-panel" id="work-panel">
+
+  <header>
+    <div class="sticky--bottom">
+      <a href="https://medlm.krig.io/login">Medlm</a>
+      <a href="https://xn--sker-loa.online/" class="saker-text">säker.online
+        <svg class="saker-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.08 80.57"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M53.48,28.42c.07-.72.11-1.45.11-2.19V21.36A21.39,21.39,0,0,0,32.23,0h-.38A21.38,21.38,0,0,0,10.49,21.36v4.87c0,.74,0,1.47.11,2.19A13.51,13.51,0,0,0,0,41.6V67.08A13.5,13.5,0,0,0,13.49,80.57h37.1A13.5,13.5,0,0,0,64.08,67.08V41.6A13.51,13.51,0,0,0,53.48,28.42ZM17.24,21.36A14.62,14.62,0,0,1,31.85,6.75h.38A14.62,14.62,0,0,1,46.84,21.36v4.87a14.33,14.33,0,0,1-.12,1.87H17.36a14.33,14.33,0,0,1-.12-1.87ZM57.33,67.08a6.74,6.74,0,0,1-6.74,6.74H13.49a6.74,6.74,0,0,1-6.74-6.74V41.6A6.75,6.75,0,0,1,12.36,35a7,7,0,0,1,1.13-.1h37.1a7.08,7.08,0,0,1,1.13.1,6.75,6.75,0,0,1,5.61,6.65Z"/><circle cx="32.23" cy="54.34" r="5.25"/></g></g></svg>
+      </a>
+    </div>
+
+    <img class="logo-small" src="assets/img/krig-logomark.svg">
+    <div class="sticky--left">
+      <a href="https://www.facebook.com/krig.collective/"><img class="facebook-icon" src="assets/img/facebook.svg"></a>
+      <a href="https://github.com/krig-collective"><img class="facebook-icon" src="assets/img/github.svg"></a>
+      <a href="https://www.instagram.com/krig_collective/"><img class="instagram-icon" src="assets/img/instagram.svg"></a>
+      <a href="https://twitter.com/krig_io"><img class="twitter-icon" src="assets/img/twitter.svg"></a>
+      <a href="mailto:webmasterkrig.io"><img class="mail-icon" src="assets/img/mail.svg"></a>
+    </div>
+  </header>
+
+  <aside class="work-panel" id="work-panel">
     <div class="work-panel__bar" id="panel-toggle">
       <div class="panel-toogle">
-        <img class="menu-toggle arrow" src="assets/img/arrow-left.svg">
+        <img class="menu-toggle arrow" src="assets/img/arrow-right.svg">
         <p class="sticky--right"><span>Need work done?</span></p>
       </div>
     </div>
-  </div>
-  
-  <img class="logo-small" src="assets/img/krig-logomark.svg">
-  <div class="sticky--left">
-    <a href="https://www.facebook.com/krig.collective/"><img class="facebook-icon" src="assets/img/facebook.svg"></a>
-    <a href="https://github.com/krig-collective"><img class="facebook-icon" src="assets/img/github.svg"></a>
-    <a href="https://www.instagram.com/krig_collective/"><img class="instagram-icon" src="assets/img/instagram.svg"></a>
-    <a href="https://twitter.com/krig_io"><img class="twitter-icon" src="assets/img/twitter.svg"></a>
-    <a href="mailto:webmasterkrig.io"><img class="mail-icon" src="assets/img/mail.svg"></a>
-  </div>
-  
-  
-</header>
+    <section>
 
-<main class="main" role="main">
-  <section class="intro">
-    <h1 class="headline">A freelance collective</h1>
-    <p class="intro-text"><strong class="krig">KRIG</strong> is a collective of freelancers and independant companies within tech och digital design. We have a wide knowledge and have grown out of the large corporate companies. We know what we are doing. Give us a problem and we will solve it!</p>
-  </section>
-</main>
+      <div class="pitch-form">
+        <div class="pitch-text">
+          <h1 class="headline">Elevator Pitch</h1>
+          <p class="under-text">Pitch us your project and we'll get back to you.</p>
+        </div>
+        <input type="text"
+        class="pitch-form-text"
+        name="about"
+        title="Contact form about input field"
+        placeholder="Short descripton of the project">
+
+        <input type="text"
+        class="pitch-form-text"
+        name="budget"
+        title="Contact form links input field"
+        placeholder="Budget">
+
+        <input type="text"
+        class="pitch-form-text"
+        name="email"
+        title="Contact form email input field"
+        placeholder="Email">
+
+        <input class="pitch-button-send" type="submit" value="Send">
+      </section>
+    </aside>
+
+
+    <main class="main" role="main">
+      <section class="intro panel">
+        <h1 class="headline">A freelance collective</h1>
+        <p class="intro-text"><strong class="krig">KRIG</strong> is a collective of freelancers and independant companies within tech och digital design. We have a wide knowledge and have grown out of the large corporate companies. We know what we are doing. Give us a problem and we will solve it!</p>
+      </section>
+
+<<<<<<< HEAD
+      <section class="about panel">
 =======
-    <canvas id="nokey" width="100%" height="100%">
-        Your Browser Don't Support Canvas, Please Download Chrome ^_^``
-    </canvas>
+      <section class="intro">
+        <div class"about">
+>>>>>>> 05f91d00a2ad81d5cc1c0bdd5047473eea1d87b8
+            <h1 class="headline">About</h1>
+            <p class="intro-text"><strong class="krig">KRIG</strong> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            <div class="buddies-container">
+              <a href="https://oakwood.se/"><img class="buddy" src="assets/img/oakwood.png"></a>
+              <a href="https://www.hellostudio.se/"><img class="buddy" src="assets/img/hello.png"></a>
+              <a href="http://www.technigo.io/"><img class="buddy" src="assets/img/technigo.png"></a>
+              <a href="https://www.tjejerkodar.se/"><img class="buddy" src="assets/img/tjejerkodar.png"></a>
+              <a href="https://www.doberman.se/"><img class="buddy" src="assets/img/doberman.png"></a>
+              <a href="https://www.feminio.se/"><img class="buddy" src="assets/img/feminio.png"></a>
+              <a href="http://mlithvall.com/"><img class="buddy" src="assets/img/mlithvall.jpg"></a>
+              <a href="https://www.earthpeople.se/"><img class="buddy" src="assets/img/ep.png"></a>
+              <a href="https://www.studieforbunden.se/"><img class="buddy" src="assets/img/studieforbunden.png"></a>
+              <a href="https://www.fatta.nu/"><img class="buddy" src="assets/img/fatta.png"></a>
+          </div>
+        </div>
+        </section>
+    </main>
 
-<header>
-<div class="sticky--bottom">
-  <a href="https://medlm.krig.io/login">Medlm</a>
-  <a href="https://xn--sker-loa.online/" class="saker-text">säker.online</a>
-    <img src="assets/img/saker_online.svg" class="saker-icon" a href="https://xn--sker-loa.online/">
-</div>
+  </div>
 
-<img class="logo-small" src="assets/img/krig-logomark.svg">
-<div class="sticky--left">
-  <a href="https://www.facebook.com/krig.collective/"><img class="facebook-icon" src="assets/img/facebook.svg"></a>
-  <a href="https://github.com/krig-collective"><img class="facebook-icon" src="assets/img/github.svg"></a>
-  <a href="https://www.instagram.com/krig_collective/"><img class="instagram-icon" src="assets/img/instagram.svg"></a>
-  <a href="https://twitter.com/krig_io"><img class="twitter-icon" src="assets/img/twitter.svg"></a>
-  <a href="mailto:webmasterkrig.io"><img class="mail-icon" src="assets/img/mail.svg"></a>
-</div>
-</header>
+  <footer class="footer" role="contentinfo">
 
-  <aside class="work-panel">
-    
-            <section>
-                
-                  <div class="pitch-form">
-                        <div class="pitch-text">
-                                <h1 class="headline">Elevator Pitch</h1>
-                                <p class="under-text">If you want to work with us, then pitch your project and what it's worth to you. We'll get back to you shortly. Lorem Ipsum, bacon cats and all those pretty things in life.</p>
-                        </div>
-                    <input type="text"
-                      class="pitch-form-text"
-                      name="about"
-                      title="Contact form about input field"
-                      placeholder="Short descripton of the project">
-      
-                      <input type="text"
-                      class="pitch-form-text"
-                      name="budget"
-                      title="Contact form links input field"
-                      placeholder="Budget">
-      
-                      <input type="text"
-                      class="pitch-form-text"
-                      name="email"
-                      title="Contact form email input field"
-                      placeholder="Email">
-      
-                      <input class="pitch-button-send" type="submit" value="Send">
-            </section>
-        </aside>
+  </footer>
+
+  <script src="assets/js/scripts.min.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-97449698-1');ga('send','pageview');
 
 
-  <main class="main" role="main">
-    <section class="intro">
-      <h1 class="headline">A freelance collective</h1>
-      <p class="intro-text"><strong class="krig">KRIG</strong> is a collective of freelancers and independant companies within tech och digital design. We have a wide knowledge and have grown out of the large corporate companies. We know what we are doing. Give us a problem and we will solve it!</p>
-    </section>
-  </main>
 
->>>>>>> feature/jenz-design
-</div>
+    </script>
 
-<footer class="footer" role="contentinfo">
-  
-</footer>
-
-<script src="assets/js/scripts.min.js"></script>
-
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-<script>
-(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-  function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-  e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-  e.src='//www.google-analytics.com/analytics.js';
-  r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-  ga('create','UA-97449698-1');ga('send','pageview');
-  
-  var canvas = document.getElementById('nokey'),
-  can_w = parseInt(canvas.getAttribute('width')),
-  can_h = parseInt(canvas.getAttribute('height')),
-  ctx = canvas.getContext('2d');
-  
-  // console.log(typeof can_w);
-  
-  var ball = {
-    x: 0,
-    y: 0,
-    vx: 0,
-    vy: 0,
-    r: 0,
-    alpha: 1,
-    phase: 0
-  },
-  ball_color = {
-    r: 230,
-    g: 230,
-    b: 230
-  },
-  R = 2,
-  balls = [],
-  alpha_f = 0.03,
-  alpha_phase = 0,
-  
-  // Line
-  link_line_width = 0.8,
-  dis_limit = 260,
-  add_mouse_point = true,
-  mouse_in = false,
-  mouse_ball = {
-    x: 0,
-    y: 0,
-    vx: 0,
-    vy: 0,
-    r: 0,
-    type: 'mouse'
-  };
-  
-  // Random speed
-  function getRandomSpeed(pos){
-    var  min = -1,
-    max = 1;
-    switch(pos){
-      case 'top':
-      return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
-      break;
-      case 'right':
-      return [randomNumFrom(min, -0.1), randomNumFrom(min, max)];
-      break;
-      case 'bottom':
-      return [randomNumFrom(min, max), randomNumFrom(min, -0.1)];
-      break;
-      case 'left':
-      return [randomNumFrom(0.1, max), randomNumFrom(min, max)];
-      break;
-      default:
-      return;
-      break;
-    }
-  }
-  function randomArrayItem(arr){
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
-  function randomNumFrom(min, max){
-    return Math.random()*(max - min) + min;
-  }
-  console.log(randomNumFrom(0, 10));
-  // Random Ball
-  function getRandomBall(){
-    var pos = randomArrayItem(['top', 'right', 'bottom', 'left']);
-    switch(pos){
-      case 'top':
-      return {
-        x: randomSidePos(can_w),
-        y: -R,
-        vx: getRandomSpeed('top')[0],
-        vy: getRandomSpeed('top')[1],
-        r: R,
-        alpha: 1,
-        phase: randomNumFrom(0, 10)
-      }
-      break;
-      case 'right':
-      return {
-        x: can_w + R,
-        y: randomSidePos(can_h),
-        vx: getRandomSpeed('right')[0],
-        vy: getRandomSpeed('right')[1],
-        r: R,
-        alpha: 1,
-        phase: randomNumFrom(0, 10)
-      }
-      break;
-      case 'bottom':
-      return {
-        x: randomSidePos(can_w),
-        y: can_h + R,
-        vx: getRandomSpeed('bottom')[0],
-        vy: getRandomSpeed('bottom')[1],
-        r: R,
-        alpha: 1,
-        phase: randomNumFrom(0, 10)
-      }
-      break;
-      case 'left':
-      return {
-        x: -R,
-        y: randomSidePos(can_h),
-        vx: getRandomSpeed('left')[0],
-        vy: getRandomSpeed('left')[1],
-        r: R,
-        alpha: 1,
-        phase: randomNumFrom(0, 10)
-      }
-      break;
-    }
-  }
-  function randomSidePos(length){
-    return Math.ceil(Math.random() * length);
-  }
-  
-  // Draw Ball
-  function renderBalls(){
-    Array.prototype.forEach.call(balls, function(b){
-      if(!b.hasOwnProperty('type')){
-        ctx.fillStyle = 'rgba('+ball_color.r+','+ball_color.g+','+ball_color.b+','+b.alpha+')';
-        ctx.beginPath();
-        ctx.arc(b.x, b.y, R, 0, Math.PI*2, true);
-        ctx.closePath();
-        ctx.fill();
-      }
-    });
-  }
-  
-  // Update balls
-  function updateBalls(){
-    var new_balls = [];
-    Array.prototype.forEach.call(balls, function(b){
-      b.x += b.vx;
-      b.y += b.vy;
-      
-      if(b.x > -(50) && b.x < (can_w+50) && b.y > -(50) && b.y < (can_h+50)){
-        new_balls.push(b);
-      }
-      
-      // alpha change
-      b.phase += alpha_f;
-      b.alpha = Math.abs(Math.cos(b.phase));
-      // console.log(b.alpha);
-    });
-    
-    balls = new_balls.slice(0);
-  }
-  
-  // loop alpha
-  function loopAlphaInf(){
-    
-  }
-  
-  // Draw lines
-  function renderLines(){
-    var fraction, alpha;
-    for (var i = 0; i < balls.length; i++) {
-      for (var j = i + 1; j < balls.length; j++) {
-        
-        fraction = getDisOf(balls[i], balls[j]) / dis_limit;
-        
-        if(fraction < 1){
-          alpha = (1 - fraction).toString();
-          
-          ctx.strokeStyle = 'rgba(150,150,150,'+alpha+')';
-          ctx.lineWidth = link_line_width;
-          
-          ctx.beginPath();
-          ctx.moveTo(balls[i].x, balls[i].y);
-          ctx.lineTo(balls[j].x, balls[j].y);
-          ctx.stroke();
-          ctx.closePath();
-        }
-      }
-    }
-  }
-  
-  // calculate distance between two points
-  function getDisOf(b1, b2){
-    var  delta_x = Math.abs(b1.x - b2.x),
-    delta_y = Math.abs(b1.y - b2.y);
-    
-    return Math.sqrt(delta_x*delta_x + delta_y*delta_y);
-  }
-  
-  // add balls if there a little balls
-  function addBallIfy(){
-    if(balls.length < 20){
-      balls.push(getRandomBall());
-    }
-  }
-  
-  // Render
-  function render(){
-    ctx.clearRect(0, 0, can_w, can_h);
-    
-    renderBalls();
-    
-    renderLines();
-    
-    updateBalls();
-    
-    addBallIfy();
-    
-    window.requestAnimationFrame(render);
-  }
-  
-  // Init Balls
-  function initBalls(num){
-    for(var i = 1; i <= num; i++){
-      balls.push({
-        x: randomSidePos(can_w),
-        y: randomSidePos(can_h),
-        vx: getRandomSpeed('top')[0],
-        vy: getRandomSpeed('top')[1],
-        r: R,
-        alpha: 1,
-        phase: randomNumFrom(0, 10)
-      });
-    }
-  }
-  // Init Canvas
-  function initCanvas(){
-    canvas.setAttribute('width', window.innerWidth);
-    canvas.setAttribute('height', window.innerHeight);
-    
-    can_w = parseInt(canvas.getAttribute('width'));
-    can_h = parseInt(canvas.getAttribute('height'));
-  }
-  window.addEventListener('resize', function(e){
-    console.log('Window Resize...');
-    initCanvas();
-  });
-  
-  function goMovie(){
-    initCanvas();
-    initBalls(20);
-    window.requestAnimationFrame(render);
-  }
-  goMovie();
-  
-  // Mouse effect
-  canvas.addEventListener('mouseenter', function(){
-    console.log('mouseenter');
-    mouse_in = true;
-    balls.push(mouse_ball);
-  });
-  canvas.addEventListener('mouseleave', function(){
-    console.log('mouseleave');
-    mouse_in = false;
-    var new_balls = [];
-    Array.prototype.forEach.call(balls, function(b){
-      if(!b.hasOwnProperty('type')){
-        new_balls.push(b);
-      }
-    });
-    balls = new_balls.slice(0);
-  });
-  canvas.addEventListener('mousemove', function(e){
-    var e = e || window.event;
-    mouse_ball.x = e.pageX;
-    mouse_ball.y = e.pageY;
-    // console.log(mouse_ball);
-  });
-  
-  
-</script>
-
-</body>
-</html>
+  </body>
+  </html>
