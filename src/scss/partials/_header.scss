@@ -42,6 +42,16 @@
     left: -100px;
   }
 
+  @media only screen and (min-width:1140px) {
+
+  }
+  @media only screen and (min-width:1280px) {
+    left: -93px;
+  }
+
+ 
+
+
   a {
     font-family: $font-headline;
     font-size: 0.75rem;
