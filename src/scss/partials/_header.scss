@@ -1,7 +1,6 @@
 .logo-small {
   width: 100px;
   height: auto;
-  position: fixed;
   margin-left: 20px;
   margin-top: 83px;
 
@@ -49,7 +48,7 @@
     left: -93px;
   }
 
- 
+
 
 
   a {
@@ -60,123 +59,5 @@
     letter-spacing: 3px;
     color: #000;
     text-decoration: none;
-  }
-}
-
-.sticky--bottom {
-  position: fixed;
-  z-index: 100;
-  bottom: 30px;
-  width: 100%;
-  left: 40px;
-
-  a{
-    font-family: $font-headline;
-    font-size: 0.75rem;
-    font-weight: bold;
-    font-style: italic;
-    text-decoration: none;
-    color: #000;
-    display: inline-block;
-  }
-
-  .saker-text {
-    font-family: $font-saker;
-    margin-left: 20px;
-    font-style: normal;
-    font-size: 0.75rem;
-
-    &:hover {
-      .saker-icon {
-        fill: $color-details;
-      }
-    }
-  }
-
-  .saker-icon {
-    width: 20px;
-    transform: translateY(3px);
-    display: inline-block;
-    margin-left: 3px;
-    fill: $color-black;
-    float: none;
-
-    path {
-      fill-opacity: 1;
-    }
-  }
-}
-
-.cookies {
-  width: 100%;
-  height: 65px;
-  background: $color-details;
-  color: #fff;
-  position: fixed;
-  display: block;
-
-  @media only screen and (min-width:768px) {
-    height: 40px;
-  }
-}
-
-.cookies-container{
-  width: 87%;
-  position: relative;
-
-  @media only screen and (min-width:768px) {
-    width: 90%;
-  }
-
-  @media only screen and (min-width:1024px) {
-    width: 80%;
-  }
-
-  ul {
-    list-style-type: none;
-  }
-}
-
-.cookie-text {
-  font-size: 0.65rem;
-  float: right;
-  margin-top: -5px;
-  position: absolute;
-  width: 66%;
-  line-height: normal;
-
-  @media only screen and (min-width:480px) {
-    margin-top: 2px;
-  }
-
-  @media only screen and (min-width:768px) {
-    width: 100%;
-    margin-top: -3px;
-  }
-}
-
-
-.accept {
-  float: right;
-  background-color: #fff;
-  border-color: #fff;
-  font-size: 0.65rem;
-  border-radius: 100px;
-  padding: 5px 15px;
-  margin-top: 3px;
-  z-index: 2000;
-
-
-  @media only screen and (min-width:768px) {
-    margin-top: -10px;
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:focus {
-    border: none;
-    outline: none;
   }
 }

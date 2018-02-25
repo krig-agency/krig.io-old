@@ -35,3 +35,47 @@
     transform: scale(1.2);
   }
 }
+
+.sticky--bottom {
+  position: fixed;
+  z-index: 0;
+  bottom: 30px;
+  width: 100%;
+  left: 40px;
+
+  a{
+    font-family: $font-headline;
+    font-size: 0.75rem;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+  }
+
+  .saker-text {
+    font-family: $font-saker;
+    margin-left: 20px;
+    font-style: normal;
+    font-size: 0.75rem;
+
+    &:hover {
+      .saker-icon {
+        fill: $color-details;
+      }
+    }
+  }
+
+  .saker-icon {
+    width: 20px;
+    transform: translateY(3px);
+    display: inline-block;
+    margin-left: 3px;
+    fill: $color-black;
+    float: none;
+
+    path {
+      fill-opacity: 1;
+    }
+  }
+}
