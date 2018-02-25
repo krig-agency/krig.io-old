@@ -1,14 +1,18 @@
-import modernizer from '../components/modernizr'; // eslint-disable-line
-import jQuery from 'jquery';
+import Background from './Background';
+import $ from 'jquery';
+require('jquery-scrollify');
 
-(function ($, window, document) {
-  'use strict';
-
-  $(function () {
-    // var cssSelector = anime({
-    //   targets: '#cssSelector .el',
-    //   translateX: 250,
-    //   autostart: true
-    // });
+$(function () {
+  $.scrollify({
+    section: '.panel',
+    setHeights: true
   });
-})(jQuery, window, document);
+
+  let bg = new Background(document.querySelector('#nokey'));
+  bg.startAnimation();
+
+  let menu = document.querySelector('#work-panel');
+  document.querySelector('#panel-toggle').addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
+});

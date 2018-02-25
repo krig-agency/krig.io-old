@@ -7,28 +7,43 @@ p {
 
 h1,
 h2,
-h3,
+h3 {
+  font-family: $font-saker;
+
+  &.saker-text {
+    margin-bottom: 20px;
+    line-height: 115%;
+    font-size: 1.75rem;
+  }
+  @media only screen and (max-width:480px) {
+    font-size: 1.5rem;
+  }
+
+}
+
 h4 {
   font-family: $font-headline;
 
   &.headline {
-    font-style: italic;
-    margin-top: 0px;
+    margin-bottom: 20px;
+    line-height: 115%;
+    font-size: 1.75rem;
   }
   @media only screen and (max-width:480px) {
     font-size: 1.5rem;
-}
+  }
+
 }
 
 p {
-  font-size: 0.75rem;
+  font-size: 1rem;
   line-height: 2;
 
   &.under-text {
     margin-bottom: 30px;
-    
+
   }
   @media only screen and (max-width:480px) {
     font-size: 0.65rem;
-}
+  }
 }

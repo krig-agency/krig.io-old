@@ -1,0 +1,155 @@
+
+.pitch-form {
+  max-width: 100%;
+  padding: 0 10%;
+}
+
+.pitch-text{
+  color: #fff;
+  text-align: left;
+}
+
+.pitch-form-text {
+  border: 1px #fff;
+  background: transparent;
+  color: #fff;
+  border-style: solid;
+  border-radius: 4px;
+  width: 100%;
+  padding: 10px 10px 50px;
+  margin-bottom: 25px;
+  font-size: 0.65rem;
+  color: $color-terminal;
+
+  &::placeholder {
+    color: $color-terminal;
+  }
+
+  &:focus  {
+    outline: none;
+    border-color: $color-terminal;
+  }
+
+  @media only screen and (min-width:768px) {
+    font-size: 0.875rem;
+  }
+}
+
+.pitch-button-send {
+  border-style: none;
+  width: 50%;
+  height: 46px;
+  border: none;
+  background: #fff;
+  border-radius: 100px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 10px;
+  font-size: 0.65rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  @media only screen and (max-width:480px) {
+    width: 90%;
+    font-size: 0.75rem;
+  }
+
+  @media only screen and (max-width:768px) {
+    width: 60%;
+  }
+}
+
+.work-panel {
+  position: fixed;
+  background-color: #000;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  width: 81vw;
+  height: 100vh;
+  top: 0;
+  position: fixed;
+  z-index: 1000;
+  right: -70vw;
+  overflow: hidden;
+  background-color: #111;
+  transition: all .4s ease-in-out;
+
+  @media only screen and (min-width:768px) {
+    width: 50vw;
+    right: -43vw;
+  }
+
+  &.open {
+    right: 0;
+
+    .arrow {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.work-panel__bar {
+  height: 100%;
+  width: 54vw;
+  position: relative;
+  text-align: center;
+  background-color: black;
+  cursor: url('../img/cursor.png'), auto;
+  cursor: -webkit-image-set(
+  url('../img/cursor.png') 1x,
+  url('../img/cursor.png') 2x
+), auto;
+
+  @media only screen and (min-width:320px) {
+    width: 21vw;
+  }
+
+  @media only screen and (min-width:480px) {
+    width: 14vw;
+  }
+
+  @media only screen and (min-width:768px) {
+    width: 15vw;
+  }
+
+  @media only screen and (min-width:1024px) {
+    width: 12vw;
+  }
+
+  @media only screen and (min-width:1280px) {
+    width: 10vw;
+  }
+
+}
+
+.sticky--right span {
+  transform: rotate(-0deg);
+  display: block;
+  min-width: 300px;
+  text-align: center;
+  top: 50%;
+  font-size: 0.65rem;
+
+  @media only screen and (min-width:480px) {
+    font-size: 0.75rem;
+  }
+}
+
+.arrow {
+  color: #fff;
+  width: 20px;
+  margin-top: 30px;
+  transition: all 500ms ease;
+
+  @media only screen and (min-width:768px) {
+    width: 30px;
+  }
+}
