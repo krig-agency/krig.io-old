@@ -19,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  max-width: 80%;
+  width: 80%;
 
   > .panel__content {
     padding-left: 77px;
@@ -32,11 +32,14 @@ body {
       padding-left: 66px;
       max-width: 80%;
     }
+
+    @media only screen and (min-width:768px) {
+      max-width: 50%;
+    }
   }
 }
 
 .buddies-container {
-  max-width: 100%;
   margin-top: 40PX;
   position: relative;
   z-index: 100;
