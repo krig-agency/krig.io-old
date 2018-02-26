@@ -1,6 +1,7 @@
 import Point from './Point';
 import Rect from './Rect';
 import Color from './Color';
+import DeviceDetector from './DeviceDetector';
 
 export default class Background {
   /**
@@ -9,7 +10,7 @@ export default class Background {
    */
   constructor (canvasElement, config = {pointCount: 50, pointSpeed: 50}) {
     this.pointSpeed = config.pointSpeed;
-    let totalPointCount = config.pointCount;
+    let totalPointCount = DeviceDetector.isMobile() ? config.pointCount / 3 : config.pointCount;
     this.canvas = canvasElement;
     this.context = this.canvas.getContext('2d');
     this.rect = new Rect(0, 0, parseFloat(window.innerWidth), parseFloat(window.innerHeight));
@@ -32,25 +33,26 @@ export default class Background {
       });
     }
 
+    this.lastFrame = Date.now();
+    // Subscribe events.
+    window.addEventListener('resize', this.resize.bind(this));
+
     this.mousePoint = Object.assign({}, this.points[0]);
     this.mousePoint.alpha = 0;
     this.points.push(this.mousePoint);
 
-    this.lastFrame = Date.now();
-
-    // Subscribe events.
-    window.addEventListener('resize', this.resize.bind(this));
-
-    window.addEventListener('mouseenter', () => {
-      this.mousePoint.velocity = new Point(0, 0);
-    });
-    window.addEventListener('mouseleave', () => {
-      this.mousePoint.pos = new Point(0, 0);
-    });
-    window.addEventListener('mousemove', (event) => {
-      this.mousePoint.pos.X = event.clientX;
-      this.mousePoint.pos.Y = event.clientY;
-    });
+    if (DeviceDetector.isMobile() === false) {
+      window.addEventListener('mouseenter', () => {
+        this.mousePoint.velocity = new Point(0, 0);
+      });
+      window.addEventListener('mouseleave', () => {
+        this.mousePoint.pos = new Point(0, 0);
+      });
+      window.addEventListener('mousemove', (event) => {
+        this.mousePoint.pos.X = event.clientX;
+        this.mousePoint.pos.Y = event.clientY;
+      });
+    }
   }
 
   getRandomPos (anywhere) {
@@ -114,7 +116,7 @@ export default class Background {
     this.drawLines();
     this.update(frameDeltaTime);
     this.lastFrame = Date.now();
-    window.requestAnimationFrame(this.render.bind(this));
+    setTimeout(this.render.bind(this), 25);
   }
 
   drawPoints () {
