@@ -2,8 +2,6 @@ import Point from './Point';
 import Rect from './Rect';
 import Color from './Color';
 
-let log = (msg) => {};
-
 export default class Background {
   /**
    * @param {Element} canvasElement
@@ -103,12 +101,10 @@ export default class Background {
   }
 
   resize () {
-    log('Resize called.');
     this.rect.Width = parseFloat(document.body.clientWidth);
     this.rect.Height = parseFloat(window.innerHeight);
     this.canvas.setAttribute('width', this.rect.Width);
     this.canvas.setAttribute('height', this.rect.Height);
-    log(`The size of the bounding rect is: (${this.rect.X}, ${this.rect.Y}, ${this.rect.Width}, ${this.rect.Height})`);
   }
 
   render () {
