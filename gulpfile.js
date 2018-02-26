@@ -40,7 +40,7 @@ let cssCompile = () => {
     .pipe(cssnano())
     .pipe(rename({ suffix: '.min' }))
     .pipe(header(banner, { package: pkg }))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(outDir + '/assets/css'))
     .pipe(browserSync.reload({stream: true}));
 };
@@ -84,6 +84,7 @@ let jsCompile = () => {
     .pipe(gulp.dest(outDir + '/assets/js'))
     .pipe(uglify())
     .pipe(header(banner, { package: pkg }))
+    .pipe(sourcemaps.write('.'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(outDir + '/assets/js'));
 };
