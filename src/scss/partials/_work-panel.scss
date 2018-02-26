@@ -1,7 +1,7 @@
 
 .pitch-form {
   max-width: 100%;
-  padding: 0 10%;
+  padding: 0 7%;
 }
 
 .pitch-text{
@@ -67,24 +67,22 @@
 }
 
 .work-panel {
-  position: fixed;
-  background-color: #000;
-  min-height: 100%;
   display: flex;
   align-items: center;
-  width: 81vw;
-  height: 100vh;
-  top: 0;
   position: fixed;
   z-index: 1;
-  right: -70vw;
+  top: 0;
+  right: calc((-90vw) + 50px);
+  width: 90vw;
+  height: 100vh;
+  min-height: 100%;
   overflow: hidden;
   background-color: #111;
   transition: all .4s ease-in-out;
 
   @media only screen and (min-width:768px) {
     width: 50vw;
-    right: -43vw;
+    right: calc((-50vw) + 80px);
   }
 
   &.open {
@@ -98,7 +96,7 @@
 
 .work-panel__bar {
   height: 100%;
-  width: 54vw;
+  min-width: 50px;
   position: relative;
   text-align: center;
   background-color: black;
@@ -106,43 +104,41 @@
   cursor: -webkit-image-set(
   url('../img/cursor.png') 1x,
   url('../img/cursor.png') 2x
-), auto;
+  ), auto;
 
-  @media only screen and (min-width:320px) {
-    width: 21vw;
-  }
-
-  @media only screen and (min-width:480px) {
-    width: 14vw;
-  }
+  // @media only screen and (min-width:420px) {
+  //   width: 80px;
+  // }
 
   @media only screen and (min-width:768px) {
-    width: 15vw;
+    min-width: 80px;
   }
-
-  @media only screen and (min-width:1024px) {
-    width: 12vw;
-  }
-
-  @media only screen and (min-width:1280px) {
-    width: 10vw;
-  }
-
 }
 
-.sticky--right span {
-  transform: rotate(-0deg);
+.sticky--right {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -115px;
+  transform: rotate(-90deg) translateY(-50%);
+  color: #fff;
+  font-size: 0.65rem;
+
+  @media only screen and (min-width:768px) {
+    left: -98px;
+    font-size: 0.75rem;
+  }
+}
+.sticky--right > span {
   display: block;
   min-width: 300px;
   text-align: center;
   top: 50%;
-  font-size: 0.65rem;
 
   @media only screen and (min-width:480px) {
     font-size: 0.75rem;
   }
 }
-
 .arrow {
   color: #fff;
   width: 20px;
