@@ -1,6 +1,6 @@
 import Background from './Background';
 import $ from 'jquery';
-require('jquery-scrollify');
+import 'jquery-scrollify';
 
 $(function () {
   $.scrollify({
