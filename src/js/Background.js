@@ -118,7 +118,7 @@ export default class Background {
     this.drawLines();
     this.update(frameDeltaTime);
     this.lastFrame = Date.now();
-    window.requestAnimationFrame(this.render.bind(this));
+    setTimeout(this.render.bind(this), 25);
   }
 
   drawPoints () {
