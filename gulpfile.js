@@ -8,9 +8,16 @@ const rename = require('gulp-rename');
 const cssnano = require('gulp-cssnano');
 const sourcemaps = require('gulp-sourcemaps');
 const pkg = require('./package.json');
+const replace = require('gulp-replace');
 const eslint = require('gulp-eslint');
 const webpack = require('webpack-stream');
 const outDir = 'app';
+const env = process.env.ENV;
+
+const includes = [
+  { name: 'assets/js/scripts.js', dev: 'assets/js/scripts.js', prod: 'assets/js/scripts.min.js' },
+  { name: 'assets/css/style.css', dev: 'assets/css/style.css', prod: 'assets/css/style.min.css' }
+];
 
 const banner = [
   '/*!\n' +
@@ -33,7 +40,7 @@ let cssCompile = () => {
     .pipe(cssnano())
     .pipe(rename({ suffix: '.min' }))
     .pipe(header(banner, { package: pkg }))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(outDir + '/assets/css'))
     .pipe(browserSync.reload({stream: true}));
 };
@@ -77,8 +84,8 @@ let jsCompile = () => {
     .pipe(gulp.dest(outDir + '/assets/js'))
     .pipe(uglify())
     .pipe(header(banner, { package: pkg }))
+    .pipe(sourcemaps.write('.'))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest(outDir + '/assets/js'));
 };
 jsCompile.displayName = 'compile-js';
@@ -104,8 +111,11 @@ reSync.description = 'Reloads the page that browser sync serves.';
 gulp.task(reSync);
 
 let moveHtml = () => {
-  return gulp.src('src/html/**/*.html')
-    .pipe(gulp.dest('app'));
+  let g = gulp.src('src/html/**/*.html');
+  for (let i = 0; i < includes.length; i++) {
+    g = g.pipe(replace(includes[i].name, env === 'production' ? includes[i].prod : includes[i].dev));
+  }
+  return g.pipe(gulp.dest('app'));
 };
 moveHtml.displayName = 'move-html';
 moveHtml.description = 'Moves all static html files from /src to /app.';
