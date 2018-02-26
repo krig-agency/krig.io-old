@@ -62,8 +62,8 @@ let jsCompile = () => {
     .pipe(webpack(
       {
         entry: {
-          scripts: './src/js/scripts.js'
-          // If more than one entrypoint exists, add it here and a new file will be created on build.
+          'scripts': ['babel-polyfill', './src/js/scripts.js'],
+          'postcookie': './src/js/postcookie.js'
         },
         output: {
           filename: '[name].js'
