@@ -20,34 +20,6 @@
   text-align: center;
   top: 30px;
   left: 20px;
-}
-
-.sticky--right {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: -113px;
-  transform: rotate(-90deg) translateY(-50%);
-  color: #fff;
-
-  @media only screen and (min-width:480px) {
-    left: -111px;
-  }
-
-  @media only screen and (min-width:768px) {
-    left: -110px;
-  }
-
-  @media only screen and (min-width:1024px) {
-    left: -100px;
-  }
-
-  @media only screen and (min-width:1140px) {
-
-  }
-  @media only screen and (min-width:1280px) {
-    left: -93px;
-  }
 
   a {
     font-family: $font-headline;
