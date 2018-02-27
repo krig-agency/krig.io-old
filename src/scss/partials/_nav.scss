@@ -16,18 +16,18 @@
   transform: translateY(-50%);
   position: fixed;
   top: 50%;
-
-  @media only screen and (max-width:480px) {
-    left: -110px;
-  }
 }
 
 .social-nav__item {
   display: block;
   width: 20px;
   opacity: .80;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 10px;
+
+  @media only screen and (min-width:768px) {
+    margin-left: 20px;
+  }
+
   img {
     width: 20px;
   }
