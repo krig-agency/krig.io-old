@@ -17,7 +17,6 @@
   transform: translateY(-50%);
   position: fixed;
   top: 50%;
-}
 
 .social-nav__item {
   display: block;
@@ -29,9 +28,22 @@
     margin-left: 20px;
   }
 
+  a {
+  cursor: url('../img/cursor.png'), auto;
+  cursor: -webkit-image-set(
+  url('../img/cursor.png') 1x,
+  url('../img/cursor.png') 2x
+  ), auto;
+
+  // @media only screen and (min-width:420px) {
+  //   width: 80px;
+  // }
+  }
+
   img {
     width: 20px;
   }
+
   &:hover {
     transform: scale(1.2);
   }
