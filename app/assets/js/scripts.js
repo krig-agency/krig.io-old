@@ -19448,6 +19448,10 @@ __webpack_require__(90);
 
 __webpack_require__(339);
 
+var _FormValidation = __webpack_require__(341);
+
+var _FormValidation2 = _interopRequireDefault(_FormValidation);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function () {
@@ -19470,6 +19474,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     script.async = true;
     script.src = './assets/js/postcookie.js';
     document.querySelector('body').appendChild(script);
+  });
+
+  var formValidation = new _FormValidation2.default(document.querySelector('form.pitch-form__form'), {
+    'input[name="Description"]': ['not-empty'],
+    'input[name="Budget"]': ['not-empty'],
+    'input[name="Email"]': ['not-empty', 'email']
+  });
+
+  formValidation.on('change', function (e) {
+    e.classList.remove('error');
+  });
+
+  formValidation.on('success', function () {
+    return true;
+  });
+
+  formValidation.on('failure', function (validationErrors) {
+    validationErrors.forEach(function (error) {
+      error.element.classList.add('error');
+    });
   });
 });
 
@@ -20939,6 +20963,249 @@ exports.__esModule = true;
 exports.default = function () {};
 
 module.exports = exports["default"];
+
+/***/ }),
+/* 341 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _EventEmitter2 = __webpack_require__(342);
+
+var _EventEmitter3 = _interopRequireDefault(_EventEmitter2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var FormValidation = function (_EventEmitter) {
+  _inherits(FormValidation, _EventEmitter);
+
+  function FormValidation(form, rules) {
+    _classCallCheck(this, FormValidation);
+
+    var _this = _possibleConstructorReturn(this, (FormValidation.__proto__ || Object.getPrototypeOf(FormValidation)).call(this));
+
+    _this.form = form;
+    _this.rules = rules;
+    _this.validationTypes = {
+      'email': function email(element) {
+        return element.value.indexOf('@') > 0 ? true : 'Not a valid email address.';
+      },
+      'not-empty': function notEmpty(element) {
+        return element.value.length > 0 || element.innerText.length > 0 ? true : 'Input was empty.';
+      }
+    };
+
+    _this.form.addEventListener('submit', _this.submit.bind(_this));
+    Object.entries(_this.rules).forEach(function (entry) {
+      _this.form.querySelector(entry[0]).addEventListener('input', _this.change.bind(_this));
+    });
+    return _this;
+  }
+
+  /**
+   * Method handling input change events on each form input with a rule.
+   * @param event
+   */
+
+
+  _createClass(FormValidation, [{
+    key: 'change',
+    value: function change(event) {
+      this.emit('change', event.target);
+    }
+
+    /**
+     * Method handling submit event to force validation and pause submit.
+     * @param event
+     */
+
+  }, {
+    key: 'submit',
+    value: function submit(event) {
+      var _this2 = this;
+
+      event.preventDefault();
+
+      var validationErrors = [];
+      Object.entries(this.rules).forEach(function (rule) {
+        var selector = rule[0];
+        var rules = rule[1];
+        var element = _this2.form.querySelector(selector);
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+          for (var _iterator = rules[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var test = _step.value;
+
+            var output = _this2.validationTypes[test](element);
+            if (output !== true) {
+              validationErrors.push({
+                'element': element,
+                'selector': selector,
+                'error': output
+              });
+            }
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+              _iterator.return();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+      });
+
+      if (validationErrors.length === 0) {
+        if (this.emit('success', this.form)) {
+          this.form.submit();
+        }
+      } else {
+        this.emit('failure', validationErrors);
+      }
+    }
+  }]);
+
+  return FormValidation;
+}(_EventEmitter3.default);
+
+exports.default = FormValidation;
+
+/***/ }),
+/* 342 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * Event emitter class.
+ * Allows adding of event listeners (with on/off/once) which will be fired on emit call.
+ */
+var EventEmitter = function () {
+  function EventEmitter() {
+    _classCallCheck(this, EventEmitter);
+
+    this.listeners = {};
+  }
+
+  /**
+   * Attach a listener to a given event.
+   * @param {string} type Event type.
+   * @param {function} handler Callback to fire.
+   * @return {EventEmitter} this
+   */
+
+
+  _createClass(EventEmitter, [{
+    key: "on",
+    value: function on(type, handler) {
+      if (!this.listeners[type]) {
+        this.listeners[type] = [];
+      }
+      this.listeners[type].push(handler);
+      return this;
+    }
+
+    /**
+     * Attach a listener to a given event. The listener will be removed when the event is fired.
+     * @param {string} type Event type
+     * @param {function} handler Callback to fire.
+     * @return {EventEmitter} this
+     */
+
+  }, {
+    key: "once",
+    value: function once(type, handler) {
+      var _this = this;
+
+      var inner = function inner() {
+        handler.apply(undefined, arguments);
+        _this.off(type, inner);
+      };
+
+      this.on(type, inner.bind(this));
+    }
+
+    /**
+     * Remove a given handler from a event.
+     * @param {string} type Event type.
+     * @param {function} handler Handler to remove.
+     * @return {EventEmitter} this
+     */
+
+  }, {
+    key: "off",
+    value: function off(type, handler) {
+      if (!this.listeners[type]) {
+        throw new Error("No listener exists on the " + type + " event.");
+      }
+
+      var index = this.listeners[type].indexOf(handler);
+      if (index < 0) {
+        throw new Error("The provided handler for the " + type + " event did not exist.");
+      }
+
+      this.listeners.splice(index, 1);
+      return this;
+    }
+
+    /**
+     * Emit a given event.
+     * @param {string} type Event type.
+     * @param {...} args Arguments.
+     * @return {EventEmitter}
+     */
+
+  }, {
+    key: "emit",
+    value: function emit(type) {
+      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        args[_key - 1] = arguments[_key];
+      }
+
+      if (this.listeners[type].length > 0) {
+        this.listeners[type].forEach(function (listener) {
+          listener.apply(undefined, args);
+        });
+      }
+      return this;
+    }
+  }]);
+
+  return EventEmitter;
+}();
+
+exports.default = EventEmitter;
 
 /***/ })
 /******/ ]);
