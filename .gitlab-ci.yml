@@ -6,8 +6,8 @@ build:
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   script:
-    docker build -t ${CI_REGISTRY_IMAGE}:${TAG} --no-cache .
-    docker push ${CI_REGISTRY_IMAGE}:${TAG}
+    - docker build -t ${CI_REGISTRY_IMAGE}:${TAG} --no-cache .
+    - docker push ${CI_REGISTRY_IMAGE}:${TAG}
   after_script:
     - docker logout registry.gitlab.com
 
