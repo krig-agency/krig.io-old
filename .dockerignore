@@ -5,3 +5,4 @@ Dockerfile
 DOCS.md
 README.md
 .idea
+node_modules
