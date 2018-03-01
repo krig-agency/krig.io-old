@@ -21,7 +21,7 @@
   "semistandard": {
     "parser": "babel-eslint"
   },
-  "devDependencies": {
+  "dependencies": {
     "animejs": "^2.2.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
@@ -44,9 +44,7 @@
     "semistandard": "^11.0.0",
     "watch": "^1.0.2",
     "webpack": "^3.10.0",
-    "webpack-stream": "^4.0.0"
-  },
-  "dependencies": {
+    "webpack-stream": "^4.0.0",
     "babel-polyfill": "^6.26.0"
   }
 }
