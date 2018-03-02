@@ -8,7 +8,6 @@ stages:
   - image
   - deploy
 
-
 Build source:
   stage: build
   image: jitesoft/node-yarn
@@ -29,6 +28,7 @@ Test source:
       key: krig:modules
       paths:
         - node_modules/
+      policy: pull
 
 Docker build:
   stage: image
