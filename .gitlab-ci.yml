@@ -61,7 +61,7 @@ Deploy:
     - mkdir -p ~/.ssh
     - echo "${DOKKU_IDENTITY}" > ~/.ssh/known_hosts
   script:
-    - git remote set-url --add dokku ${USER}@${HOST}:${REPO}
+    - git remote add dokku ${USER}@${HOST}:${REPO} 2>/dev/null
     - git push dokku HEAD:${BRANCH} --force
   after_script:
     - ssh-add -D
