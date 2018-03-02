@@ -1,13 +1,43 @@
 variables:
-  TAG: ${CI_COMMIT_REF_NAME//\//\-}
+  TAG: ${CI_COMMIT_REF_NAME}
+  GIT_DEPTH: "1"
 
-build:
+stages:
+  - build
+  - test
+  - image
+  - deploy
+
+
+Build source:
+  stage: build
+  image: jitesoft/node-yarn
+  script:
+    - yarn global add gulp-cli
+    - yarn install
+  cache:
+    key: krig:modules
+    paths:
+      - node_modules/
+
+Test source:
+  stage: test
+  image: jitesoft/node-yarn
+  script:
+    yarn test
+  cache:
+      key: krig:modules
+      paths:
+        - node_modules/
+
+Docker build:
+  stage: image
   image: docker:latest
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   script:
-    - docker build -t ${CI_REGISTRY_IMAGE}:${TAG} --no-cache .
-    - docker push ${CI_REGISTRY_IMAGE}:${TAG}
+    - docker build -t ${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_NAME//\//\-} --no-cache .
+    - docker push ${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_NAME//\//\-}
   after_script:
     - docker logout registry.gitlab.com
   only:
@@ -15,7 +45,7 @@ build:
     - knacka
     - /^feature\/.*$/
 
-deploy:
+Deploy:
   stage: deploy
   image: alpine:latest
   variables:
