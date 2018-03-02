@@ -8,27 +8,28 @@ stages:
   - image
   - deploy
 
-Build source:
-  stage: build
-  image: jitesoft/node-yarn
-  script:
-    - yarn global add gulp-cli
-    - yarn install
-  cache:
-    key: krig:modules
-    paths:
-      - node_modules/
-
-Test source:
-  stage: test
-  image: jitesoft/node-yarn
-  script:
-    yarn test
-  cache:
-      key: krig:modules
-      paths:
-        - node_modules/
-      policy: pull
+#Build source:
+#  stage: build
+#  image: jitesoft/node-yarn
+#  script:
+#    - yarn global add gulp-cli
+#    - yarn install
+#    - gulp build
+#  cache:
+#    key: krig:modules
+#    paths:
+#      - node_modules/
+#
+#Test source:
+#  stage: test
+#  image: jitesoft/node-yarn
+#  script:
+#    yarn test
+#  cache:
+#      key: krig:modules
+#      paths:
+#        - node_modules/
+#      policy: pull
 
 Docker build:
   stage: image
