@@ -1,5 +1,5 @@
 variables:
-  TAG: ${CI_COMMIT_REF_NAME}
+  TAG: ${CI_COMMIT_REF_NAME//\//\-}
 
 build:
   image: docker:latest
@@ -10,6 +10,10 @@ build:
     - docker push ${CI_REGISTRY_IMAGE}:${TAG}
   after_script:
     - docker logout registry.gitlab.com
+  only:
+    - master
+    - knacka
+    - /^feature\/.*$/
 
 deploy:
   stage: deploy
