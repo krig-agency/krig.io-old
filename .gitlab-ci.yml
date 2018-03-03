@@ -62,7 +62,7 @@ Deploy:
     - echo "${DOKKU_IDENTITY}" > ~/.ssh/known_hosts
   script:
     - git remote add dokku ${USER}@${HOST}:${REPO} 2>/dev/null
-    - git push dokku HEAD:${BRANCH} --force
+    - git push dokku ${BRANCH} --force
   only:
     - master
     - knacka
