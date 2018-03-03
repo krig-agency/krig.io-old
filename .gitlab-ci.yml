@@ -43,6 +43,8 @@ Docker build:
     - docker logout registry.gitlab.com
   only:
     - /^feature\/.*$/
+    - master
+    - knacka
 
 Deploy:
   stage: deploy
