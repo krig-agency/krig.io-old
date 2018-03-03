@@ -48,7 +48,9 @@ Docker build:
 
 Deploy:
   stage: deploy
-  image: alpine:latest
+  image:
+    name: alpine:latest
+    entrypoint: /bin/ash
   variables:
     HOST: git.krig.cloud
     USER: dokku
@@ -61,7 +63,7 @@ Deploy:
     - mkdir -p ~/.ssh
     - echo "${DOKKU_IDENTITY}" > ~/.ssh/known_hosts
   script:
-    - if git remote | grep -sw "dokku" 2>&1>/dev/null; then echo "Remote existed." ; else git remote add dokku ${USER}@${HOST}:${REPO} ; fi
+    - if git remote | grep -sw "dokku" 2>>/dev/null; then echo "Remote existed." ; else git remote add dokku ${USER}@${HOST}:${REPO}; fi
     - git push dokku ${BRANCH} --force
   only:
     - master
