@@ -5,6 +5,7 @@ import 'jquery-scrollify';
 import 'babel-polyfill';
 import 'babel-core/register';
 import FormValidation from './FormValidation';
+import Texts from './texts';
 
 $(function () {
   $.scrollify({
@@ -48,4 +49,14 @@ $(function () {
       error.element.classList.add('error');
     });
   });
+
+  // Load texts.
+  let container;
+  for (let text in Texts) {
+    text = Texts[text];
+
+    container = document.querySelector(text.selector);
+    container.querySelector('.headline').innerHTML = text.header;
+    container.querySelector('.intro-text').innerHTML = text.text;
+  }
 });
