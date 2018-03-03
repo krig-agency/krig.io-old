@@ -42,16 +42,11 @@ Docker build:
   after_script:
     - docker logout registry.gitlab.com
   only:
-    - master
-    - knacka
     - /^feature\/.*$/
 
 Deploy:
   stage: deploy
-  image:
-    name: alpine:latest
-    entrypoint:
-      - "/bin/ash"
+  image: alpine:latest
   variables:
     HOST: git.krig.cloud
     USER: dokku
