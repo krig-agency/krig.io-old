@@ -50,7 +50,8 @@ Deploy:
   stage: deploy
   image:
     name: alpine:latest
-    entrypoint: /bin/ash
+    entrypoint:
+      - "/bin/ash"
   variables:
     HOST: git.krig.cloud
     USER: dokku
