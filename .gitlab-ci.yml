@@ -1,6 +1,5 @@
 variables:
   TAG: ${CI_COMMIT_REF_NAME}
-  GIT_DEPTH: "1"
 
 stages:
   - build
@@ -62,5 +61,4 @@ Deploy:
     - if git remote | grep -sw "dokku" 2>>/dev/null; then echo "Remote existed." ; else git remote add dokku ${USER}@${HOST}:${REPO}; fi
     - git push dokku HEAD:${BRANCH} --force
   only:
-    - master
     - knacka
