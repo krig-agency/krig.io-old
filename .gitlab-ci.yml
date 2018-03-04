@@ -1,6 +1,6 @@
 variables:
   TAG: ${CI_COMMIT_REF_NAME}
-  GIT_DEPTH: "1"
+  GIT_STRATEGY: clone
 
 stages:
   - build
@@ -42,9 +42,9 @@ Docker build:
   after_script:
     - docker logout registry.gitlab.com
   only:
+    - /^feature\/.*$/
     - master
     - knacka
-    - /^feature\/.*$/
 
 Deploy:
   stage: deploy
@@ -61,8 +61,7 @@ Deploy:
     - mkdir -p ~/.ssh
     - echo "${DOKKU_IDENTITY}" > ~/.ssh/known_hosts
   script:
-    - if git remote | grep -sw "dokku" 2>&1>/dev/null; then echo "Remote existed." ; else git remote add dokku ${USER}@${HOST}:${REPO} ; fi
-    - git push dokku ${BRANCH} --force
+    - if git remote | grep -sw "dokku" 2>>/dev/null; then echo "Remote existed." ; else git remote add dokku ${USER}@${HOST}:${REPO}; fi
+    - git push dokku HEAD:${BRANCH} --force
   only:
-    - master
     - knacka
