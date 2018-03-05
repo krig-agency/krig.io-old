@@ -4,6 +4,8 @@ import CookieConsent from './CookieConsent';
 import 'jquery-scrollify';
 import 'babel-polyfill';
 import 'babel-core/register';
+import FormValidation from './FormValidation';
+import Texts from './texts';
 
 $(function () {
   $.scrollify({
@@ -26,4 +28,35 @@ $(function () {
     script.src = './assets/js/postcookie.js';
     document.querySelector('body').appendChild(script);
   });
+
+  let formValidation = new FormValidation(
+    document.querySelector('form.pitch-form__form'),
+    {
+      'input[name="Description"]': [ 'not-empty' ],
+      'input[name="Budget"]': [ 'not-empty' ],
+      'input[name="Email"]': [ 'not-empty', 'email' ]
+    }
+  );
+
+  formValidation.on('change', (e) => {
+    e.classList.remove('error');
+  });
+
+  formValidation.on('success', () => true);
+
+  formValidation.on('failure', (validationErrors) => {
+    validationErrors.forEach((error) => {
+      error.element.classList.add('error');
+    });
+  });
+
+  // Load texts.
+  let container;
+  for (let text in Texts) {
+    text = Texts[text];
+
+    container = document.querySelector(text.selector);
+    container.querySelector('.headline').innerHTML = text.header;
+    container.querySelector('.intro-text').innerHTML = text.text;
+  }
 });
