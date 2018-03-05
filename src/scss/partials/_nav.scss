@@ -11,17 +11,20 @@
 
 .sticky--left {
   z-index: 100;
-  left: 0;
+  left: 8px;
   padding-left: 0px;
   right: auto;
   transform: translateY(-50%);
   position: fixed;
   top: 50%;
+
+  @media only screen and (min-width:768px) {
+    left: 0;
+  }
 }
 
 .social-nav__item {
   display: block;
-  width: 20px;
   opacity: .80;
   margin: 10px;
 
@@ -30,7 +33,12 @@
   }
 
   img {
-    width: 20px;
+    width: 16px;
+
+    @media only screen and (min-width:768px) {
+      width: 20px;
+      margin-left: 20px;
+    }
   }
   &:hover {
     transform: scale(1.2);

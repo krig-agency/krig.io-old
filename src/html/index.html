@@ -48,7 +48,7 @@
 
   <div class="cookies hidden">
     <p class="cookies__text">This website uses cookies to ensure you get the best experience on our website.</p></li>
-    <button class="btn cookies__accept">Got it!</button>
+    <button class="btn btn--cookies cookies__accept">Got it!</button>
   </div>
 
   <header>
@@ -83,15 +83,14 @@
         <section class="pitch-form">
           <div class="pitch-form__intro">
             <h1 class="pitch-form__headline">Elevator Pitch</h1>
-            <p class="pitch-form__lead">Pitch us your project and we'll get back to you shortly.</p>
           </div>
           <form class="pitch-form__form" action="">
             <label for="pitch-form-desc">Short descripton of the project</label>
-            <input type="text"
+            <textarea rows="3" type="text"
             id="pitch-form-desc"
             name="Description"
             title="Description"
-            placeholder="Tell us your visions!">
+            placeholder="Tell us your visions!"></textarea>
             <label for="pitch-form-budget">What's your estimated budget?</label>
             <input type="text"
             id="pitch-form-budget"
