@@ -19,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  max-width: 80%;
+  width: 80%;
 
   > .panel__content {
     padding-left: 77px;
@@ -32,20 +32,31 @@ body {
       padding-left: 66px;
       max-width: 80%;
     }
+
+    @media only screen and (min-width:1024px) {
+      max-width: 60%;
+    }
   }
 }
 
 .buddies-container {
-  max-width: 100%;
-  margin-top: 40PX;
+  margin-top: 36px;
   position: relative;
   z-index: 100;
 }
 
 .buddy {
-  max-height: 45px;
+  max-height: 55px;
+  max-width: 55px;
   width: auto;
   margin-right: 15px;
+
+  @media only screen and (min-width:1024px) {
+    max-height: 86px;
+    max-width: 115px;
+    margin-right: 35px;
+    margin-bottom: 24px;
+  }
 }
 
 path {
