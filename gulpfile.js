@@ -12,7 +12,7 @@ const replace = require('gulp-replace');
 const eslint = require('gulp-eslint');
 const webpack = require('webpack-stream');
 const outDir = 'app';
-const env = process.env.ENV;
+const env = process.env.NODE_ENV;
 
 const includes = [
   { name: 'assets/js/scripts.js', dev: 'assets/js/scripts.js', prod: 'assets/js/scripts.min.js' },

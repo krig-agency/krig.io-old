@@ -1,0 +1,67 @@
+variables:
+  TAG: ${CI_COMMIT_REF_NAME}
+  GIT_STRATEGY: clone
+
+stages:
+  - build
+  - test
+  - image
+  - deploy
+
+#Build source:
+#  stage: build
+#  image: jitesoft/node-yarn
+#  script:
+#    - yarn global add gulp-cli
+#    - yarn install
+#    - gulp build
+#  cache:
+#    key: krig:modules
+#    paths:
+#      - node_modules/
+#
+#Test source:
+#  stage: test
+#  image: jitesoft/node-yarn
+#  script:
+#    yarn test
+#  cache:
+#      key: krig:modules
+#      paths:
+#        - node_modules/
+#      policy: pull
+
+Docker build:
+  stage: image
+  image: docker:latest
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
+  script:
+    - docker build -t ${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_NAME//\//\-} --no-cache .
+    - docker push ${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_NAME//\//\-}
+  after_script:
+    - docker logout registry.gitlab.com
+  only:
+    - /^feature\/.*$/
+    - master
+    - knacka
+
+Deploy:
+  stage: deploy
+  image: alpine:latest
+  variables:
+    HOST: git.krig.cloud
+    USER: dokku
+    REPO: knacka.krig.io
+    BRANCH: ${CI_COMMIT_REF_NAME}
+  before_script:
+    - apk add --no-cache openssh-client git
+    - eval $(ssh-agent -s)
+    - echo "${DEPLOY_KEY}" | ssh-add -
+    - mkdir -p ~/.ssh
+    - echo "${DOKKU_IDENTITY}" > ~/.ssh/known_hosts
+  script:
+    - if git remote | grep -sw "dokku" 2>>/dev/null; then echo "Remote existed." ; else git remote add dokku ${USER}@${HOST}:${REPO}; fi
+    - git push dokku HEAD:${BRANCH} --force
+  only:
+    - knacka
