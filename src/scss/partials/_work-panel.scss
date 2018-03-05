@@ -1,33 +1,27 @@
 
 .pitch-form {
-  max-width: 100%;
+  width: 100%;
   padding: 0 7%;
+  color: #fff;
 }
 
-.pitch-text{
-  color: #fff;
+.pitch-form__intro {
+
   text-align: left;
 }
 
-.pitch-form-text {
-  border: 1px #fff;
-  background: transparent;
-  color: #fff;
-  border-style: solid;
-  border-radius: 4px;
-  width: 100%;
-  padding: 10px 10px 50px;
-  margin-bottom: 25px;
-  font-size: 0.65rem;
-  color: $color-terminal;
+.pitch-form__form {
+  font-size: 0.75rem;
 
-  &::placeholder {
-    color: $color-terminal;
+  label {
+    display: block;
   }
 
-  &:focus  {
-    outline: none;
-    border-color: $color-terminal;
+  input,
+  textarea {
+    width: 100%;
+    margin: 5px 0 30px;
+    padding: 5px 7px;
   }
 
   @media only screen and (min-width:768px) {
@@ -35,42 +29,11 @@
   }
 }
 
-.pitch-button-send {
-  border-style: none;
-  width: 50%;
-  height: 46px;
-  border: none;
-  background: #fff;
-  border-radius: 100px;
-  margin: 0 auto;
-  display: block;
-  margin-top: 10px;
-  font-size: 0.65rem;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:focus {
-    border: none;
-    outline: none;
-  }
-
-  @media only screen and (max-width:480px) {
-    width: 90%;
-    font-size: 0.75rem;
-  }
-
-  @media only screen and (max-width:768px) {
-    width: 60%;
-  }
-}
-
 .work-panel {
   display: flex;
   align-items: center;
   position: fixed;
-  z-index: 1;
+  z-index: 150;
   top: 0;
   right: calc((-90vw) + 50px);
   width: 90vw;
