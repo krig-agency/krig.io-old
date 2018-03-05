@@ -46,8 +46,8 @@ body {
 }
 
 .buddy {
-  max-height: 55px;
-  max-width: 55px;
+  max-height: 36px;
+  max-width: 36px;
   width: auto;
   margin-right: 15px;
 
@@ -56,6 +56,8 @@ body {
     max-width: 115px;
     margin-right: 35px;
     margin-bottom: 24px;
+    max-height: 55px;
+    max-width: 55px;
   }
 }
 
