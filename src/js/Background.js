@@ -37,18 +37,24 @@ export default class Background {
     // Subscribe events.
     window.addEventListener('resize', this.resize.bind(this));
 
-    this.mousePoint = Object.assign({}, this.points[0]);
-    this.mousePoint.alpha = 0;
-    this.points.push(this.mousePoint);
+    this.mousePoint = {
+      pos: this.getRandomPos(true),
+      velocity: new Point(0, 0),
+      color: new Color(230, 230, 230, 1),
+      alpha: 0,
+      r: 2,
+      phase: Math.random() * 10
+    };
 
     if (DeviceDetector.isMobile() === false) {
-      window.addEventListener('mouseenter', () => {
-        this.mousePoint.velocity = new Point(0, 0);
+      document.addEventListener('mouseenter', () => {
+        this.points.push(this.mousePoint);
       });
-      window.addEventListener('mouseleave', () => {
+      document.addEventListener('mouseleave', () => {
         this.mousePoint.pos = new Point(0, 0);
+        this.points = this.points.filter(p => p !== this.mousePoint);
       });
-      window.addEventListener('mousemove', (event) => {
+      document.addEventListener('mousemove', (event) => {
         this.mousePoint.pos.X = event.clientX;
         this.mousePoint.pos.Y = event.clientY;
       });

@@ -19584,18 +19584,26 @@ var Background = function () {
     // Subscribe events.
     window.addEventListener('resize', this.resize.bind(this));
 
-    this.mousePoint = Object.assign({}, this.points[0]);
-    this.mousePoint.alpha = 0;
-    this.points.push(this.mousePoint);
+    this.mousePoint = {
+      pos: this.getRandomPos(true),
+      velocity: new _Point2.default(0, 0),
+      color: new _Color2.default(230, 230, 230, 1),
+      alpha: 0,
+      r: 2,
+      phase: Math.random() * 10
+    };
 
     if (_DeviceDetector2.default.isMobile() === false) {
-      window.addEventListener('mouseenter', function () {
-        _this.mousePoint.velocity = new _Point2.default(0, 0);
+      document.addEventListener('mouseenter', function () {
+        _this.points.push(_this.mousePoint);
       });
-      window.addEventListener('mouseleave', function () {
+      document.addEventListener('mouseleave', function () {
         _this.mousePoint.pos = new _Point2.default(0, 0);
+        _this.points = _this.points.filter(function (p) {
+          return p !== _this.mousePoint;
+        });
       });
-      window.addEventListener('mousemove', function (event) {
+      document.addEventListener('mousemove', function (event) {
         _this.mousePoint.pos.X = event.clientX;
         _this.mousePoint.pos.Y = event.clientY;
       });
