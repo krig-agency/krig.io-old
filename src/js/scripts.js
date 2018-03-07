@@ -2,7 +2,6 @@ import Background from './Background';
 import $ from 'jquery';
 import { CookieConsent } from 'cookie-sanction';
 import 'jquery-scrollify';
-import 'babel-polyfill';
 import 'babel-core/register';
 import FormValidation from './FormValidation';
 import Texts from './texts';
