@@ -1,11 +1,3 @@
-/*!
- * Krig.io
- * Krig.io webpage, using the fastshell boilerplate.
- * https://krig.io
- * @author Krig.io
- * @version 1.0.0
- * Copyright 2018. UNLICENSED licensed.
- */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -68,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 128);
+/******/ 	return __webpack_require__(__webpack_require__.s = 127);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -2963,35 +2955,30 @@ module.exports = navigator && navigator.userAgent || '';
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global) {
 
-__webpack_require__(129);
 
-__webpack_require__(326);
-
-__webpack_require__(327);
-
-if (global._babelPolyfill) {
-  throw new Error("only one instance of babel-polyfill is allowed");
-}
-global._babelPolyfill = true;
-
-var DEFINE_PROPERTY = "defineProperty";
-function define(O, key, value) {
-  O[key] || Object[DEFINE_PROPERTY](O, key, {
-    writable: true,
-    configurable: true,
-    value: value
-  });
-}
-
-define(String.prototype, "padLeft", "".padStart);
-define(String.prototype, "padRight", "".padEnd);
-
-"pop,reverse,shift,keys,values,entries,indexOf,every,some,forEach,map,filter,find,findIndex,includes,join,slice,concat,push,splice,unshift,sort,lastIndexOf,reduce,reduceRight,copyWithin,fill".split(",").forEach(function (key) {
-  [][key] && define(Array, key, Function.call.bind([][key]));
-});
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(91)))
+module.exports = function (module) {
+	if (!module.webpackPolyfill) {
+		module.deprecate = function () {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function get() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function get() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
 
 /***/ }),
 /* 91 */
@@ -4029,36 +4016,6 @@ module.exports = Math.scale || function scale(x, inLow, inHigh, outLow, outHigh)
 
 /***/ }),
 /* 126 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function (module) {
-	if (!module.webpackPolyfill) {
-		module.deprecate = function () {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function get() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function get() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-/***/ }),
-/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13891,15 +13848,50 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	return jQuery;
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(126)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(90)(module)))
+
+/***/ }),
+/* 127 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(128);
+module.exports = __webpack_require__(330);
+
 
 /***/ }),
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(90);
-module.exports = __webpack_require__(330);
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {
 
+__webpack_require__(129);
+
+__webpack_require__(326);
+
+__webpack_require__(327);
+
+if (global._babelPolyfill) {
+  throw new Error("only one instance of babel-polyfill is allowed");
+}
+global._babelPolyfill = true;
+
+var DEFINE_PROPERTY = "defineProperty";
+function define(O, key, value) {
+  O[key] || Object[DEFINE_PROPERTY](O, key, {
+    writable: true,
+    configurable: true,
+    value: value
+  });
+}
+
+define(String.prototype, "padLeft", "".padStart);
+define(String.prototype, "padRight", "".padEnd);
+
+"pop,reverse,shift,keys,values,entries,indexOf,every,some,forEach,map,filter,find,findIndex,includes,join,slice,concat,push,splice,unshift,sort,lastIndexOf,reduce,reduceRight,copyWithin,fill".split(",").forEach(function (key) {
+  [][key] && define(Array, key, Function.call.bind([][key]));
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(91)))
 
 /***/ }),
 /* 129 */
@@ -19380,7 +19372,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 // object, this seems to be the most reliable technique that does not
 // use indirect eval (which violates Content Security Policy).
 (typeof global === "undefined" ? "undefined" : _typeof(global)) === "object" ? global : (typeof window === "undefined" ? "undefined" : _typeof(window)) === "object" ? window : (typeof self === "undefined" ? "undefined" : _typeof(self)) === "object" ? self : undefined);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(91), __webpack_require__(126)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(91), __webpack_require__(90)(module)))
 
 /***/ }),
 /* 327 */
@@ -19434,25 +19426,21 @@ var _Background = __webpack_require__(331);
 
 var _Background2 = _interopRequireDefault(_Background);
 
-var _jquery = __webpack_require__(127);
+var _jquery = __webpack_require__(126);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _CookieConsent = __webpack_require__(336);
+var _cookieSanction = __webpack_require__(336);
 
-var _CookieConsent2 = _interopRequireDefault(_CookieConsent);
+__webpack_require__(337);
 
 __webpack_require__(338);
 
-__webpack_require__(90);
-
-__webpack_require__(339);
-
-var _FormValidation = __webpack_require__(341);
+var _FormValidation = __webpack_require__(340);
 
 var _FormValidation2 = _interopRequireDefault(_FormValidation);
 
-var _texts = __webpack_require__(343);
+var _texts = __webpack_require__(342);
 
 var _texts2 = _interopRequireDefault(_texts);
 
@@ -19472,12 +19460,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     menu.classList.toggle('open');
   });
 
-  new _CookieConsent2.default().show().then(function () {
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = './assets/js/postcookie.js';
-    document.querySelector('body').appendChild(script);
+  var cookieConsent = new _cookieSanction.CookieConsent({
+    element: 'div.cookies',
+    cookie: 'accept-cookies',
+    cookieValue: 'true',
+    acceptButton: '.cookies__accept'
+  });
+
+  cookieConsent.active().then(function (accepted) {
+    if (accepted) {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = './assets/js/postcookie.js';
+      document.querySelector('body').appendChild(script);
+    }
+  }).catch(function (error) {
+    console.error(error);
+    document.querySelector('div.cookies').classList.add('hidden');
   });
 
   var formValidation = new _FormValidation2.default(document.querySelector('form.pitch-form__form'), {
@@ -19974,151 +19974,127 @@ exports.default = DeviceDetector;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+/* WEBPACK VAR INJECTION */(function(module) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _CookieParser = __webpack_require__(337);
-
-var _CookieParser2 = _interopRequireDefault(_CookieParser);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-/**
- * Class to handle the cookie consent message.
- */
-var CookieConsent = function () {
-  function CookieConsent() {
-    _classCallCheck(this, CookieConsent);
-
-    this.element = document.querySelector('div.cookies');
-  }
-
-  /**
-   * Show the cookie consent dialog.
-   */
-
-
-  _createClass(CookieConsent, [{
-    key: 'show',
-    value: function () {
-      var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-        var _this = this;
-
-        return regeneratorRuntime.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                return _context.abrupt('return', new Promise(function (resolve) {
-                  if (_CookieParser2.default.getValue('accept-cookies')) {
-                    resolve();
-                  } else {
-                    _this.element.classList.remove('hidden');
-                    _this.element.addEventListener('click', function () {
-                      _this.element.classList.add('hidden');
-                      document.cookie = 'accept-cookies=true';
-                      resolve();
-                    });
-                  }
-                }));
-
-              case 1:
-              case 'end':
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      function show() {
-        return _ref.apply(this, arguments);
+!function (e, t) {
+  "object" == ( false ? "undefined" : _typeof(exports)) && "object" == ( false ? "undefined" : _typeof(module)) ? module.exports = t() :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : "object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) ? exports.CookieConsent = t() : e.CookieConsent = t();
+}(window, function () {
+  return function (e) {
+    var t = {};function o(n) {
+      if (t[n]) return t[n].exports;var i = t[n] = { i: n, l: !1, exports: {} };return e[n].call(i.exports, i, i.exports, o), i.l = !0, i.exports;
+    }return o.m = e, o.c = t, o.d = function (e, t, n) {
+      o.o(e, t) || Object.defineProperty(e, t, { configurable: !1, enumerable: !0, get: n });
+    }, o.r = function (e) {
+      Object.defineProperty(e, "__esModule", { value: !0 });
+    }, o.n = function (e) {
+      var t = e && e.__esModule ? function () {
+        return e.default;
+      } : function () {
+        return e;
+      };return o.d(t, "a", t), t;
+    }, o.o = function (e, t) {
+      return Object.prototype.hasOwnProperty.call(e, t);
+    }, o.p = "", o(o.s = 0);
+  }([function (e, t, o) {
+    "use strict";
+    o.r(t);
+    var n = function () {
+      function n() {
+        _classCallCheck(this, n);
       }
 
-      return show;
-    }()
+      _createClass(n, [{
+        key: "getValue",
+        value: function getValue(e) {
+          var t = this._parseCookies();return void 0 !== t[e] ? t[e] : null;
+        }
+      }, {
+        key: "createCookie",
+        value: function createCookie(e, t) {
+          document.cookie = e + "=" + t;
+        }
+      }, {
+        key: "_parseCookies",
+        value: function _parseCookies() {
+          var e = document.cookie.split(";"),
+              t = {},
+              o = [];for (var _n = 0; _n < e.length; _n++) {
+            t[(o = e[_n].trim().split("="))[0]] = o[1];
+          }return t;
+        }
+      }]);
+
+      return n;
+    }();
+
+    var i = { element: "div.cookie-consent", cookie: "accept-cookies", cookieValue: "accepted", hiddenClass: "hidden", acceptButton: 'div.cookie-consent button[name="accept"]', rejectButton: 'div.cookie-consent button[name="reject"]' };var r = function () {
+      function r(e) {
+        _classCallCheck(this, r);
+
+        this.options = Object.assign(i, e), this.cookieHandler = new n();
+      }
+
+      _createClass(r, [{
+        key: "hide",
+        value: function hide(e) {
+          e.classList.add(this.options.hiddenClass);
+        }
+      }, {
+        key: "active",
+        value: function () {
+          var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            var _this = this;
+
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    return _context.abrupt("return", new Promise(function (e, t) {
+                      var o = document.querySelector(_this.options.element);if (!o) return _this.hide(o), t(new Error("Failed to locate element to apply cookie consent code to."));if (null !== _this.cookieHandler.getValue(_this.options.cookie)) return _this.hide(o), e(!0);var n = o.querySelector(_this.options.acceptButton),
+                          i = o.querySelector(_this.options.rejectButton);if (null === n) return _this.hide(o), t(new Error("Failed to locate the accept button."));n.addEventListener("click", function () {
+                        _this.cookieHandler.createCookie(_this.options.cookie, _this.options.cookieValue), _this.hide(o), e(!0);
+                      }), null !== i && i.addEventListener("click", function () {
+                        return _this.hide(o), e(!1);
+                      }), o.classList.remove(_this.options.hiddenClass);
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee, this);
+          }));
+
+          function active() {
+            return _ref.apply(this, arguments);
+          }
+
+          return active;
+        }()
+      }]);
+
+      return r;
+    }();o.d(t, "CookieConsent", function () {
+      return r;
+    });t.default = r;
   }]);
-
-  return CookieConsent;
-}();
-
-exports.default = CookieConsent;
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(90)(module)))
 
 /***/ }),
 /* 337 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Class used to parse cookies from the local page.
- * Uses document.cookie to fetch cookies.
- */
-var CookieParser = function () {
-  function CookieParser() {
-    _classCallCheck(this, CookieParser);
-  }
-
-  _createClass(CookieParser, null, [{
-    key: 'getValue',
-
-    /**
-     * Get value from a cookie.
-     * @param {string} name
-     * @return {null|string|bool|number}
-     */
-    value: function getValue(name) {
-      var parsed = CookieParser.parseCookies();
-      if (parsed[name] !== undefined) {
-        return parsed[name];
-      }
-      return null;
-    }
-
-    /**
-     * Parses the pages cookies.
-     * @return {{string: name, mixed: value}}
-     */
-
-  }, {
-    key: 'parseCookies',
-    value: function parseCookies() {
-      var cookies = document.cookie.split(';');
-      var fixed = {};
-      var spl = [];
-
-      for (var i = 0; i < cookies.length; i++) {
-        spl = cookies[i].trim().split('=');
-        fixed[spl[0]] = spl[1];
-      }
-
-      return fixed;
-    }
-  }]);
-
-  return CookieParser;
-}();
-
-exports.default = CookieParser;
-
-/***/ }),
-/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20163,7 +20139,7 @@ if touchScroll is false - update index
 
   if (true) {
     // AMD. Register as an anonymous module.
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(127)], __WEBPACK_AMD_DEFINE_RESULT__ = (function ($) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(126)], __WEBPACK_AMD_DEFINE_RESULT__ = (function ($) {
       return factory($, global, global.document);
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -20955,7 +20931,7 @@ if touchScroll is false - update index
 });
 
 /***/ }),
-/* 339 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20963,10 +20939,10 @@ if touchScroll is false - update index
 
 /* eslint max-len: 0 */
 // TODO: eventually deprecate this console.trace("use the `babel-register` package instead of `babel-core/register`");
-module.exports = __webpack_require__(340);
+module.exports = __webpack_require__(339);
 
 /***/ }),
-/* 340 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20979,7 +20955,7 @@ exports.default = function () {};
 module.exports = exports["default"];
 
 /***/ }),
-/* 341 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20991,7 +20967,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _EventEmitter2 = __webpack_require__(342);
+var _EventEmitter2 = __webpack_require__(341);
 
 var _EventEmitter3 = _interopRequireDefault(_EventEmitter2);
 
@@ -21107,7 +21083,7 @@ var FormValidation = function (_EventEmitter) {
 exports.default = FormValidation;
 
 /***/ }),
-/* 342 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21222,7 +21198,7 @@ var EventEmitter = function () {
 exports.default = EventEmitter;
 
 /***/ }),
-/* 343 */
+/* 342 */
 /***/ (function(module, exports) {
 
 module.exports = {"intro":{"header":"A freelance collective","text":"<string class='krig'>KRIG</strong> is a collective of freelancers and independent companies within tech and digital design. We have a wide knowledge within our fields and have grown out of the large corporate company structure. We know what we are doing, give us a task and we will solve it!","selector":"div.intro"},"about":{"header":"About","text":"<strong class='krig'>KRIG</strong> consists of about 30 hand picked senior developers and designers. Together we have knowledge within UX design, UI design, graphics design, handheld development, web development, motion design, back-end development, DevOps and much much more.","selector":"div.about"},"buddies":{"header":"Buddies","text":"<strong class='krig'>Here</strong> is a selection of some of our awesome buddies, associates, partners and clients that we <3","selector":"div.buddies"}}
