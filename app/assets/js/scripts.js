@@ -19481,7 +19481,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   });
 
   var formValidation = new _FormValidation2.default(document.querySelector('form.pitch-form__form'), {
-    'input[name="Description"]': ['not-empty'],
+    'textarea[name="Description"]': ['not-empty'],
     'input[name="Budget"]': ['not-empty'],
     'input[name="Email"]': ['not-empty', 'email']
   });

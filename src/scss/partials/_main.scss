@@ -51,12 +51,27 @@ body {
 
 .buddy {
   max-width: 36px;
-  width: auto;
+  height: auto;
   margin-right: 15px;
 
+    &:hover {
+      transform: scale(1.05);
+      background: transparent;
+    }
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+
+
+  @media only screen and (min-width:480px) {
+    max-width: 56px;
+  }
+
   @media only screen and (min-width:1024px) {
-    max-height: 86px;
-    width: auto;
+    max-width: 76px;
+    height: auto;
     margin-right: 35px;
     margin-bottom: 24px;
   }

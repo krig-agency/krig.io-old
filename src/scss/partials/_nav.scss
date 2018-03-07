@@ -66,6 +66,15 @@
     color: #000;
     display: inline-block;
 
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+
     @media only screen and (min-width:768px) {
       font-size: 0.75rem;
     }
@@ -76,6 +85,15 @@
     margin-left: 10px;
     font-style: normal;
     font-size: 0.65rem;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
 
     @media only screen and (min-width:768px) {
       margin-left: 20px;
