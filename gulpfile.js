@@ -73,14 +73,21 @@ let jsCompile = () => {
             test: /\.js$/,
             loader: 'babel-loader',
             options: {
-              presets: ['env']
+              presets: [
+                [
+                  'env', {
+                    targets: {
+                      browsers: [ 'since 2015' ]
+                    }
+                  }
+                ]
+              ]
             }
           }]
         }
       }
     ))
     .pipe(sourcemaps.init())
-    .pipe(header(banner, { package: pkg }))
     .pipe(gulp.dest(outDir + '/assets/js'))
     .pipe(uglify())
     .pipe(header(banner, { package: pkg }))

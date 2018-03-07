@@ -1,8 +1,7 @@
 import Background from './Background';
 import $ from 'jquery';
-import CookieConsent from './CookieConsent';
+import { CookieConsent } from 'cookie-sanction';
 import 'jquery-scrollify';
-import 'babel-polyfill';
 import 'babel-core/register';
 import FormValidation from './FormValidation';
 import Texts from './texts';
@@ -21,12 +20,24 @@ $(function () {
     menu.classList.toggle('open');
   });
 
-  (new CookieConsent()).show().then(() => {
-    let script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = './assets/js/postcookie.js';
-    document.querySelector('body').appendChild(script);
+  const cookieConsent = new CookieConsent({
+    element: 'div.cookies',
+    cookie: 'accept-cookies',
+    cookieValue: 'true',
+    acceptButton: '.cookies__accept'
+  });
+
+  cookieConsent.active().then((accepted) => {
+    if (accepted) {
+      let script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = './assets/js/postcookie.js';
+      document.querySelector('body').appendChild(script);
+    }
+  }).catch((error) => {
+    console.error(error);
+    document.querySelector('div.cookies').classList.add('hidden');
   });
 
   let formValidation = new FormValidation(
