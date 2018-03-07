@@ -1,9 +1,7 @@
-# FastShell
-# https://HosseinKarami.github.io/fastshell
-# @author Hossein Karami
 /.idea/
 .env
-
+/app/*
+!app/.gitkeep
 
 ## Node.js
 lib-cov
@@ -37,8 +35,3 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
-
-README 2.md
-
-
-package-lock.json
