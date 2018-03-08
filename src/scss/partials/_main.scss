@@ -20,6 +20,7 @@ body {
   align-items: center;
   position: relative;
   width: 80%;
+  z-index: 100;
 
   > .panel__content {
     padding-left: 55px;
@@ -42,6 +43,11 @@ body {
       line-height: 1.8;
     }
   }
+}
+
+.intro-text-about{
+  background: #fff;
+  display: inline;
 }
 
 .buddies-container {
@@ -110,6 +116,14 @@ canvas {
   width: 100%;
   opacity: .7;
   box-sizing: border-box;
+}
+
+.team_content{
+  max-width: 55%;
+  position: absolute;
+  left: 53%;
+  top: 15%;
+  z-index: -1;
 }
 
 .team-photo {
