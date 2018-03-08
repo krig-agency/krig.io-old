@@ -125,3 +125,27 @@
     }
   }
 }
+
+.sticky--bottom-mobile-nav__item {
+  display: inline-block;
+  opacity: .80;
+  margin: 10px;
+  position: fixed;
+  margin-left: 10px;
+
+  @media only screen and (min-width:768px) {
+    margin-left: 20px;
+  }
+
+  img {
+    width: 16px;
+
+    @media only screen and (min-width:768px) {
+      width: 20px;
+      margin-left: 20px;
+    }
+  }
+  &:hover {
+    transform: scale(1.2);
+  }
+}
