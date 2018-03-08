@@ -1533,10 +1533,6 @@ convert-source-map@1.X, convert-source-map@^1.1.1, convert-source-map@^1.5.0:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.5.1.tgz#b8278097b9bc229365de5c62cf5fcaed8b5599e5"
 
-cookie-sanction@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/cookie-sanction/-/cookie-sanction-1.0.0.tgz#ce0670dd586de66fdc0421dcf2faa7c1ed5f4ba9"
-
 cookie@0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
