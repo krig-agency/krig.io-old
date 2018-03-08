@@ -34,7 +34,8 @@ body {
     }
 
     @media only screen and (min-width:1024px) {
-      max-width: 60%;
+      padding-left: 136px;
+      max-width: 75%;
     }
 
     p {
@@ -109,4 +110,8 @@ canvas {
   width: 100%;
   opacity: .7;
   box-sizing: border-box;
+}
+
+.team-photo {
+  max-width: 100%;
 }
