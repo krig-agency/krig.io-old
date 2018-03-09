@@ -39,11 +39,17 @@ p {
   font-size: 1rem;
   line-height: 2;
 
+
   &.under-text {
     margin-bottom: 30px;
-
   }
+
+
   @media only screen and (max-width:480px) {
     font-size: 0.75rem;
   }
+}
+
+p .krig{
+  font-weight: bold;
 }
