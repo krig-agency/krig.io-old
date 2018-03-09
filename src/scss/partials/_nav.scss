@@ -87,7 +87,13 @@
     font-size: 0.65rem;
 
     &:hover {
+        cursor: url('../img/cursor.png') 0 0, auto;
+        cursor: -webkit-image-set(
+        url('../img/cursor.png') 1x,
+        url('../img/cursor.png') 2x
+      ), auto;
       transform: scale(1.05);
+      box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.12);
     }
 
     &:focus {
@@ -97,12 +103,6 @@
 
     @media only screen and (min-width:768px) {
       margin-left: 20px;
-    }
-
-    &:hover {
-      .saker-icon {
-        fill: $color-details;
-      }
     }
   }
 

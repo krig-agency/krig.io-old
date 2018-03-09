@@ -60,11 +60,17 @@ body {
   max-width: 36px;
   height: auto;
   margin-right: 15px;
+  background: transparent;
 
     &:hover {
-      transform: scale(1.05);
-      background: transparent;
-    }
+      cursor: url('../img/cursor.png') 0 0, auto;
+      cursor: -webkit-image-set(
+      url('../img/cursor.png') 1x,
+      url('../img/cursor.png') 2x
+    ), auto;
+    transform: scale(1.05);
+  }
+
 
     &:focus {
       border: none;
@@ -124,6 +130,14 @@ canvas {
   left: 53%;
   top: 15%;
   z-index: -1;
+
+  @media only screen and (min-width:768px) {
+      top: 33%;
+  }
+
+  @media only screen and (min-width:1024px) {
+      top: 25%;
+  }
 }
 
 .team-photo {
