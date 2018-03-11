@@ -10,7 +10,7 @@
 }
 
 .sticky--left {
-  z-index: 100;
+  z-index: 150;
   left: 8px;
   padding-left: 0px;
   right: auto;
@@ -47,7 +47,7 @@
 
 .sticky--bottom {
   position: fixed;
-  z-index: 0;
+  z-index: 150;
   bottom: 15px;
   width: 100%;
   left: 20px;
@@ -86,6 +86,7 @@
     font-style: normal;
     font-size: 0.65rem;
 
+
     &:hover {
         cursor: url('../img/cursor.png') 0 0, auto;
         cursor: -webkit-image-set(
@@ -93,7 +94,6 @@
         url('../img/cursor.png') 2x
       ), auto;
       transform: scale(1.05);
-      box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.12);
       }
 
     &:focus {
