@@ -6,7 +6,7 @@
   font-family: $font-saker;
   font-weight: 900;
   font-style: italic;
-  font-size: 1rem;
+  font-size: 0.75rem;
   color: #fff;
   background-color: $color-details;
   border: none;
@@ -19,10 +19,10 @@
   }
 
   &:hover {
-    cursor: url('../img/cursor.png') 0 0, auto;
+    cursor: url('../img/cursor-blk.png') 0 0, auto;
     cursor: -webkit-image-set(
-    url('../img/cursor.png') 1x,
-    url('../img/cursor.png') 2x
+    url('../img/cursor-blk.png') 1x,
+    url('../img/cursor-blk.png') 2x
   ), auto;
     transform: scale(1.05);
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.12);
@@ -34,8 +34,10 @@
   }
 }
 
-.btn--cookies {
-  font-size: 0.65rem;
+.btn.btn--cookies {
+  font-size: 0.75rem;
+  background-color: $color-app;
+  color: $color-details;
 }
 
 input.btn--form {
@@ -43,10 +45,10 @@ input.btn--form {
   width: auto;
 
   &:hover {
-      cursor: url('../img/cursor.png') 0 0, auto;
+      cursor: url('../img/cursor.png-blk') 0 0, auto;
       cursor: -webkit-image-set(
-      url('../img/cursor.png') 1x,
-      url('../img/cursor.png') 2x
+      url('../img/cursor-blk.png') 1x,
+      url('../img/cursor-blk.png') 2x
     ), auto;
     transform: scale(1.05);
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.12);
