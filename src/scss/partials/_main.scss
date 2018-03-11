@@ -45,6 +45,18 @@ body {
   }
 }
 
+.about .headline {
+  background: #fff;
+  display: block;
+  clear: both;
+  width: auto;
+  width: 30%;
+
+  @media only screen and (min-width:768px) {
+    background: transparent;
+  }
+}
+
 .intro-text-about{
   background: #fff;
   display: inline;
@@ -125,14 +137,16 @@ canvas {
 }
 
 .team_content{
-  max-width: 55%;
-  position: absolute;
-  left: 53%;
-  top: 15%;
-  z-index: -1;
+    z-index: -1;
+    top: 18%;
+    position: absolute;
+
 
   @media only screen and (min-width:768px) {
       top: 33%;
+      max-width: 55%;
+      left: 53%;
+
   }
 
   @media only screen and (min-width:1024px) {
