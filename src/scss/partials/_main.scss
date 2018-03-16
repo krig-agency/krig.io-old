@@ -45,15 +45,14 @@ body {
   }
 }
 
-.about.headline {
+.about .headline {
   background: #fff;
   display: block;
   clear: both;
-  width: auto;
   width: 30%;
 
-  @media only screen and (min-width:768px) {
-    width: 25%;
+  @media only screen and (min-width:480px) {
+    background: #fff;
   }
 
   @media only screen and (min-width:768px) {
