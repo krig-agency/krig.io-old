@@ -16,27 +16,26 @@ body {
 
 .panel {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
-  width: 80%;
+  width: 100%;
   z-index: 100;
 
   > .panel__content {
-    padding-left: 55px;
+      padding-left: 12%;
+      max-width: 80%;
 
     @media only screen and (min-width:480px) {
-      padding-left: 97px;
+      padding-left: 15%;
     }
 
     @media only screen and (min-width:768px) {
-      padding-left: 66px;
       max-width: 80%;
     }
 
     @media only screen and (min-width:1024px) {
-      padding-left: 75px;
-      max-width: 63%;
+      max-width: 70%;
     }
 
     p {
@@ -137,18 +136,18 @@ canvas {
 
 .team_content{
   z-index: -1;
-  top: 18%;
+  top: 50%;
+  transform: translateY(-50%);
   position: absolute;
 
   @media only screen and (min-width:768px) {
-    top: 33%;
-    max-width: 55%;
-    left: 53%;
+    max-width: 50%;
+    left: 40%;
   }
 
-  @media only screen and (min-width:1024px) {
-    top: 25%;
-  }
+  // @media only screen and (min-width:1024px) {
+  //   // top: 25%;
+  // }
 }
 
 .team-photo {
