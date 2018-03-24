@@ -1,164 +1,203 @@
-import Point from './Point';
-import Rect from './Rect';
-import Color from './Color';
 import DeviceDetector from './DeviceDetector';
 
-export default class Background {
-  /**
-   * @param {Element} canvasElement
-   * @param {{pointCount: Number, pointSpeed: Number}} config
-   */
-  constructor (canvasElement, config = {pointCount: 50, pointSpeed: 50}) {
-    this.pointSpeed = config.pointSpeed;
-    let totalPointCount = DeviceDetector.isMobile() ? config.pointCount / 3 : config.pointCount;
-    this.canvas = canvasElement;
-    this.context = this.canvas.getContext('2d');
-    this.rect = new Rect(0, 0, parseFloat(window.innerWidth), parseFloat(window.innerHeight));
+export default function Background (canvas) {
+  const pointSpeed = 50;
+  const totalPointCount = DeviceDetector.isMobile() ? 17 : 50;
 
-    this.canvas.setAttribute('width', this.rect.Width);
-    this.canvas.setAttribute('height', this.rect.Height);
+  const context = canvas.getContext('2d');
 
-    this.maxDistance = 260;
+  let width = document.body.clientWidth;
+  let height = document.body.clientHeight;
+  let devicePixelRatio = window.devicePixelRatio;
+  canvas.width = width * devicePixelRatio;
+  canvas.height = height * devicePixelRatio;
 
-    this.points = [];
-    for (let i = 0; i < totalPointCount; i++) {
-      let pos = this.getRandomPos(true);
+  const pointColor = '#e6e6e6';
+  const pointRadius = 2;
+  const lineColor = '#969696';
 
-      this.points.push({
-        pos: pos,
-        velocity: this.getRandomVelocity(pos),
-        color: new Color(230, 230, 230, 1),
-        r: 2,
-        phase: Math.random() * 10
-      });
-    }
+  context.lineWidth = 0.8;
 
-    this.lastFrame = Date.now();
-    // Subscribe events.
-    window.addEventListener('resize', this.resize.bind(this));
+  const maxDistance = 260;
+  const maxDistance2 = maxDistance * maxDistance;
+  const startOffset = 0;
+  const resetDistance = 50;
 
-    this.mousePoint = Object.assign({}, this.points[0]);
-    this.mousePoint.alpha = 0;
-    this.points.push(this.mousePoint);
-
-    if (DeviceDetector.isMobile() === false) {
-      window.addEventListener('mouseenter', () => {
-        this.mousePoint.velocity = new Point(0, 0);
-      });
-      window.addEventListener('mouseleave', () => {
-        this.mousePoint.pos = new Point(0, 0);
-      });
-      window.addEventListener('mousemove', (event) => {
-        this.mousePoint.pos.X = event.clientX;
-        this.mousePoint.pos.Y = event.clientY;
-      });
-    }
+  const points = [];
+  for (let i = 0; i < totalPointCount; i++) {
+    points.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vX: Math.random(),
+      vY: Math.random(),
+      phase: Math.random() * 10
+    });
   }
 
-  getRandomPos (anywhere) {
-    let point = new Point(Math.random() * this.rect.width, Math.random() * this.rect.height);
-    if (anywhere) {
-      return point;
-    }
-    switch (Math.ceil(Math.random() * 4) - 1) {
-      case 0:
-        point.x = 0; break;
-      case 1:
-        point.x = this.rect.width; break;
-      case 2:
-        point.y = 0; break;
-      case 3:
-        point.y = this.rect.height; break;
-    }
-    return point;
+  let lastFrame = performance.now();
+
+  const mousePoint = {
+    x: 0,
+    y: 0,
+    vX: 0,
+    vY: 0,
+    phase: Math.random() * 10
+  };
+
+  if (DeviceDetector.isMobile() === false) {
+    document.addEventListener('mouseenter', () => {
+      points.push(mousePoint);
+    });
+    document.addEventListener('mouseleave', () => {
+      mousePoint.x = 0;
+      mousePoint.y = 0;
+
+      points.pop();
+    });
+    document.addEventListener('mousemove', (event) => {
+      mousePoint.x = event.clientX;
+      mousePoint.y = event.clientY;
+    });
   }
 
-  getRandomVelocity (point) {
-    let vel = new Point(Math.random(), Math.random());
-    if (!this.rect.inside(point, -10)) {
-      vel.x *= point.x === 0 ? 1 : -1;
-      vel.y *= point.y === 0 ? 1 : -1;
+  window.addEventListener('resize', onResize);
+
+  function resetPoint (point) {
+    const edge = Math.ceil(Math.random() * 4) - 1;
+    if (edge === 0) {
+      point.x = Math.random() * width;
+      point.y = -startOffset;
+      point.vX = Math.random();
+      point.vY = Math.random();
+    } else if (edge === 1) {
+      point.x = width + startOffset;
+      point.y = Math.random() * height;
+      point.vX = -Math.random();
+      point.vY = Math.random();
+    } else if (edge === 2) {
+      point.x = Math.random() * width;
+      point.y = height + startOffset;
+      point.vX = Math.random();
+      point.vY = -Math.random();
+    } else {
+      point.x = -startOffset;
+      point.y = Math.random() * height;
+      point.vX = Math.random();
+      point.vY = Math.random();
     }
 
-    return vel;
+    point.phase = Math.random() * 10;
   }
 
-  update (delta) {
-    this.points.forEach((point) => {
-      // Update position with velocity times delta.
-      point.pos.X += (point.velocity.X / this.pointSpeed) * delta;
-      point.pos.Y += (point.velocity.Y / this.pointSpeed) * delta;
+  function isOutsideBounds (p, pad = 0) {
+    return p.x < -pad || p.x > width + pad || p.y < -pad || p.y > height + pad;
+  }
 
-      if (!this.rect.inside(point.pos, 50)) {
-        // When a point is outside of the actual canvas, we just reset its position
-        // to a random position (which is at one of the edges) and push it in a velocity towards a given direction.
-        point.pos = this.getRandomPos();
-        point.velocity = this.getRandomVelocity(point.pos);
-        point.phase = Math.random() * 10;
+  function onResize () {
+    width = document.body.clientWidth;
+    height = document.body.clientHeight;
+    devicePixelRatio = window.devicePixelRatio;
+    canvas.width = width * devicePixelRatio;
+    canvas.height = height * devicePixelRatio;
+  }
+
+  function onAnimationFrame (now) {
+    const dT = now - lastFrame;
+
+    const numberOfPoints = points.length;
+
+    // Update points
+
+    for (let i = 0; i < numberOfPoints; i++) {
+      const point = points[i];
+
+      point.x += point.vX / pointSpeed * dT;
+      point.y += point.vY / pointSpeed * dT;
+
+      if (isOutsideBounds(point, resetDistance)) {
+        resetPoint(point);
       }
 
       point.phase += 0.003;
-      point.color.Alpha = Math.abs(Math.cos(point.phase));
-    });
-  }
+    }
 
-  resize () {
-    this.rect.Width = parseFloat(document.body.clientWidth);
-    this.rect.Height = parseFloat(window.innerHeight);
-    this.canvas.setAttribute('width', this.rect.Width);
-    this.canvas.setAttribute('height', this.rect.Height);
-  }
+    // Clear
 
-  render () {
-    let frameDeltaTime = Date.now() - this.lastFrame;
-    this.context.clearRect(this.rect.X, this.rect.Y, this.rect.Width, this.rect.Height);
-    this.drawPoints();
-    this.drawLines();
-    this.update(frameDeltaTime);
-    this.lastFrame = Date.now();
-    setTimeout(this.render.bind(this), 25);
-  }
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
-  drawPoints () {
-    this.points.forEach((point) => {
-      if (!point.hasOwnProperty('type')) {
-        let pos = point.pos;
-        this.context.fillStyle = `rgba(${point.color.Red}, ${point.color.Green}, ${point.color.Blue}, ${point.color.Alpha})`;
-        this.context.beginPath();
-        this.context.arc(pos.X, pos.Y, point.r, 0, Math.PI * 2, true);
-        this.context.closePath();
-        this.context.fill();
-      }
-    });
-  }
+    // Draw points
 
-  drawLines () {
-    let fraction, alpha;
-    for (let i = 0; i < this.points.length; i++) {
-      for (let j = i + 1; j < this.points.length; j++) {
-        let a = this.points[i];
-        let b = this.points[j];
+    const r = pointRadius * devicePixelRatio;
 
-        fraction = Math.sqrt((Math.pow(a.pos.X - b.pos.X, 2)) + (Math.pow(a.pos.Y - b.pos.Y, 2))) / this.maxDistance;
-        if (fraction < 1) {
-          alpha = (1.0 - fraction);
-          this.context.strokeStyle = `rgba(150, 150, 150, ${alpha})`;
-          this.context.lineWidth = 0.8;
-          this.context.beginPath();
-          this.context.moveTo(a.pos.X, a.pos.Y);
-          this.context.lineTo(b.pos.X, b.pos.Y);
-          this.context.stroke();
-          this.context.closePath();
+    context.fillStyle = pointColor;
+
+    for (let i = 0; i < numberOfPoints; i++) {
+      const point = points[i];
+
+      const x = point.x * devicePixelRatio;
+      const y = point.y * devicePixelRatio;
+      const alpha = Math.abs(Math.cos(point.phase));
+
+      context.globalAlpha = alpha;
+      context.beginPath();
+      context.arc(x, y, r, 0, Math.PI * 2, true);
+      context.closePath();
+      context.fill();
+    }
+
+    // Draw lines
+
+    context.fillStyle = lineColor;
+
+    for (let i = 0; i < numberOfPoints; i++) {
+      for (let j = i + 1; j < numberOfPoints; j++) {
+        const a = points[i];
+        const b = points[j];
+
+        const dX = a.x - b.x;
+        const dY = a.y - b.y;
+
+        if (dX < -maxDistance || dX > maxDistance || dY < -maxDistance || dY > maxDistance) {
+          continue;
         }
+
+        const distance2 = dX * dX + dY * dY;
+
+        if (distance2 > maxDistance2) {
+          continue;
+        }
+
+        const distance = Math.sqrt(distance2);
+        const fraction = distance / maxDistance;
+
+        const aX = a.x * devicePixelRatio;
+        const aY = a.y * devicePixelRatio;
+        const bX = b.x * devicePixelRatio;
+        const bY = b.y * devicePixelRatio;
+        const alpha = (1.0 - fraction);
+
+        context.globalAlpha = alpha;
+        context.beginPath();
+        context.moveTo(aX, aY);
+        context.lineTo(bX, bY);
+        context.stroke();
+        context.closePath();
       }
     }
+
+    // Next frame
+
+    lastFrame = now;
+
+    requestAnimationFrame(onAnimationFrame);
   }
 
   /**
    * Run the animation.
    */
-  startAnimation () {
-    this.resize();
-    this.render();
+  function startAnimation () {
+    requestAnimationFrame(onAnimationFrame);
   }
+
+  this.startAnimation = startAnimation;
 }
