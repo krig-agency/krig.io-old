@@ -124,7 +124,7 @@ svg {
   margin: 0;
 }
 
-*{
+* {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -146,12 +146,10 @@ canvas {
   top: 18%;
   position: absolute;
 
-
   @media only screen and (min-width:768px) {
     top: 33%;
     max-width: 55%;
     left: 53%;
-
   }
 
   @media only screen and (min-width:1024px) {
