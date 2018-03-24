@@ -10,7 +10,7 @@
 }
 
 .sticky--left {
-  z-index: 100;
+  z-index: 150;
   left: 8px;
   padding-left: 0px;
   right: auto;
@@ -34,20 +34,27 @@
 
   img {
     width: 16px;
+    transition: all .3s ease-in-out;
 
     @media only screen and (min-width:768px) {
-      width: 20px;
+      width: 22px;
+      margin-top: 5px;
       margin-left: 20px;
     }
+
+    &:hover {
+      transform: scale(1.15);
+    }
   }
-  &:hover {
-    transform: scale(1.2);
+
+  a {
+    display: block;
   }
 }
 
 .sticky--bottom {
   position: fixed;
-  z-index: 0;
+  z-index: 150;
   bottom: 15px;
   width: 100%;
   left: 20px;
@@ -65,6 +72,7 @@
     text-decoration: none;
     color: #000;
     display: inline-block;
+    transition: all .3s ease-in-out;
 
     &:hover {
       transform: scale(1.05);
@@ -86,9 +94,15 @@
     font-style: normal;
     font-size: 0.65rem;
 
+
     &:hover {
+        cursor: url('../img/cursor.png') 0 0, auto;
+        cursor: -webkit-image-set(
+        url('../img/cursor.png') 1x,
+        url('../img/cursor.png') 2x
+      ), auto;
       transform: scale(1.05);
-    }
+      }
 
     &:focus {
       border: none;
@@ -98,13 +112,7 @@
     @media only screen and (min-width:768px) {
       margin-left: 20px;
     }
-
-    &:hover {
-      .saker-icon {
-        fill: $color-details;
-      }
-    }
-  }
+}
 
   .saker-icon {
     width: 16px;

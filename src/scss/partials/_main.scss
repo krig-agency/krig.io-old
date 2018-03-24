@@ -16,25 +16,26 @@ body {
 
 .panel {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
-  width: 80%;
+  width: 100%;
+  z-index: 100;
 
   > .panel__content {
-    padding-left: 55px;
+      padding-left: 12%;
+      max-width: 80%;
 
     @media only screen and (min-width:480px) {
-      padding-left: 97px;
+      padding-left: 15%;
     }
 
     @media only screen and (min-width:768px) {
-      padding-left: 66px;
       max-width: 80%;
     }
 
     @media only screen and (min-width:1024px) {
-      max-width: 60%;
+      max-width: 70%;
     }
 
     p {
@@ -43,37 +44,59 @@ body {
   }
 }
 
+.about .headline {
+  background: #fff;
+  display: block;
+  clear: both;
+  width: 30%;
+
+  @media only screen and (min-width:480px) {
+    background: #fff;
+  }
+
+  @media only screen and (min-width:768px) {
+    background: transparent;
+  }
+}
+
+.intro-text-about{
+  background: #fff;
+  display: inline;
+}
+
 .buddies-container {
-  margin-top: 36px;
-  position: relative;
-  z-index: 100;
+
 }
 
 .buddy {
-  max-width: 36px;
+  max-width: 58px;
   height: auto;
   margin-right: 15px;
+  background: transparent;
+  transition: all .3s ease-in-out;
 
-    &:hover {
-      transform: scale(1.05);
-      background: transparent;
-    }
+  &:hover {
+    cursor: url('../img/cursor.png') 0 0, auto;
+    cursor: -webkit-image-set(
+    url('../img/cursor.png') 1x,
+    url('../img/cursor.png') 2x
+    ), auto;
+    transform: scale(1.05);
+  }
 
-    &:focus {
-      border: none;
-      outline: none;
-    }
-
+  &:focus {
+    border: none;
+    outline: none;
+  }
 
   @media only screen and (min-width:480px) {
-    max-width: 56px;
+    max-width: 110px;
   }
 
   @media only screen and (min-width:1024px) {
-    max-width: 76px;
+    max-width: 114px;
     height: auto;
-    margin-right: 35px;
-    margin-bottom: 24px;
+    margin: 30px 30px 25px 0;
   }
 }
 
@@ -94,7 +117,7 @@ svg {
   margin: 0;
 }
 
-*{
+* {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -109,4 +132,24 @@ canvas {
   width: 100%;
   opacity: .7;
   box-sizing: border-box;
+}
+
+.team_content{
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+
+  @media only screen and (min-width:768px) {
+    max-width: 50%;
+    left: 40%;
+  }
+
+  // @media only screen and (min-width:1024px) {
+  //   // top: 25%;
+  // }
+}
+
+.team-photo {
+  max-width: 100%;
 }
