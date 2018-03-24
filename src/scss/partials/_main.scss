@@ -66,11 +66,7 @@ body {
 }
 
 .buddies-container {
-  margin-top: 36px;
-  position: relative;
-  z-index: 100;
-  display: flex;
-  align-items: center;
+
 }
 
 .buddy {
@@ -89,21 +85,19 @@ body {
     transform: scale(1.05);
   }
 
-
   &:focus {
     border: none;
     outline: none;
   }
 
   @media only screen and (min-width:480px) {
-    max-width: 100px;
+    max-width: 110px;
   }
 
   @media only screen and (min-width:1024px) {
-    max-width: 114px;;
+    max-width: 114px;
     height: auto;
-    margin-right: 35px;
-    margin-bottom: 24px;
+    margin: 30px 30px 25px 0;
   }
 }
 
