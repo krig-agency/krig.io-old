@@ -5,6 +5,7 @@ import 'jquery-scrollify';
 import 'babel-core/register';
 import FormValidation from './FormValidation';
 import Texts from './texts';
+import 'whatwg-fetch';
 
 $(function () {
   $.scrollify({
@@ -36,7 +37,9 @@ $(function () {
       document.querySelector('body').appendChild(script);
     }
   }).catch((error) => {
-    console.error(error);
+    if (window.console) {
+      console.error(error);
+    }
     document.querySelector('div.cookies').classList.add('hidden');
   });
 
@@ -53,7 +56,35 @@ $(function () {
     e.classList.remove('error');
   });
 
-  formValidation.on('success', () => true);
+  formValidation.on('success', (form) => {
+    const description = document.getElementsByName('Description')[0];
+    const budget = document.getElementsByName('Budget')[0];
+    const email = document.getElementsByName('Email')[0];
+    const params = {
+      to: 'webmaster@krig.io',
+      body: 'Beskrivning:\n' + description.value + '\n\nBudget:\n' + budget.value + '\n\nE-post:\n' + email.value,
+      subject: 'Pitch'
+    };
+
+    fetch('https://mailer.krig.cloud/api/v1/KRIG/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      body: Object.keys(params).map((key) => {
+        return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+      }).join('&')
+    }).then(res => {
+      description.value = '';
+      budget.value = '';
+      email.value = '';
+      menu.classList.toggle('open');
+    }).catch(err => {
+      if (window.console) {
+        console.log(err);
+      }
+    });
+  });
 
   formValidation.on('failure', (validationErrors) => {
     validationErrors.forEach((error) => {
@@ -68,6 +99,6 @@ $(function () {
 
     container = document.querySelector(text.selector);
     container.querySelector('.headline').innerHTML = text.header;
-    container.querySelector('.intro-text').innerHTML = text.text;
+    // container.querySelector('.intro-text').innerHTML = text.text;
   }
 });
