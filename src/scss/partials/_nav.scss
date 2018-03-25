@@ -10,47 +10,59 @@
 }
 
 .sticky--left {
-  z-index: 100;
-  left: 8px;
+  z-index: 150;
+  left: auto;
+  top: 0;
   padding-left: 0px;
-  right: auto;
-  transform: translateY(-50%);
+  right: 70px;
   position: fixed;
-  top: 50%;
 
   @media only screen and (min-width:768px) {
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
+    width: 100px;
   }
 }
 
 .social-nav__item {
-  display: block;
+  display: inline-block;
   opacity: .80;
-  margin: 10px;
+  padding: 5px;
 
   @media only screen and (min-width:768px) {
-    margin-left: 20px;
+    display: block;
+    padding: 10px;
+    padding-left: 20px;
   }
 
   img {
     width: 16px;
+    transition: all .3s ease-in-out;
 
     @media only screen and (min-width:768px) {
-      width: 20px;
+      width: 22px;
+      margin-top: 5px;
       margin-left: 20px;
     }
+
+    &:hover {
+      transform: scale(1.15);
+    }
   }
-  &:hover {
-    transform: scale(1.2);
+
+  a {
+    display: block;
+    width: auto;
   }
 }
 
 .sticky--bottom {
   position: fixed;
-  z-index: 0;
+  z-index: 150;
   bottom: 15px;
   width: 100%;
-  left: 20px;
+  left: 5%;
 
   @media only screen and (min-width:768px) {
     bottom: 30px;
@@ -65,6 +77,7 @@
     text-decoration: none;
     color: #000;
     display: inline-block;
+    transition: all .3s ease-in-out;
 
     &:hover {
       transform: scale(1.05);
@@ -86,9 +99,15 @@
     font-style: normal;
     font-size: 0.65rem;
 
+
     &:hover {
+        cursor: url('../img/cursor.png') 0 0, auto;
+        cursor: -webkit-image-set(
+        url('../img/cursor.png') 1x,
+        url('../img/cursor.png') 2x
+      ), auto;
       transform: scale(1.05);
-    }
+      }
 
     &:focus {
       border: none;
@@ -98,16 +117,10 @@
     @media only screen and (min-width:768px) {
       margin-left: 20px;
     }
-
-    &:hover {
-      .saker-icon {
-        fill: $color-details;
-      }
-    }
-  }
+}
 
   .saker-icon {
-    width: 16px;
+    width: 15px;
     transform: translateY(5px);
     display: inline-block;
     margin-left: 5px;
@@ -119,7 +132,6 @@
     }
 
     @media only screen and (min-width:768px) {
-      width: 20px;
       transform: translateY(5px);
       font-size: 0.75rem;
     }
