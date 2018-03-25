@@ -81,10 +81,14 @@ body {
   flex: 1;
   align-items: center;
 
-  margin: 0 -15px;
+  margin: 0 -10px;
 
   a {
     width: 20%;
+  }
+
+  @media only screen and (min-width:768px) {
+    margin: 0 -15px;
   }
 }
 
@@ -145,15 +149,22 @@ svg {
 }
 
 canvas {
-  background-color: transparent;
-  position: fixed;
-  z-index: 0;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  opacity: .7;
-  box-sizing: border-box;
+  display: none;
+  visibility: hidden;
+
+  @media only screen and (min-width: 768px) {
+    display: block;
+    visibility: visible;
+    background-color: transparent;
+    position: fixed;
+    z-index: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .7;
+    box-sizing: border-box;
+  }
 }
 
 .team_content{
