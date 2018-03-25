@@ -65,16 +65,24 @@ body {
 }
 
 .buddies-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  
+  margin: 0 -15px;
 
+  a {
+    width: 20%;
+  }
 }
 
 .buddy {
-  max-width: 58px;
+  max-width: 100%;
   height: auto;
-  margin-right: 15px;
+  padding: 0 7px;
   background: transparent;
   transition: all .3s ease-in-out;
-x
+
   &:hover {
     cursor: url('../img/cursor.png') 0 0, auto;
     cursor: -webkit-image-set(
@@ -90,13 +98,15 @@ x
   }
 
   @media only screen and (min-width:480px) {
-    max-width: 110px;
+    max-width: 100%;
+
   }
 
   @media only screen and (min-width:1024px) {
-    max-width: 114px;
+    max-width: 100%;
+
     height: auto;
-    margin: 30px 30px 25px 0;
+    padding: 30px 15px 25px 15px;
   }
 }
 
