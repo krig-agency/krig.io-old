@@ -44,6 +44,18 @@ body {
   }
 }
 
+.about {
+  padding-top: 55%;
+
+  @media only screen and (min-width:480px) {
+    padding-top: 35%;
+  }
+
+  @media only screen and (min-width:768px) {
+    padding-top: 0;
+  }
+}
+
 .about .headline {
   background: #fff;
   display: block;
@@ -68,7 +80,7 @@ body {
   display: flex;
   flex: 1;
   align-items: center;
-  
+
   margin: 0 -15px;
 
   a {
