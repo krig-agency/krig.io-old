@@ -22,7 +22,8 @@
     "parser": "babel-eslint"
   },
   "scripts": {
-    "test": "semistandard src/js"
+    "test": "semistandard src/js",
+    "watch": "gulp"
   },
   "dependencies": {
     "animejs": "^2.2.0",
