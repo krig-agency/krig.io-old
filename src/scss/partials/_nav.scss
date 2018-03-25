@@ -11,25 +11,29 @@
 
 .sticky--left {
   z-index: 150;
-  left: 8px;
+  left: auto;
+  top: 0;
   padding-left: 0px;
-  right: auto;
-  transform: translateY(-50%);
+  right: 70px;
   position: fixed;
-  top: 50%;
+
 
   @media only screen and (min-width:768px) {
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
   }
 }
 
 .social-nav__item {
-  display: block;
+  display: inline-block;
   opacity: .80;
-  margin: 10px;
+  padding: 5px;
 
   @media only screen and (min-width:768px) {
-    margin-left: 20px;
+    display: block;
+    padding: 10px;
+    padding-left: 20px;
   }
 
   img {
