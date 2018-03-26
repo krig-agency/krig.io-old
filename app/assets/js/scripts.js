@@ -1,11 +1,3 @@
-/*!
- * Krig.io
- * Krig.io webpage, using the fastshell boilerplate.
- * https://krig.io
- * @author Krig.io
- * @version 1.0.0
- * Copyright 2018. UNLICENSED licensed.
- */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -68,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 128);
+/******/ 	return __webpack_require__(__webpack_require__.s = 127);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -2963,35 +2955,30 @@ module.exports = navigator && navigator.userAgent || '';
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global) {
 
-__webpack_require__(129);
 
-__webpack_require__(326);
-
-__webpack_require__(327);
-
-if (global._babelPolyfill) {
-  throw new Error("only one instance of babel-polyfill is allowed");
-}
-global._babelPolyfill = true;
-
-var DEFINE_PROPERTY = "defineProperty";
-function define(O, key, value) {
-  O[key] || Object[DEFINE_PROPERTY](O, key, {
-    writable: true,
-    configurable: true,
-    value: value
-  });
-}
-
-define(String.prototype, "padLeft", "".padStart);
-define(String.prototype, "padRight", "".padEnd);
-
-"pop,reverse,shift,keys,values,entries,indexOf,every,some,forEach,map,filter,find,findIndex,includes,join,slice,concat,push,splice,unshift,sort,lastIndexOf,reduce,reduceRight,copyWithin,fill".split(",").forEach(function (key) {
-  [][key] && define(Array, key, Function.call.bind([][key]));
-});
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(91)))
+module.exports = function (module) {
+	if (!module.webpackPolyfill) {
+		module.deprecate = function () {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function get() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function get() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
 
 /***/ }),
 /* 91 */
@@ -4029,36 +4016,6 @@ module.exports = Math.scale || function scale(x, inLow, inHigh, outLow, outHigh)
 
 /***/ }),
 /* 126 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function (module) {
-	if (!module.webpackPolyfill) {
-		module.deprecate = function () {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function get() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function get() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-/***/ }),
-/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13891,15 +13848,50 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	return jQuery;
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(126)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(90)(module)))
+
+/***/ }),
+/* 127 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(128);
+module.exports = __webpack_require__(330);
+
 
 /***/ }),
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(90);
-module.exports = __webpack_require__(330);
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {
 
+__webpack_require__(129);
+
+__webpack_require__(326);
+
+__webpack_require__(327);
+
+if (global._babelPolyfill) {
+  throw new Error("only one instance of babel-polyfill is allowed");
+}
+global._babelPolyfill = true;
+
+var DEFINE_PROPERTY = "defineProperty";
+function define(O, key, value) {
+  O[key] || Object[DEFINE_PROPERTY](O, key, {
+    writable: true,
+    configurable: true,
+    value: value
+  });
+}
+
+define(String.prototype, "padLeft", "".padStart);
+define(String.prototype, "padRight", "".padEnd);
+
+"pop,reverse,shift,keys,values,entries,indexOf,every,some,forEach,map,filter,find,findIndex,includes,join,slice,concat,push,splice,unshift,sort,lastIndexOf,reduce,reduceRight,copyWithin,fill".split(",").forEach(function (key) {
+  [][key] && define(Array, key, Function.call.bind([][key]));
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(91)))
 
 /***/ }),
 /* 129 */
@@ -19380,7 +19372,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 // object, this seems to be the most reliable technique that does not
 // use indirect eval (which violates Content Security Policy).
 (typeof global === "undefined" ? "undefined" : _typeof(global)) === "object" ? global : (typeof window === "undefined" ? "undefined" : _typeof(window)) === "object" ? window : (typeof self === "undefined" ? "undefined" : _typeof(self)) === "object" ? self : undefined);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(91), __webpack_require__(126)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(91), __webpack_require__(90)(module)))
 
 /***/ }),
 /* 327 */
@@ -19434,25 +19426,21 @@ var _Background = __webpack_require__(331);
 
 var _Background2 = _interopRequireDefault(_Background);
 
-var _jquery = __webpack_require__(127);
+var _jquery = __webpack_require__(126);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _CookieConsent = __webpack_require__(336);
+var _cookieSanction = __webpack_require__(333);
 
-var _CookieConsent2 = _interopRequireDefault(_CookieConsent);
+__webpack_require__(334);
 
-__webpack_require__(338);
+__webpack_require__(335);
 
-__webpack_require__(90);
-
-__webpack_require__(339);
-
-var _FormValidation = __webpack_require__(341);
+var _FormValidation = __webpack_require__(340);
 
 var _FormValidation2 = _interopRequireDefault(_FormValidation);
 
-var _texts = __webpack_require__(343);
+var _texts = __webpack_require__(342);
 
 var _texts2 = _interopRequireDefault(_texts);
 
@@ -19472,12 +19460,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     menu.classList.toggle('open');
   });
 
-  new _CookieConsent2.default().show().then(function () {
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = './assets/js/postcookie.js';
-    document.querySelector('body').appendChild(script);
+  var cookieConsent = new _cookieSanction.CookieConsent({
+    element: 'div.cookies',
+    cookie: 'accept-cookies',
+    cookieValue: 'true',
+    acceptButton: '.cookies__accept'
+  });
+
+  cookieConsent.active().then(function (accepted) {
+    if (accepted) {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = './assets/js/postcookie.js';
+      document.querySelector('body').appendChild(script);
+    }
+  }).catch(function (error) {
+    console.error(error);
+    document.querySelector('div.cookies').classList.add('hidden');
   });
 
   var formValidation = new _FormValidation2.default(document.querySelector('form.pitch-form__form'), {
@@ -19521,419 +19521,220 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = Background;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _Point = __webpack_require__(332);
-
-var _Point2 = _interopRequireDefault(_Point);
-
-var _Rect = __webpack_require__(333);
-
-var _Rect2 = _interopRequireDefault(_Rect);
-
-var _Color = __webpack_require__(334);
-
-var _Color2 = _interopRequireDefault(_Color);
-
-var _DeviceDetector = __webpack_require__(335);
+var _DeviceDetector = __webpack_require__(332);
 
 var _DeviceDetector2 = _interopRequireDefault(_DeviceDetector);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function Background(canvas) {
+  var pointSpeed = 50;
+  var totalPointCount = _DeviceDetector2.default.isMobile() ? 17 : 50;
 
-var Background = function () {
-  /**
-   * @param {Element} canvasElement
-   * @param {{pointCount: Number, pointSpeed: Number}} config
-   */
-  function Background(canvasElement) {
-    var _this = this;
+  var context = canvas.getContext('2d');
 
-    var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : { pointCount: 50, pointSpeed: 50 };
+  var width = document.body.clientWidth;
+  var height = document.body.clientHeight;
+  var devicePixelRatio = window.devicePixelRatio;
+  canvas.width = width * devicePixelRatio;
+  canvas.height = height * devicePixelRatio;
 
-    _classCallCheck(this, Background);
+  var pointColor = '#e6e6e6';
+  var pointRadius = 2;
+  var lineColor = '#969696';
 
-    this.pointSpeed = config.pointSpeed;
-    var totalPointCount = _DeviceDetector2.default.isMobile() ? config.pointCount / 3 : config.pointCount;
-    this.canvas = canvasElement;
-    this.context = this.canvas.getContext('2d');
-    this.rect = new _Rect2.default(0, 0, parseFloat(window.innerWidth), parseFloat(window.innerHeight));
+  context.lineWidth = 0.8;
 
-    this.canvas.setAttribute('width', this.rect.Width);
-    this.canvas.setAttribute('height', this.rect.Height);
+  var maxDistance = 260;
+  var maxDistance2 = maxDistance * maxDistance;
+  var startOffset = 0;
+  var resetDistance = 50;
 
-    this.maxDistance = 260;
-
-    this.points = [];
-    for (var i = 0; i < totalPointCount; i++) {
-      var pos = this.getRandomPos(true);
-
-      this.points.push({
-        pos: pos,
-        velocity: this.getRandomVelocity(pos),
-        color: new _Color2.default(230, 230, 230, 1),
-        r: 2,
-        phase: Math.random() * 10
-      });
-    }
-
-    this.lastFrame = Date.now();
-    // Subscribe events.
-    window.addEventListener('resize', this.resize.bind(this));
-
-    this.mousePoint = Object.assign({}, this.points[0]);
-    this.mousePoint.alpha = 0;
-    this.points.push(this.mousePoint);
-
-    if (_DeviceDetector2.default.isMobile() === false) {
-      window.addEventListener('mouseenter', function () {
-        _this.mousePoint.velocity = new _Point2.default(0, 0);
-      });
-      window.addEventListener('mouseleave', function () {
-        _this.mousePoint.pos = new _Point2.default(0, 0);
-      });
-      window.addEventListener('mousemove', function (event) {
-        _this.mousePoint.pos.X = event.clientX;
-        _this.mousePoint.pos.Y = event.clientY;
-      });
-    }
+  var points = [];
+  for (var i = 0; i < totalPointCount; i++) {
+    points.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vX: Math.random(),
+      vY: Math.random(),
+      phase: Math.random() * 10
+    });
   }
 
-  _createClass(Background, [{
-    key: 'getRandomPos',
-    value: function getRandomPos(anywhere) {
-      var point = new _Point2.default(Math.random() * this.rect.width, Math.random() * this.rect.height);
-      if (anywhere) {
-        return point;
-      }
-      switch (Math.ceil(Math.random() * 4) - 1) {
-        case 0:
-          point.x = 0;break;
-        case 1:
-          point.x = this.rect.width;break;
-        case 2:
-          point.y = 0;break;
-        case 3:
-          point.y = this.rect.height;break;
-      }
-      return point;
+  var lastFrame = performance.now();
+
+  var mousePoint = {
+    x: 0,
+    y: 0,
+    vX: 0,
+    vY: 0,
+    phase: Math.random() * 10
+  };
+
+  if (_DeviceDetector2.default.isMobile() === false) {
+    document.addEventListener('mouseenter', function () {
+      points.push(mousePoint);
+    });
+    document.addEventListener('mouseleave', function () {
+      mousePoint.x = 0;
+      mousePoint.y = 0;
+
+      points.pop();
+    });
+    document.addEventListener('mousemove', function (event) {
+      mousePoint.x = event.clientX;
+      mousePoint.y = event.clientY;
+    });
+  }
+
+  window.addEventListener('resize', onResize);
+
+  function resetPoint(point) {
+    var edge = Math.ceil(Math.random() * 4) - 1;
+    if (edge === 0) {
+      point.x = Math.random() * width;
+      point.y = -startOffset;
+      point.vX = Math.random();
+      point.vY = Math.random();
+    } else if (edge === 1) {
+      point.x = width + startOffset;
+      point.y = Math.random() * height;
+      point.vX = -Math.random();
+      point.vY = Math.random();
+    } else if (edge === 2) {
+      point.x = Math.random() * width;
+      point.y = height + startOffset;
+      point.vX = Math.random();
+      point.vY = -Math.random();
+    } else {
+      point.x = -startOffset;
+      point.y = Math.random() * height;
+      point.vX = Math.random();
+      point.vY = Math.random();
     }
-  }, {
-    key: 'getRandomVelocity',
-    value: function getRandomVelocity(point) {
-      var vel = new _Point2.default(Math.random(), Math.random());
-      if (!this.rect.inside(point, -10)) {
-        vel.x *= point.x === 0 ? 1 : -1;
-        vel.y *= point.y === 0 ? 1 : -1;
+
+    point.phase = Math.random() * 10;
+  }
+
+  function isOutsideBounds(p) {
+    var pad = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+    return p.x < -pad || p.x > width + pad || p.y < -pad || p.y > height + pad;
+  }
+
+  function onResize() {
+    width = document.body.clientWidth;
+    height = document.body.clientHeight;
+    devicePixelRatio = window.devicePixelRatio;
+    canvas.width = width * devicePixelRatio;
+    canvas.height = height * devicePixelRatio;
+  }
+
+  function onAnimationFrame(now) {
+    var dT = now - lastFrame;
+
+    var numberOfPoints = points.length;
+
+    // Update points
+
+    for (var _i = 0; _i < numberOfPoints; _i++) {
+      var point = points[_i];
+
+      point.x += point.vX / pointSpeed * dT;
+      point.y += point.vY / pointSpeed * dT;
+
+      if (isOutsideBounds(point, resetDistance)) {
+        resetPoint(point);
       }
 
-      return vel;
+      point.phase += 0.003;
     }
-  }, {
-    key: 'update',
-    value: function update(delta) {
-      var _this2 = this;
 
-      this.points.forEach(function (point) {
-        // Update position with velocity times delta.
-        point.pos.X += point.velocity.X / _this2.pointSpeed * delta;
-        point.pos.Y += point.velocity.Y / _this2.pointSpeed * delta;
+    // Clear
 
-        if (!_this2.rect.inside(point.pos, 50)) {
-          // When a point is outside of the actual canvas, we just reset its position
-          // to a random position (which is at one of the edges) and push it in a velocity towards a given direction.
-          point.pos = _this2.getRandomPos();
-          point.velocity = _this2.getRandomVelocity(point.pos);
-          point.phase = Math.random() * 10;
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw points
+
+    var r = pointRadius * devicePixelRatio;
+
+    context.fillStyle = pointColor;
+
+    for (var _i2 = 0; _i2 < numberOfPoints; _i2++) {
+      var _point = points[_i2];
+
+      var x = _point.x * devicePixelRatio;
+      var y = _point.y * devicePixelRatio;
+      var alpha = Math.abs(Math.cos(_point.phase));
+
+      context.globalAlpha = alpha;
+      context.beginPath();
+      context.arc(x, y, r, 0, Math.PI * 2, true);
+      context.closePath();
+      context.fill();
+    }
+
+    // Draw lines
+
+    context.fillStyle = lineColor;
+
+    for (var _i3 = 0; _i3 < numberOfPoints; _i3++) {
+      for (var j = _i3 + 1; j < numberOfPoints; j++) {
+        var a = points[_i3];
+        var b = points[j];
+
+        var dX = a.x - b.x;
+        var dY = a.y - b.y;
+
+        if (dX < -maxDistance || dX > maxDistance || dY < -maxDistance || dY > maxDistance) {
+          continue;
         }
 
-        point.phase += 0.003;
-        point.color.Alpha = Math.abs(Math.cos(point.phase));
-      });
-    }
-  }, {
-    key: 'resize',
-    value: function resize() {
-      this.rect.Width = parseFloat(document.body.clientWidth);
-      this.rect.Height = parseFloat(window.innerHeight);
-      this.canvas.setAttribute('width', this.rect.Width);
-      this.canvas.setAttribute('height', this.rect.Height);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var frameDeltaTime = Date.now() - this.lastFrame;
-      this.context.clearRect(this.rect.X, this.rect.Y, this.rect.Width, this.rect.Height);
-      this.drawPoints();
-      this.drawLines();
-      this.update(frameDeltaTime);
-      this.lastFrame = Date.now();
-      setTimeout(this.render.bind(this), 25);
-    }
-  }, {
-    key: 'drawPoints',
-    value: function drawPoints() {
-      var _this3 = this;
+        var distance2 = dX * dX + dY * dY;
 
-      this.points.forEach(function (point) {
-        if (!point.hasOwnProperty('type')) {
-          var pos = point.pos;
-          _this3.context.fillStyle = 'rgba(' + point.color.Red + ', ' + point.color.Green + ', ' + point.color.Blue + ', ' + point.color.Alpha + ')';
-          _this3.context.beginPath();
-          _this3.context.arc(pos.X, pos.Y, point.r, 0, Math.PI * 2, true);
-          _this3.context.closePath();
-          _this3.context.fill();
+        if (distance2 > maxDistance2) {
+          continue;
         }
-      });
-    }
-  }, {
-    key: 'drawLines',
-    value: function drawLines() {
-      var fraction = void 0,
-          alpha = void 0;
-      for (var i = 0; i < this.points.length; i++) {
-        for (var j = i + 1; j < this.points.length; j++) {
-          var a = this.points[i];
-          var b = this.points[j];
 
-          fraction = Math.sqrt(Math.pow(a.pos.X - b.pos.X, 2) + Math.pow(a.pos.Y - b.pos.Y, 2)) / this.maxDistance;
-          if (fraction < 1) {
-            alpha = 1.0 - fraction;
-            this.context.strokeStyle = 'rgba(150, 150, 150, ' + alpha + ')';
-            this.context.lineWidth = 0.8;
-            this.context.beginPath();
-            this.context.moveTo(a.pos.X, a.pos.Y);
-            this.context.lineTo(b.pos.X, b.pos.Y);
-            this.context.stroke();
-            this.context.closePath();
-          }
-        }
+        var distance = Math.sqrt(distance2);
+        var fraction = distance / maxDistance;
+
+        var aX = a.x * devicePixelRatio;
+        var aY = a.y * devicePixelRatio;
+        var bX = b.x * devicePixelRatio;
+        var bY = b.y * devicePixelRatio;
+        var _alpha = 1.0 - fraction;
+
+        context.globalAlpha = _alpha;
+        context.beginPath();
+        context.moveTo(aX, aY);
+        context.lineTo(bX, bY);
+        context.stroke();
+        context.closePath();
       }
     }
 
-    /**
-     * Run the animation.
-     */
+    // Next frame
 
-  }, {
-    key: 'startAnimation',
-    value: function startAnimation() {
-      this.resize();
-      this.render();
-    }
-  }]);
+    lastFrame = now;
 
-  return Background;
-}();
+    requestAnimationFrame(onAnimationFrame);
+  }
 
-exports.default = Background;
+  /**
+   * Run the animation.
+   */
+  function startAnimation() {
+    requestAnimationFrame(onAnimationFrame);
+  }
+
+  this.startAnimation = startAnimation;
+}
 
 /***/ }),
 /* 332 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Point = function () {
-  /**
-   *
-   * @param {number} x
-   * @param {number} y
-   */
-  function Point(x, y) {
-    _classCallCheck(this, Point);
-
-    this.x = x;
-    this.y = y;
-  }
-
-  _createClass(Point, [{
-    key: "X",
-    set: function set(val) {
-      this.x = val;
-    },
-    get: function get() {
-      return this.x;
-    }
-  }, {
-    key: "Y",
-    set: function set(val) {
-      this.y = val;
-    },
-    get: function get() {
-      return this.y;
-    }
-  }]);
-
-  return Point;
-}();
-
-exports.default = Point;
-
-/***/ }),
-/* 333 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Rect = function () {
-  /**
-   *
-   * @param {number} x
-   * @param {number} y
-   * @param {number} width
-   * @param {number} height
-   */
-  function Rect(x, y, width, height) {
-    _classCallCheck(this, Rect);
-
-    // TopLeft is actual coordinates of the top-left position.
-    // BotRight is the actual coordinates to the bottom-right position.
-    this.x = x;
-    this.y = y;
-    this.width = width;
-    this.height = height;
-  }
-
-  _createClass(Rect, [{
-    key: "inside",
-
-
-    /**
-     * Test if a given point is inside the rect.
-     * @param {Point} p
-     * @param {number} pad
-     * @return boolean
-     */
-    value: function inside(p, pad) {
-      return p.X > this.x - pad && p.X < this.x + this.width + pad && p.Y > this.y - pad && p.Y < this.y + this.height + pad;
-    }
-  }, {
-    key: "X",
-    get: function get() {
-      return this.x;
-    },
-    set: function set(val) {
-      this.x = val;
-    }
-  }, {
-    key: "Y",
-    get: function get() {
-      return this.y;
-    },
-    set: function set(val) {
-      this.y = val;
-    }
-  }, {
-    key: "Width",
-    get: function get() {
-      return this.width;
-    },
-    set: function set(val) {
-      this.width = val;
-    }
-  }, {
-    key: "Height",
-    get: function get() {
-      return this.height;
-    },
-    set: function set(val) {
-      this.height = val;
-    }
-  }]);
-
-  return Rect;
-}();
-
-exports.default = Rect;
-
-/***/ }),
-/* 334 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Color = function () {
-  function Color(r, g, b, a) {
-    _classCallCheck(this, Color);
-
-    this.r = r;
-    this.g = g;
-    this.b = b;
-    this.a = a;
-  }
-
-  _createClass(Color, [{
-    key: "Red",
-    get: function get() {
-      return this.r;
-    },
-    set: function set(val) {
-      this.r = val;
-    }
-  }, {
-    key: "Green",
-    get: function get() {
-      return this.g;
-    },
-    set: function set(val) {
-      this.g = val;
-    }
-  }, {
-    key: "Blue",
-    get: function get() {
-      return this.b;
-    },
-    set: function set(val) {
-      this.b = val;
-    }
-  }, {
-    key: "Alpha",
-    get: function get() {
-      return this.a;
-    },
-    set: function set(val) {
-      this.a = val;
-    }
-  }]);
-
-  return Color;
-}();
-
-exports.default = Color;
-
-/***/ }),
-/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19970,155 +19771,133 @@ var DeviceDetector = function () {
 exports.default = DeviceDetector;
 
 /***/ }),
-/* 336 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+/* WEBPACK VAR INJECTION */(function(module) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _CookieParser = __webpack_require__(337);
-
-var _CookieParser2 = _interopRequireDefault(_CookieParser);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-/**
- * Class to handle the cookie consent message.
- */
-var CookieConsent = function () {
-  function CookieConsent() {
-    _classCallCheck(this, CookieConsent);
+!function (e, t) {
+  "object" == ( false ? "undefined" : _typeof(exports)) && "object" == ( false ? "undefined" : _typeof(module)) ? module.exports = t() :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : "object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) ? exports.CookieConsent = t() : e.CookieConsent = t();
+}(window, function () {
+  return function (e) {
+    var t = {};function o(n) {
+      if (t[n]) return t[n].exports;var i = t[n] = { i: n, l: !1, exports: {} };return e[n].call(i.exports, i, i.exports, o), i.l = !0, i.exports;
+    }return o.m = e, o.c = t, o.d = function (e, t, n) {
+      o.o(e, t) || Object.defineProperty(e, t, { configurable: !1, enumerable: !0, get: n });
+    }, o.r = function (e) {
+      Object.defineProperty(e, "__esModule", { value: !0 });
+    }, o.n = function (e) {
+      var t = e && e.__esModule ? function () {
+        return e.default;
+      } : function () {
+        return e;
+      };return o.d(t, "a", t), t;
+    }, o.o = function (e, t) {
+      return Object.prototype.hasOwnProperty.call(e, t);
+    }, o.p = "", o(o.s = 0);
+  }([function (e, t, o) {
+    "use strict";
+    o.r(t);
+    var n = function () {
+      function n() {
+        _classCallCheck(this, n);
+      }
 
-    this.element = document.querySelector('div.cookies');
-  }
+      _createClass(n, [{
+        key: "getValue",
+        value: function getValue(e) {
+          var t = this._parseCookies();return void 0 !== t[e] ? t[e] : null;
+        }
+      }, {
+        key: "createCookie",
+        value: function createCookie(e, t) {
+          document.cookie = e + "=" + t;
+        }
+      }, {
+        key: "_parseCookies",
+        value: function _parseCookies() {
+          var e = document.cookie.split(";"),
+              t = {},
+              o = [];for (var _n = 0; _n < e.length; _n++) {
+            t[(o = e[_n].trim().split("="))[0]] = o[1];
+          }return t;
+        }
+      }]);
 
-  /**
-   * Show the cookie consent dialog.
-   */
+      return n;
+    }();
+    
+    var i = { element: "div.cookie-consent", cookie: "accept-cookies", cookieValue: "accepted", hiddenClass: "hidden", acceptButton: 'div.cookie-consent button[name="accept"]', rejectButton: 'div.cookie-consent button[name="reject"]' };var r = function () {
+      function r(e) {
+        _classCallCheck(this, r);
 
+        this.options = Object.assign(i, e), this.cookieHandler = new n();
+      }
 
-  _createClass(CookieConsent, [{
-    key: 'show',
-    value: function () {
-      var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-        var _this = this;
+      _createClass(r, [{
+        key: "hide",
+        value: function hide(e) {
+          e.classList.add(this.options.hiddenClass);
+        }
+      }, {
+        key: "active",
+        value: function () {
+          var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            var _this = this;
 
-        return regeneratorRuntime.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                return _context.abrupt('return', new Promise(function (resolve) {
-                  if (_CookieParser2.default.getValue('accept-cookies')) {
-                    resolve();
-                  } else {
-                    _this.element.classList.remove('hidden');
-                    _this.element.addEventListener('click', function () {
-                      _this.element.classList.add('hidden');
-                      document.cookie = 'accept-cookies=true';
-                      resolve();
-                    });
-                  }
-                }));
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    return _context.abrupt("return", new Promise(function (e, t) {
+                      var o = document.querySelector(_this.options.element);if (!o) return _this.hide(o), t(new Error("Failed to locate element to apply cookie consent code to."));if (null !== _this.cookieHandler.getValue(_this.options.cookie)) return _this.hide(o), e(!0);var n = o.querySelector(_this.options.acceptButton),
+                          i = o.querySelector(_this.options.rejectButton);if (null === n) return _this.hide(o), t(new Error("Failed to locate the accept button."));n.addEventListener("click", function () {
+                        _this.cookieHandler.createCookie(_this.options.cookie, _this.options.cookieValue), _this.hide(o), e(!0);
+                      }), null !== i && i.addEventListener("click", function () {
+                        return _this.hide(o), e(!1);
+                      }), o.classList.remove(_this.options.hiddenClass);
+                    }));
 
-              case 1:
-              case 'end':
-                return _context.stop();
-            }
+                  case 1:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee, this);
+          }));
+
+          function active() {
+            return _ref.apply(this, arguments);
           }
-        }, _callee, this);
-      }));
 
-      function show() {
-        return _ref.apply(this, arguments);
-      }
+          return active;
+        }()
+      }]);
 
-      return show;
-    }()
+      return r;
+    }();o.d(t, "CookieConsent", function () {
+      return r;
+    });t.default = r;
   }]);
-
-  return CookieConsent;
-}();
-
-exports.default = CookieConsent;
-
-/***/ }),
-/* 337 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Class used to parse cookies from the local page.
- * Uses document.cookie to fetch cookies.
- */
-var CookieParser = function () {
-  function CookieParser() {
-    _classCallCheck(this, CookieParser);
-  }
-
-  _createClass(CookieParser, null, [{
-    key: 'getValue',
-
-    /**
-     * Get value from a cookie.
-     * @param {string} name
-     * @return {null|string|bool|number}
-     */
-    value: function getValue(name) {
-      var parsed = CookieParser.parseCookies();
-      if (parsed[name] !== undefined) {
-        return parsed[name];
-      }
-      return null;
-    }
-
-    /**
-     * Parses the pages cookies.
-     * @return {{string: name, mixed: value}}
-     */
-
-  }, {
-    key: 'parseCookies',
-    value: function parseCookies() {
-      var cookies = document.cookie.split(';');
-      var fixed = {};
-      var spl = [];
-
-      for (var i = 0; i < cookies.length; i++) {
-        spl = cookies[i].trim().split('=');
-        fixed[spl[0]] = spl[1];
-      }
-
-      return fixed;
-    }
-  }]);
-
-  return CookieParser;
-}();
-
-exports.default = CookieParser;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(90)(module)))
 
 /***/ }),
-/* 338 */
+
+/* 337 */
+
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20163,7 +19942,7 @@ if touchScroll is false - update index
 
   if (true) {
     // AMD. Register as an anonymous module.
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(127)], __WEBPACK_AMD_DEFINE_RESULT__ = (function ($) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(126)], __WEBPACK_AMD_DEFINE_RESULT__ = (function ($) {
       return factory($, global, global.document);
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -20955,7 +20734,9 @@ if touchScroll is false - update index
 });
 
 /***/ }),
-/* 339 */
+
+/* 338 */
+
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20963,10 +20744,12 @@ if touchScroll is false - update index
 
 /* eslint max-len: 0 */
 // TODO: eventually deprecate this console.trace("use the `babel-register` package instead of `babel-core/register`");
-module.exports = __webpack_require__(340);
+
+module.exports = __webpack_require__(339);
 
 /***/ }),
-/* 340 */
+/* 339 */
+
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20979,7 +20762,9 @@ exports.default = function () {};
 module.exports = exports["default"];
 
 /***/ }),
-/* 341 */
+
+/* 340 */
+
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20991,7 +20776,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _EventEmitter2 = __webpack_require__(342);
+
+var _EventEmitter2 = __webpack_require__(341);
+
 
 var _EventEmitter3 = _interopRequireDefault(_EventEmitter2);
 
@@ -21107,7 +20894,8 @@ var FormValidation = function (_EventEmitter) {
 exports.default = FormValidation;
 
 /***/ }),
-/* 342 */
+/* 341 */
+
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21222,7 +21010,9 @@ var EventEmitter = function () {
 exports.default = EventEmitter;
 
 /***/ }),
-/* 343 */
+
+/* 342 */
+
 /***/ (function(module, exports) {
 
 module.exports = {"intro":{"header":"A freelance collective","text":"<string class='krig'>KRIG</strong> is a collective of freelancers and independent companies within tech and digital design. We have a wide knowledge within our fields and have grown out of the large corporate company structure. We know what we are doing, give us a task and we will solve it!","selector":"div.intro"},"about":{"header":"About","text":"<strong class='krig'>KRIG</strong> consists of about 30 hand picked senior developers and designers. Together we have knowledge within UX design, UI design, graphics design, handheld development, web development, motion design, back-end development, DevOps and much much more.","selector":"div.about"},"buddies":{"header":"Buddies","text":"<strong class='krig'>Here</strong> is a selection of some of our awesome buddies, associates, partners and clients that we <3","selector":"div.buddies"}}
