@@ -19436,11 +19436,11 @@ __webpack_require__(334);
 
 __webpack_require__(335);
 
-var _FormValidation = __webpack_require__(340);
+var _FormValidation = __webpack_require__(337);
 
 var _FormValidation2 = _interopRequireDefault(_FormValidation);
 
-var _texts = __webpack_require__(342);
+var _texts = __webpack_require__(339);
 
 var _texts2 = _interopRequireDefault(_texts);
 
@@ -19838,7 +19838,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       return n;
     }();
-    
+
     var i = { element: "div.cookie-consent", cookie: "accept-cookies", cookieValue: "accepted", hiddenClass: "hidden", acceptButton: 'div.cookie-consent button[name="accept"]', rejectButton: 'div.cookie-consent button[name="reject"]' };var r = function () {
       function r(e) {
         _classCallCheck(this, r);
@@ -19895,9 +19895,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(90)(module)))
 
 /***/ }),
-
-/* 337 */
-
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20734,9 +20732,7 @@ if touchScroll is false - update index
 });
 
 /***/ }),
-
-/* 338 */
-
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20744,12 +20740,10 @@ if touchScroll is false - update index
 
 /* eslint max-len: 0 */
 // TODO: eventually deprecate this console.trace("use the `babel-register` package instead of `babel-core/register`");
-
-module.exports = __webpack_require__(339);
+module.exports = __webpack_require__(336);
 
 /***/ }),
-/* 339 */
-
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20762,9 +20756,7 @@ exports.default = function () {};
 module.exports = exports["default"];
 
 /***/ }),
-
-/* 340 */
-
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20776,9 +20768,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-
-var _EventEmitter2 = __webpack_require__(341);
-
+var _EventEmitter2 = __webpack_require__(338);
 
 var _EventEmitter3 = _interopRequireDefault(_EventEmitter2);
 
@@ -20894,8 +20884,7 @@ var FormValidation = function (_EventEmitter) {
 exports.default = FormValidation;
 
 /***/ }),
-/* 341 */
-
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21010,9 +20999,7 @@ var EventEmitter = function () {
 exports.default = EventEmitter;
 
 /***/ }),
-
-/* 342 */
-
+/* 339 */
 /***/ (function(module, exports) {
 
 module.exports = {"intro":{"header":"A freelance collective","text":"<string class='krig'>KRIG</strong> is a collective of freelancers and independent companies within tech and digital design. We have a wide knowledge within our fields and have grown out of the large corporate company structure. We know what we are doing, give us a task and we will solve it!","selector":"div.intro"},"about":{"header":"About","text":"<strong class='krig'>KRIG</strong> consists of about 30 hand picked senior developers and designers. Together we have knowledge within UX design, UI design, graphics design, handheld development, web development, motion design, back-end development, DevOps and much much more.","selector":"div.about"},"buddies":{"header":"Buddies","text":"<strong class='krig'>Here</strong> is a selection of some of our awesome buddies, associates, partners and clients that we <3","selector":"div.buddies"}}
