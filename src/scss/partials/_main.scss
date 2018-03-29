@@ -24,8 +24,8 @@ body {
   height: 100vh;
 
   > .panel__content {
-      padding-left: 6%;
-      max-width: 80%;
+      padding-left: 5%;
+      max-width: 81.5%;
 
     @media only screen and (min-width:480px) {
       padding-left: 15%;
@@ -179,12 +179,8 @@ canvas {
     max-width: 50%;
     left: 40%;
   }
-
-  // @media only screen and (min-width:1024px) {
-  //   // top: 25%;
-  // }
 }
 
 .team-photo {
-  max-width: 80%;
+  max-width: 81.5%;
 }
