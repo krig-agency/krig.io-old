@@ -11,6 +11,7 @@ const pkg = require('./package.json');
 const replace = require('gulp-replace');
 const eslint = require('gulp-eslint');
 const webpack = require('webpack-stream');
+const imgmin = require('gulp-imagemin');
 const outDir = 'app';
 const env = process.env.NODE_ENV;
 
@@ -131,6 +132,7 @@ gulp.task(moveHtml);
 let moveImages = gulp.parallel(
   function moveImg () {
     return gulp.src('src/img/**/*')
+      .pipe(imgmin({verbose: false}))
       .pipe(gulp.dest(outDir + '/assets/img'));
   },
   function moveFavicon () {
@@ -138,21 +140,21 @@ let moveImages = gulp.parallel(
       .pipe(gulp.dest(outDir + '/'));
   }
 );
-moveImages.displayName = 'move-images';
-moveImages.description = 'Moves images from the /src/img & /src/favicon directories to the /app directory.';
+moveImages.displayName = 'compress-images';
+moveImages.description = 'Moves and compresses images from the /src/img & /src/favicon directories to the /app directory.';
 gulp.task(moveImages);
 
 let watchTask = function watch () {
   gulp.watch('src/js/**/*.js').on('all', gulp.series('compile-js', 'lint-js', 'browser-reload'));
   gulp.watch('src/scss/**/*.scss').on('all', gulp.series('compile-css', 'browser-reload'));
   gulp.watch('src/html/**/*').on('all', gulp.series('move-html', 'browser-reload'));
-  gulp.watch(['src/favicon/**/*', 'src/img/**/*']).on('all', gulp.series('move-images', 'browser-reload'));
+  gulp.watch(['src/favicon/**/*', 'src/img/**/*']).on('all', gulp.series('compress-images', 'browser-reload'));
 };
 watchTask.displayName = 'watch';
 watchTask.description = 'Watches files for changes and invokes its given move or compile scripts..';
 gulp.task(watchTask);
 
-let build = gulp.series(gulp.parallel('compile-css', 'compile-js', 'move-html', 'move-images'), 'lint-js');
+let build = gulp.series(gulp.parallel('compile-css', 'compile-js', 'move-html', 'compress-images'), 'lint-js');
 build.displayName = 'build';
 build.description = 'Builds the source.';
 gulp.task(build);
