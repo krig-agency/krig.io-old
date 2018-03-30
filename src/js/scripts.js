@@ -99,6 +99,6 @@ $(function () {
 
     container = document.querySelector(text.selector);
     container.querySelector('.headline').innerHTML = text.header;
-    // container.querySelector('.intro-text').innerHTML = text.text;
+    container.querySelector('p').innerHTML = text.text;
   }
 });
