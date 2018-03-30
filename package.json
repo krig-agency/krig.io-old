@@ -45,8 +45,6 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.1",
-    "jquery": "^3.2.1",
-    "jquery-scrollify": "^1.0.19",
     "semistandard": "^11.0.0",
     "watch": "^1.0.2",
     "webpack": "^3.10.0",

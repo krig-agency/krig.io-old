@@ -1,17 +1,11 @@
 import Background from './Background';
-import $ from 'jquery';
 import { CookieConsent } from 'cookie-sanction';
-import 'jquery-scrollify';
 import 'babel-core/register';
 import FormValidation from './FormValidation';
 import Texts from './texts';
 import 'whatwg-fetch';
 
-$(function () {
-  $.scrollify({
-    section: '.panel',
-    setHeights: true
-  });
+window.onload = () => {
 
   let bg = new Background(document.querySelector('#nokey'));
   bg.startAnimation();
@@ -101,4 +95,4 @@ $(function () {
     container.querySelector('.headline').innerHTML = text.header;
     // container.querySelector('.intro-text').innerHTML = text.text;
   }
-});
+};
