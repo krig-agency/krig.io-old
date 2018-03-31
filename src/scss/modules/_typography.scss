@@ -47,6 +47,10 @@ p {
   @media only screen and (max-width:480px) {
     font-size: 0.75rem;
   }
+
+  @media only screen and (max-width:1280px) {
+    font-size: 1.5rem;
+  }
 }
 
 .mail-link {
