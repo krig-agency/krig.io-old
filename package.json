@@ -50,6 +50,7 @@
     "semistandard": "^11.0.0",
     "watch": "^1.0.2",
     "webpack": "^3.10.0",
-    "webpack-stream": "^4.0.0"
+    "webpack-stream": "^4.0.0",
+    "whatwg-fetch": "^2.0.3"
   }
 }

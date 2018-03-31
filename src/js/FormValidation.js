@@ -57,7 +57,7 @@ export default class FormValidation extends EventEmitter {
 
     if (validationErrors.length === 0) {
       if (this.emit('success', (this.form))) {
-        this.form.submit();
+        event.preventDefault();
       }
     } else {
       this.emit('failure', validationErrors);
