@@ -1,7 +1,7 @@
-# FastShell
-# https://HosseinKarami.github.io/fastshell
-# @author Hossein Karami
-
+/.idea/
+.env
+/app/*
+!app/.gitkeep
 
 ## Node.js
 lib-cov
@@ -17,9 +17,6 @@ logs
 results
 npm-debug.log
 node_modules
-
-## Bower
-src/components
 
 ## Sass
 .sass-cache
@@ -38,5 +35,3 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
-
-README 2.md

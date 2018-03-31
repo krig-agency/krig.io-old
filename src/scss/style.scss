@@ -19,9 +19,9 @@
 
 @import 'partials/_header.scss';
 @import 'partials/_nav.scss';
-@import 'partials/_sidebar.scss';
 @import 'partials/_main.scss';
 @import 'partials/_footer.scss';
+@import 'partials/_work-panel.scss';
 
 //----------------------------------*\
 // OBJECTS & MODULES
@@ -33,6 +33,7 @@
 @import 'modules/_typography.scss';
 @import 'modules/_misc.scss';
 @import 'modules/_app.scss';
+@import 'modules/_cookies.scss';
 
 // Enhancement modules
 @import 'modules/_breakpoints.scss';

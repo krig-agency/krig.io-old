@@ -1,21 +1,55 @@
-@font-face {
-  font-family: 'switz';
-  src: url('../fonts/switzerland.eot');
-  src: url('../fonts/switzerland.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/switzerland.woff') format('woff'),
-       url('../fonts/switzerland.ttf') format('truetype'),
-       url('../fonts/switzerland.svg#font-name') format('svg');
-  font-weight: normal;
-  font-style: normal;
+@import url('https://fonts.googleapis.com/css?family=Chivo|Overpass+Mono');
+
+body,
+p {
+  font-family: $font-body;
 }
 
-@font-face {
-  font-family: 'switz';
-  src: url('../fonts/switzerland-italic.eot');
-  src: url('../fonts/switzerland-italic.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/switzerland-italic.woff') format('woff'),
-       url('../fonts/switzerland-italic.ttf') format('truetype'),
-       url('../fonts/switzerland-italic.svg#font-name') format('svg');
-  font-weight: normal;
-  font-style: italic;
+h1,
+h2,
+h3 {
+  font-family: $font-saker;
+
+  &.saker-text {
+    margin-bottom: 20px;
+    line-height: 115%;
+    font-size: 1.75rem;
+  }
+  @media only screen and (max-width:480px) {
+    font-size: 1.5rem;
+  }
+
+}
+
+h4 {
+  font-family: $font-headline;
+
+  &.headline {
+    margin-bottom: 20px;
+    line-height: 115%;
+    font-size: 1.75rem;
+  }
+  @media only screen and (max-width:480px) {
+    font-size: 1.5rem;
+  }
+
+}
+
+p {
+  font-size: 1rem;
+  line-height: 2;
+
+
+  &.under-text {
+    margin-bottom: 30px;
+  }
+
+  @media only screen and (max-width:480px) {
+    font-size: 0.75rem;
+  }
+}
+
+.mail-link {
+  color: $color-details;
+
 }

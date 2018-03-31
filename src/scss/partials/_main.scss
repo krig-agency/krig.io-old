@@ -1,3 +1,186 @@
-.main {
+html,
+body {
+  min-height: 1vh;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-size: 16px;
+  line-height: 1.5;
+}
 
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+.panel {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  z-index: 100;
+  height: 100vh;
+
+  > .panel__content {
+      padding-left: 5%;
+      max-width: 81.5%;
+
+    @media only screen and (min-width:480px) {
+      padding-left: 15%;
+    }
+
+    @media only screen and (min-width:768px) {
+      max-width: 80%;
+    }
+
+    @media only screen and (min-width:1024px) {
+      max-width: 70%;
+    }
+
+    p {
+      line-height: 1.8;
+    }
+  }
+}
+
+.about {
+  padding-top: 55%;
+
+  @media only screen and (min-width:480px) {
+    padding-top: 35%;
+  }
+
+  @media only screen and (min-width:768px) {
+    padding-top: 0;
+  }
+}
+
+.about .headline {
+  background: #fff;
+  display: block;
+  clear: both;
+  width: 30%;
+
+  @media only screen and (min-width:480px) {
+    background: #fff;
+  }
+
+  @media only screen and (min-width:768px) {
+    background: transparent;
+  }
+}
+
+
+.intro-text-about{
+  background: #fff;
+  display: inline;
+}
+
+.buddies-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+
+  margin: 0 -10px;
+
+  a {
+    width: 20%;
+  }
+
+  @media only screen and (min-width:768px) {
+    margin: 0 -15px;
+  }
+}
+
+.buddy {
+  max-width: 100%;
+  height: auto;
+  padding: 0 7px;
+  background: transparent;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    cursor: url('../img/cursor.png') 0 0, auto;
+    cursor: -webkit-image-set(
+    url('../img/cursor.png') 1x,
+    url('../img/cursor.png') 2x
+    ), auto;
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  @media only screen and (min-width:480px) {
+    max-width: 100%;
+
+  }
+
+  @media only screen and (min-width:1024px) {
+    max-width: 100%;
+
+    height: auto;
+    padding: 30px 15px 25px 15px;
+  }
+}
+
+path {
+  fill-opacity: .5;
+  transition: all .5s;
+}
+path:nth-child(n+32){opacity:0;}
+svg:hover path:nth-child(n+10){opacity:1}
+
+p {
+  font-family: "Courier New";
+}
+
+svg {
+  display: block;
+  float: left;
+  margin: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+canvas {
+  display: none;
+  visibility: hidden;
+
+  @media only screen and (min-width: 768px) {
+    display: block;
+    visibility: visible;
+    background-color: transparent;
+    position: fixed;
+    z-index: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .7;
+    box-sizing: border-box;
+  }
+}
+
+.team_content{
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+
+  @media only screen and (min-width:768px) {
+    max-width: 50%;
+    left: 40%;
+  }
+}
+
+.team-photo {
+  max-width: 81.5%;
 }

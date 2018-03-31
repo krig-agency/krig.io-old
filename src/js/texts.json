@@ -1,0 +1,17 @@
+{
+    "intro": {
+        "header": "A freelance collective",
+        "text": "<string class='krig'>KRIG</strong> is a collective of freelancers and independent companies within tech and digital design. We have a wide knowledge within our fields and have grown out of the large corporate company structure. We know what we are doing, give us a task and we will solve it!",
+        "selector": "div.intro"
+    },
+    "about": {
+        "header": "About",
+        "text": "<strong class='krig'>KRIG</strong> consists of about 30 hand picked senior developers and designers. Together we have knowledge within UX design, UI design, graphics design, handheld development, web development, motion design, back-end development, DevOps and much much more.",
+        "selector": "div.about"
+    },
+    "buddies": {
+        "header": "Buddies",
+        "text": "We are super happy to be connected to, work with - and for - these amazing peeps we call Buddies! Love and happiness to all of you! Would you like to be our buddy? Just <a href=\"mailto:webmaster@krig.io\" class=\"mail-link\">email us</a> and we'll get back to you asap!",
+        "selector": "div.buddies"
+    }
+}

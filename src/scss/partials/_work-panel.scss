@@ -1,0 +1,114 @@
+
+.pitch-form {
+  width: 100%;
+  padding: 0 7%;
+  color: #fff;
+}
+
+.pitch-form__intro {
+
+  text-align: left;
+}
+
+.pitch-form__form {
+  font-size: 0.75rem;
+
+  label {
+    display: block;
+  }
+
+  input:not(.btn),
+  textarea {
+    width: 100%;
+    margin: 5px 0 30px;
+    padding: 5px 7px;
+  }
+
+  @media only screen and (min-width:768px) {
+    font-size: 0.875rem;
+  }
+}
+
+.work-panel {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 150;
+  top: 0;
+  right: calc((-90vw) + 50px);
+  width: 90vw;
+  height: 100vh;
+  min-height: 100%;
+  overflow: hidden;
+  background-color: #111;
+  transition: all .4s ease-in-out;
+
+  @media only screen and (min-width:768px) {
+    width: 50vw;
+    right: calc((-50vw) + 80px);
+  }
+
+  &.open {
+    right: 0;
+
+    .arrow {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.work-panel__bar {
+  height: 100%;
+  min-width: 50px;
+  position: relative;
+  text-align: center;
+  background-color: black;
+  cursor: url('../img/cursor.png'), auto;
+  cursor: -webkit-image-set(
+  url('../img/cursor.png') 1x,
+  url('../img/cursor.png') 2x
+  ), auto;
+
+  // @media only screen and (min-width:420px) {
+  //   width: 80px;
+  // }
+
+  @media only screen and (min-width:768px) {
+    min-width: 80px;
+  }
+}
+
+.sticky--right {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -115px;
+  transform: rotate(-90deg) translateY(-50%);
+  color: #fff;
+  font-size: 0.65rem;
+
+  @media only screen and (min-width:768px) {
+    left: -98px;
+    font-size: 0.75rem;
+  }
+}
+.sticky--right > span {
+  display: block;
+  min-width: 300px;
+  text-align: center;
+  top: 50%;
+
+  @media only screen and (min-width:480px) {
+    font-size: 0.75rem;
+  }
+}
+.arrow {
+  color: #fff;
+  width: 20px;
+  margin-top: 30px;
+  transition: all 500ms ease;
+
+  @media only screen and (min-width:768px) {
+    width: 30px;
+  }
+}

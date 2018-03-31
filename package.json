@@ -1,25 +1,56 @@
 {
-  "name": "fastshell",
-  "title": "Fiercely quick and opinionated front-ends",
-  "author": "Hossein Karami",
-  "url": "https://HosseinKarami.github.io/fastshell",
-  "version": "1.0.5",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/HosseinKarami/fastshell.git"
+  "name": "Krig.io",
+  "title": "Krig.io webpage.",
+  "author": "Krig.io",
+  "url": "https://krig.io",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "sourceType": "module"
+    },
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "jquery": true
+    },
+    "extends": "semistandard"
   },
-  "devDependencies": {
-    "browser-sync": "^2.11.1",
-    "gulp": "^3.9.0",
+  "semistandard": {
+    "parser": "babel-eslint"
+  },
+  "scripts": {
+    "test": "semistandard src/js",
+    "watch": "gulp"
+  },
+  "dependencies": {
+    "animejs": "^2.2.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.5",
+    "cookie-sanction": "^1.0.0",
+    "gulp": "gulpjs/gulp.git#4.0",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-cli": "^1.4.0",
     "gulp-cssnano": "^2.1.0",
-    "gulp-sourcemaps": "^1.6.0",
+    "gulp-eslint": "^4.0.1",
     "gulp-header": "^1.7.1",
-    "gulp-jshint": "^2.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.1.1",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.1",
-    "jshint": "^2.8.0"
+    "jquery": "^3.2.1",
+    "jquery-scrollify": "^1.0.19",
+    "semistandard": "^11.0.0",
+    "watch": "^1.0.2",
+    "webpack": "^3.10.0",
+    "webpack-stream": "^4.0.0",
+    "whatwg-fetch": "^2.0.3"
   }
 }
