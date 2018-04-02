@@ -19,6 +19,12 @@ h3 {
     font-size: 1.5rem;
   }
 
+  @media only screen and (max-width:1280px) {
+    font-size: 8em;
+    margin: .67em 0;
+    line-height: 1;
+  }
+
 }
 
 h4 {
