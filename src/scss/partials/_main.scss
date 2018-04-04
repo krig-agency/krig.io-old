@@ -51,10 +51,6 @@ body {
         line-height: 1.8;
       }
 
-      @media only screen and (min-width:1024px) {
-        font-size: 1.3rem;
-      }
-
       @media only screen and (min-width:1280px) {
         font-size: 1.5rem;
       }
@@ -75,12 +71,14 @@ body {
   }
 
   @media only screen and (min-width:1140px) {
-    font-size: 7rem;
+    font-size: 5.5rem;
     line-height: 1;
+    margin-bottom: 30px;
   }
   @media only screen and (min-width:1280px) {
     font-size: 8rem;
     line-height: 1;
+    margin-bottom: 42px;
   }
 }
 
