@@ -35,15 +35,24 @@ body {
       max-width: 80%;
     }
 
-    @media only screen and (min-width:1024px) {
+    @media only screen and (min-width:1140px) {
       max-width: 70%;
+    }
+
+    @media only screen and (min-width:1280px) {
+      max-width: 60%;
     }
 
     p {
       line-height: 1.6;
+      font-size: 1rem;
 
       @media only screen and (min-width:768px) {
         line-height: 1.8;
+      }
+
+      @media only screen and (min-width:1280px) {
+        font-size: 1.5rem;
       }
     }
   }
@@ -59,6 +68,17 @@ body {
 
   @media only screen and (min-width:768px) {
     font-size: 3rem;
+  }
+
+  @media only screen and (min-width:1140px) {
+    font-size: 5.5rem;
+    line-height: 1;
+    margin-bottom: 30px;
+  }
+  @media only screen and (min-width:1280px) {
+    font-size: 8rem;
+    line-height: 1;
+    margin-bottom: 42px;
   }
 }
 
