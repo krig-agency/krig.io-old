@@ -76,9 +76,13 @@ body {
     margin-bottom: 30px;
   }
   @media only screen and (min-width:1280px) {
-    font-size: 6rem;                                                                                            rem;
+    font-size: 6rem;
     line-height: 1;
     margin-bottom: 42px;
+  }
+
+  @media only screen and (min-width:1480px) {
+    font-size: 8rem;
   }
 }
 
