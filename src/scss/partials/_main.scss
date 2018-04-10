@@ -52,6 +52,10 @@ body {
       }
 
       @media only screen and (min-width:1280px) {
+        font-size: 1.2rem;
+      }
+
+      @media only screen and (min-width:1480px) {
         font-size: 1.5rem;
       }
     }
@@ -76,9 +80,13 @@ body {
     margin-bottom: 30px;
   }
   @media only screen and (min-width:1280px) {
-    font-size: 8rem;
+    font-size: 6rem;
     line-height: 1;
     margin-bottom: 42px;
+  }
+
+  @media only screen and (min-width:1480px) {
+    font-size: 8rem;
   }
 }
 
