@@ -45,17 +45,14 @@ body {
 
     p {
       line-height: 1.6;
-      font-size: 1rem;
+      font-size: 0.875rem;
 
       @media only screen and (min-width:768px) {
         line-height: 1.8;
+        font-size: 1rem;
       }
 
-      @media only screen and (min-width:1280px) {
-        font-size: 1.2rem;
-      }
-
-      @media only screen and (min-width:1480px) {
+      @media only screen and (min-width:1980px) {
         font-size: 1.5rem;
       }
     }
