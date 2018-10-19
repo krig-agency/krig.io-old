@@ -62,20 +62,20 @@ let jsCompile = () => {
     .pipe(webpack(
       {
         entry: {
-          'scripts': ['babel-polyfill', './src/js/scripts.js'],
+          'scripts': ['@babel/polyfill', './src/js/scripts.js'],
           'postcookie': './src/js/postcookie.js'
         },
         output: {
           filename: '[name].js'
         },
         module: {
-          loaders: [{
+          rules: [{
             test: /\.js$/,
             loader: 'babel-loader',
             options: {
               presets: [
                 [
-                  'env', {
+                  '@babel/preset-env', {
                     targets: {
                       browsers: [ 'since 2015' ]
                     }
