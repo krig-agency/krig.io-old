@@ -11,6 +11,10 @@
 .pitch-form__form {
   font-size: 0.75rem;
 
+  .error {
+    color: red;
+  }
+
   label {
     display: block;
   }

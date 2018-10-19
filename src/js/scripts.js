@@ -97,6 +97,10 @@ $(() => {
         if (window.console) {
           console.log(err);
         }
+
+        const errorForm = document.querySelector('.form-error');
+        errorForm.innerText = 'An error occured. Please try again later or send an email to webmaster@krig.io!';
+        errorForm.classList.remove('hidden');
       });
   });
 
