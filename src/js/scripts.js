@@ -75,7 +75,7 @@ $(function () {
       subject: 'Pitch'
     };
 
-    fetch('https://mailer.krig.cloud/api/v1/KRIG/send', {
+    fetch('https://moxter.krig.cloud/api/v1/KRIG/send', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
